@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2t1krrgducmg" path="res://Engine/Systems/input_system.gd" id="1_n16qt"]
 [ext_resource type="Script" uid="uid://cwp5vnsldxm3v" path="res://Engine/Systems/look_system.gd" id="2_fos0o"]
 [ext_resource type="Script" uid="uid://chf781dcn7web" path="res://Engine/Systems/movement_system.gd" id="3_kr71i"]
+[ext_resource type="Script" uid="uid://b5fx68om0pfc3" path="res://Engine/Systems/health_system.gd" id="4_fos0o"]
 
 [node name="Systems" type="Node" unique_id=2122822176]
 
@@ -14,3 +15,6 @@ script = ExtResource("2_fos0o")
 
 [node name="MovementSystem" type="Node" parent="." unique_id=1808722209]
 script = ExtResource("3_kr71i")
+
+[node name="HealthSystem" type="Node" parent="." unique_id=213764001]
+script = ExtResource("4_fos0o")
