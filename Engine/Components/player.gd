@@ -8,7 +8,7 @@ extends CharacterBody3D
 var input_system: InputSystem
 var look_system: LookSystem
 var movement_system: MovementSystem
-var health_system: HealthSystem
+var damage_system: DamageSystem
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -16,7 +16,7 @@ func _ready():
 	input_system = Systems.get_node("InputSystem")
 	look_system = Systems.get_node("LookSystem")
 	movement_system = Systems.get_node("MovementSystem")
-	health_system = Systems.get_node("HealthSystem")
+	damage_system = Systems.get_node("DamageSystem")
 	
 	if health != null:
 		health.current_health = health.max_health
@@ -30,7 +30,7 @@ func _physics_process(delta):
 	movement_system.process(self, movement, input_comp, delta)
 
 func take_damage(amount: float):
-	health_system.apply_direct_damage(self, amount)
+	damage_system.apply_direct_damage(self, amount)
 
 func die():
 	print("Jugador murió")
