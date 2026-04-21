@@ -1,5 +1,5 @@
 class_name MovementComponent
-extends Resource
+extends Component
 
 @export var speed: float = 10.0
 @export var jump_velocity: float = 4.5
