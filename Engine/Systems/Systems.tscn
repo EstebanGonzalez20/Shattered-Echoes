@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://chf781dcn7web" path="res://Engine/Systems/movement_system.gd" id="3_kr71i"]
 [ext_resource type="Script" uid="uid://dqown0gl1xeul" path="res://Engine/Systems/enemy_behavior_system.gd" id="4_fos0o"]
 [ext_resource type="Script" uid="uid://coopw2g8kr0ey" path="res://Engine/Systems/enemy_movement_system.gd" id="5_kr71i"]
+[ext_resource type="Script" uid="uid://b5fx68om0pfc3" path="res://Engine/Systems/health_system.gd" id="6_fos0o"]
 
 [node name="Systems" type="Node" unique_id=2122822176]
 
@@ -22,3 +23,6 @@ script = ExtResource("4_fos0o")
 
 [node name="EnemyMovementSystem" type="Node" parent="."]
 script = ExtResource("5_kr71i")
+
+[node name="HealthSystem" type="Node" parent="." unique_id=213764001]
+script = ExtResource("6_fos0o")
