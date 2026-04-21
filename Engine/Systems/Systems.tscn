@@ -6,15 +6,15 @@
 [ext_resource type="Script" uid="uid://dqown0gl1xeul" path="res://Engine/Systems/enemy_behavior_system.gd" id="4_fos0o"]
 [ext_resource type="Script" uid="uid://coopw2g8kr0ey" path="res://Engine/Systems/enemy_movement_system.gd" id="5_kr71i"]
 
-[node name="Systems" type="Node"]
+[node name="Systems" type="Node" unique_id=2122822176]
 
-[node name="InputSystem" type="Node" parent="."]
+[node name="InputSystem" type="Node" parent="." unique_id=847239643]
 script = ExtResource("1_n16qt")
 
-[node name="LookSystem" type="Node" parent="."]
+[node name="LookSystem" type="Node" parent="." unique_id=631254494]
 script = ExtResource("2_fos0o")
 
-[node name="MovementSystem" type="Node" parent="."]
+[node name="MovementSystem" type="Node" parent="." unique_id=1808722209]
 script = ExtResource("3_kr71i")
 
 [node name="EnemyBehaviorSystem" type="Node" parent="."]
