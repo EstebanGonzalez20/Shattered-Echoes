@@ -1,5 +1,5 @@
 class_name InputComponent
-extends Resource
+extends Component
 
 var move_vector: Vector2 = Vector2.ZERO
 var jump_pressed: bool = false
