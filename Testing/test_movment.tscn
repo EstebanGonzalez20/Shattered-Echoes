@@ -6,10 +6,16 @@
 [ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Engine/Components/player_look.tres" id="4_0jr4o"]
 [ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Engine/Components/player_input.tres" id="5_w2kja"]
 [ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/health_component.gd" id="6_0jr4o"]
+[ext_resource type="Script" uid="uid://b4uc3c7slruau" path="res://Testing/damage_zone.gd" id="7_w2kja"]
 
 [sub_resource type="Resource" id="Resource_w2kja"]
 script = ExtResource("6_0jr4o")
 metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jr4o"]
+size = Vector3(1, 1, 1.4604492)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w2kja"]
 
 [node name="Test_movment" type="Node3D" unique_id=1762958035]
 
@@ -29,3 +35,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 use_collision = true
 collision_layer = 2
 size = Vector3(20, 0.5, 20)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1183689101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+script = ExtResource("7_w2kja")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=336016483]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.23022461)
+shape = SubResource("BoxShape3D_0jr4o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=807215993]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("BoxMesh_w2kja")
