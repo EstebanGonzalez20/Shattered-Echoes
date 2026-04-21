@@ -1,5 +1,5 @@
 extends Node
-class_name HealthSystem
+class_name DamageSystem
 
 func apply_damage(attacker, target):
 	# Validaciones
