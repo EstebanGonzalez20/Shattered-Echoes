@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctnga4yjlnevd"]
+[gd_scene format=3 uid="uid://ctnga4yjlnevd"]
 
 [ext_resource type="Script" uid="uid://c2t1krrgducmg" path="res://Engine/Systems/input_system.gd" id="1_n16qt"]
 [ext_resource type="Script" uid="uid://cwp5vnsldxm3v" path="res://Engine/Systems/look_system.gd" id="2_fos0o"]
 [ext_resource type="Script" uid="uid://chf781dcn7web" path="res://Engine/Systems/movement_system.gd" id="3_kr71i"]
 
-[node name="Systems" type="Node"]
+[node name="Systems" type="Node" unique_id=2122822176]
 
-[node name="InputSystem" type="Node" parent="."]
+[node name="InputSystem" type="Node" parent="." unique_id=847239643]
 script = ExtResource("1_n16qt")
 
-[node name="LookSystem" type="Node" parent="."]
+[node name="LookSystem" type="Node" parent="." unique_id=631254494]
 script = ExtResource("2_fos0o")
 
-[node name="MovementSystem" type="Node" parent="."]
+[node name="MovementSystem" type="Node" parent="." unique_id=1808722209]
 script = ExtResource("3_kr71i")
