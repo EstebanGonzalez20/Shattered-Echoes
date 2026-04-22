@@ -14,4 +14,4 @@ func _on_body_entered(body):
 	if body.health == null:
 		return
 
-	damage_system.apply_direct_damage(body, damage)
+	damage_system.apply_damage(damage, body)
