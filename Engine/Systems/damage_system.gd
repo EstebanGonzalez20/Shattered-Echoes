@@ -1,32 +1,20 @@
 extends Node
 class_name DamageSystem
 
-func apply_damage(attacker, target):
+##Aplica daño a una entidad que tenga componente de vida
+func apply_damage(amount: int, target):
 	# Validaciones
-	if attacker.damage == null:
-		return
 	if target.health == null:
 		return
 
-	var damage_comp = attacker.damage
 	var health_comp = target.health
-
 	# Aplicar daño
-	health_comp.take_damage(damage_comp.damage)
-
+	health_comp.take_damage(amount)
 	# Verificar muerte
 	if not health_comp.is_alive():
 		on_entity_died(target)
 
-func apply_direct_damage(target, amount: float):
-	if target.health == null:
-		return
-
-	target.health.take_damage(amount)
-
-	if not target.health.is_alive():
-		on_entity_died(target)
-
+##Maneja la muerte de las entidades al sufrir daño letal
 func on_entity_died(entity):
 	print("Entidad murió: ", entity.name)
 
@@ -34,4 +22,3 @@ func on_entity_died(entity):
 		entity.die()
 	else:
 		entity.queue_free()
-		
