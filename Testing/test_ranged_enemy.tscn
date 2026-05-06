@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://djmvkf0rx7nal"]
+[gd_scene format=3 uid="uid://djmvkf0rx7nal"]
 
 [ext_resource type="Script" uid="uid://blaxbq1koqt6g" path="res://Testing/test_ranged_enemy.gd" id="1_xiho5"]
 [ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="2_ndyq0"]
@@ -17,20 +17,16 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 
 [sub_resource type="Resource" id="Resource_fgnpj"]
 script = ExtResource("9_jek14")
-speed = 20.0
-jump_velocity = 4.5
+speed = 5.0
 metadata/_custom_type_script = "uid://fiqspojmjr1c"
 
 [sub_resource type="Resource" id="Resource_88bx5"]
 script = ExtResource("10_qttms")
-max_player_distance = 7.0
-min_player_distance = 3.0
 metadata/_custom_type_script = "uid://djh5kjox4u2q1"
 
 [sub_resource type="Resource" id="Resource_jek14"]
 script = ExtResource("9_jek14")
 speed = 5.0
-jump_velocity = 4.5
 metadata/_custom_type_script = "uid://fiqspojmjr1c"
 
 [sub_resource type="Resource" id="Resource_qttms"]
@@ -41,72 +37,71 @@ metadata/_custom_type_script = "uid://djh5kjox4u2q1"
 
 [sub_resource type="Resource" id="Resource_8xdmy"]
 script = ExtResource("9_jek14")
-speed = 100.0
-jump_velocity = 4.5
+speed = 5.0
 metadata/_custom_type_script = "uid://fiqspojmjr1c"
 
 [sub_resource type="Resource" id="Resource_00e1b"]
 script = ExtResource("10_qttms")
-max_player_distance = 3.0
-min_player_distance = 3.0
+max_player_distance = 2.0
+min_player_distance = 1.0
 metadata/_custom_type_script = "uid://djh5kjox4u2q1"
 
-[node name="TestRangedEnemy" type="Node3D"]
+[node name="TestRangedEnemy" type="Node3D" unique_id=1891263668]
 script = ExtResource("1_xiho5")
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=383981212]
 navigation_mesh = SubResource("NavigationMesh_wdqvv")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=22699080]
 use_collision = true
 collision_layer = 2
 size = Vector3(20, 0.5, 20)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2000583697]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96554, 1.38092, 0)
 use_collision = true
 collision_layer = 2
 size = Vector3(5, 0.5, 5)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=915783920]
 transform = Transform3D(0.00305433, 0, 0.999995, 0, 1, 0, -0.999995, 0, 0.00305433, -5.42441, 2.5942, 0)
 use_collision = true
 collision_layer = 2
 size = Vector3(1, 5, 10)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1156648774]
 transform = Transform3D(1, 0, 0, 0, 0.904968, -0.425479, 0, 0.425479, 0.904968, 5.30028, 0.332649, 4.66956)
 use_collision = true
 collision_layer = 2
 size = Vector3(2, 0.5, 5)
 
-[node name="Player" parent="." instance=ExtResource("2_ndyq0")]
+[node name="Player" parent="." unique_id=217514591 instance=ExtResource("2_ndyq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80747, 0)
 script = ExtResource("3_ihkpw")
 movement = ExtResource("4_fddkj")
 look = ExtResource("5_p2vdo")
 input_comp = ExtResource("6_jek14")
 
-[node name="Enemy" parent="." instance=ExtResource("7_ihkpw")]
+[node name="Enemy" parent="." unique_id=1332273276 instance=ExtResource("7_ihkpw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190372, 3.03862, -8.0513)
 script = ExtResource("8_fddkj")
 movement = SubResource("Resource_fgnpj")
 enemy_player_distance = SubResource("Resource_88bx5")
 
-[node name="Enemy2" parent="." instance=ExtResource("7_ihkpw")]
+[node name="Enemy2" parent="." unique_id=2069686704 instance=ExtResource("7_ihkpw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60557, 1.25, -7.16506)
 script = ExtResource("8_fddkj")
 movement = SubResource("Resource_jek14")
 enemy_player_distance = SubResource("Resource_qttms")
 
-[node name="Enemy3" parent="." instance=ExtResource("7_ihkpw")]
+[node name="Enemy3" parent="." unique_id=481712196 instance=ExtResource("7_ihkpw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65875, 1.25, -7.07483)
 script = ExtResource("8_fddkj")
 movement = SubResource("Resource_8xdmy")
 enemy_player_distance = SubResource("Resource_00e1b")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=296736232]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment"]
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1949612825]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.45683, 0)
 omni_range = 19.31
