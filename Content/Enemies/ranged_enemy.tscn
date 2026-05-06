@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b3hamct2ecmpx"]
+[gd_scene load_steps=5 format=3 uid="uid://b3hamct2ecmpx"]
+
+[ext_resource type="Script" uid="uid://bhyjl757c1a55" path="res://Content/Enemies/ranged_enemy.gd" id="1_do21r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82i5i"]
 albedo_color = Color(1, 0, 0, 1)
@@ -8,10 +10,16 @@ material = SubResource("StandardMaterial3D_82i5i")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hggra"]
 
-[node name="Enemy" type="CharacterBody3D" unique_id=445116402]
+[node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
+script = ExtResource("1_do21r")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1793290453]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_do21r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1295638998]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hggra")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="No_es_mi_tiempo"
+run/main_scene="uid://djmvkf0rx7nal"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Systems="*res://Engine/Systems/Systems.tscn"
+
+[global_group]
+
+enemies=""
 
 [input]
 
