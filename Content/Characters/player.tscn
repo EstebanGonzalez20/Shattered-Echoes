@@ -2,7 +2,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iutjo"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["players"]]
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

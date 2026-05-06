@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctnga4yjlnevd"]
+[gd_scene load_steps=6 format=3 uid="uid://ctnga4yjlnevd"]
 
 [ext_resource type="Script" uid="uid://c2t1krrgducmg" path="res://Engine/Systems/input_system.gd" id="1_n16qt"]
 [ext_resource type="Script" uid="uid://cwp5vnsldxm3v" path="res://Engine/Systems/look_system.gd" id="2_fos0o"]
 [ext_resource type="Script" uid="uid://chf781dcn7web" path="res://Engine/Systems/movement_system.gd" id="3_kr71i"]
+[ext_resource type="Script" uid="uid://dqown0gl1xeul" path="res://Engine/Systems/enemy_behavior_system.gd" id="4_fos0o"]
+[ext_resource type="Script" uid="uid://coopw2g8kr0ey" path="res://Engine/Systems/enemy_movement_system.gd" id="5_kr71i"]
 
 [node name="Systems" type="Node"]
 
@@ -14,3 +16,9 @@ script = ExtResource("2_fos0o")
 
 [node name="MovementSystem" type="Node" parent="."]
 script = ExtResource("3_kr71i")
+
+[node name="EnemyBehaviorSystem" type="Node" parent="."]
+script = ExtResource("4_fos0o")
+
+[node name="EnemyMovementSystem" type="Node" parent="."]
+script = ExtResource("5_kr71i")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EnemyPlayerDistanceComponent" load_steps=2 format=3 uid="uid://deywppspk2vw3"]
+
+[ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/enemy_player_distance_component.gd" id="1_fnjc8"]
+
+[resource]
+script = ExtResource("1_fnjc8")
+metadata/_custom_type_script = "uid://djh5kjox4u2q1"

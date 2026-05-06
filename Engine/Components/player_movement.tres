@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_m02jd")
 speed = 10.0
-jump_velocity = 4.5
+jump_velocity = 10.0
 metadata/_custom_type_script = "uid://fiqspojmjr1c"

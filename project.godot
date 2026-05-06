@@ -22,6 +22,7 @@ Systems="*res://Engine/Systems/Systems.tscn"
 [global_group]
 
 enemies=""
+players=""
 
 [input]
 
