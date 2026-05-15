@@ -1,7 +1,9 @@
 extends Area3D
 class_name Attack
 
-@export var attack_data: AttackData
+@export var attack_data: AttackCoefficient
+@export var shot_speed: float
+@export var duration: float
 
 var damage_function: Callable
 var attack_speed_function: Callable
