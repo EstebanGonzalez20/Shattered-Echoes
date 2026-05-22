@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b2vpivfwryh3o"]
 
 [ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="1_rejls"]
-[ext_resource type="Script" uid="uid://da3qnelo1f7qc" path="res://Engine/Components/player.gd" id="2_vajbr"]
-[ext_resource type="Resource" uid="uid://c188earn40el4" path="res://Engine/Components/player_movement.tres" id="3_56tdo"]
-[ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Engine/Components/player_look.tres" id="4_0jr4o"]
-[ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Engine/Components/player_input.tres" id="5_w2kja"]
+[ext_resource type="Script" uid="uid://da3qnelo1f7qc" path="res://Game/Scripts/player.gd" id="2_vajbr"]
+[ext_resource type="Resource" uid="uid://c188earn40el4" path="res://Game/Scripts/player_movement.tres" id="3_56tdo"]
+[ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Game/Scripts/player_look.tres" id="4_0jr4o"]
+[ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Game/Scripts/player_input.tres" id="5_w2kja"]
 [ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/health_component.gd" id="6_0jr4o"]
 [ext_resource type="Script" uid="uid://b4uc3c7slruau" path="res://Testing/damage_zone.gd" id="7_w2kja"]
 
