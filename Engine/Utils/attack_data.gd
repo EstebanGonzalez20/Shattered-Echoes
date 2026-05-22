@@ -4,6 +4,7 @@ class_name AttackData
 @export var attack_coefficient: AttackCoefficient
 @export var shot_speed: float
 @export var duration: float
+@export var hitbox_scale: Vector3
 
 var damage_function: Callable
 var attack_speed_function: Callable
