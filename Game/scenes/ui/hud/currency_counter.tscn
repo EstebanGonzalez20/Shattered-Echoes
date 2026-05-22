@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ku7wkky3hvxh"]
 
-[ext_resource type="Script" uid="uid://hwab8c5p5fj5" path="res://Game/scenes/ui/hud/currency_counter.gd" id="1_gevf5"]
+[ext_resource type="Script" uid="uid://hwab8c5p5fj5" path="res://Game/Scripts/ui/currency_counter.gd" id="1_gevf5"]
 [ext_resource type="Texture2D" uid="uid://cvp58uh2brv36" path="res://Assets/GUI/currency.png" id="1_rmaq2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gevf5"]
