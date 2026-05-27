@@ -15,6 +15,7 @@ script = ExtResource("1_gevf5")
 [node name="Icon" type="TextureRect" parent="." unique_id=823626622]
 layout_mode = 2
 texture = ExtResource("1_rmaq2")
+expand_mode = 3
 
 [node name="Amount" type="Label" parent="." unique_id=277461080]
 layout_mode = 2
