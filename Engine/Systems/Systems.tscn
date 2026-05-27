@@ -9,13 +9,17 @@
 [ext_resource type="Script" uid="uid://b5fx68om0pfc3" path="res://Engine/Systems/damage_system.gd" id="7_fos0o"]
 
 [node name="Systems" type="Node" unique_id=2122822176]
+[node name="Systems" type="Node" unique_id=2122822176]
 
+[node name="InputSystem" type="Node" parent="." unique_id=847239643]
 [node name="InputSystem" type="Node" parent="." unique_id=847239643]
 script = ExtResource("1_n16qt")
 
 [node name="LookSystem" type="Node" parent="." unique_id=631254494]
+[node name="LookSystem" type="Node" parent="." unique_id=631254494]
 script = ExtResource("2_fos0o")
 
+[node name="MovementSystem" type="Node" parent="." unique_id=1808722209]
 [node name="MovementSystem" type="Node" parent="." unique_id=1808722209]
 script = ExtResource("3_kr71i")
 

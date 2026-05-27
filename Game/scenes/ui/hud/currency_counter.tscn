@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ku7wkky3hvxh"]
+
+[ext_resource type="Script" uid="uid://hwab8c5p5fj5" path="res://Game/Scripts/ui/currency_counter.gd" id="1_gevf5"]
+[ext_resource type="Texture2D" uid="uid://cvp58uh2brv36" path="res://Assets/GUI/currency.png" id="1_rmaq2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gevf5"]
+
+[node name="CurrencyCounter" type="HBoxContainer" unique_id=135044168]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 4
+alignment = 1
+script = ExtResource("1_gevf5")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=823626622]
+layout_mode = 2
+texture = ExtResource("1_rmaq2")
+expand_mode = 3
+
+[node name="Amount" type="Label" parent="." unique_id=277461080]
+layout_mode = 2
+text = "x 0"
+label_settings = SubResource("LabelSettings_gevf5")

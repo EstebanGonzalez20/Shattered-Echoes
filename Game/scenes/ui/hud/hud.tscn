@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://nywik2fsq2bi"]
+
+[ext_resource type="PackedScene" uid="uid://dfsdfbds7gewd" path="res://Game/scenes/ui/hud/health_bar.tscn" id="1_4w5ks"]
+[ext_resource type="Script" uid="uid://cwl23ke5bs5vf" path="res://Game/Scripts/ui/hud.gd" id="1_ihl16"]
+[ext_resource type="PackedScene" uid="uid://ku7wkky3hvxh" path="res://Game/scenes/ui/hud/currency_counter.tscn" id="2_ihl16"]
+
+[node name="Hud" type="CanvasLayer" unique_id=896107773]
+script = ExtResource("1_ihl16")
+
+[node name="Control" type="Control" parent="." unique_id=1300411668]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 648.0
+
+[node name="HealthBar" parent="Control" unique_id=940840797 instance=ExtResource("1_4w5ks")]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 26.0
+offset_right = 431.0
+offset_bottom = 55.0
+
+[node name="CurrencyCounter" parent="Control" unique_id=135044168 instance=ExtResource("2_ihl16")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -172.0
+offset_right = 0.0
+offset_bottom = 119.0
+grow_horizontal = 0

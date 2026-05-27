@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LookComponent" load_steps=2 format=3 uid="uid://bpetgswrxhsfr"]
+[gd_resource type="Resource" script_class="LookComponent" format=3 uid="uid://bpetgswrxhsfr"]
 
 [ext_resource type="Script" uid="uid://duevyhqv1q6ch" path="res://Engine/Components/look_component.gd" id="1_tf35w"]
 

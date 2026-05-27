@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InputComponent" load_steps=2 format=3 uid="uid://cdttsp18834hi"]
+[gd_resource type="Resource" script_class="InputComponent" format=3 uid="uid://cdttsp18834hi"]
 
 [ext_resource type="Script" uid="uid://cvky1r7l5thsf" path="res://Engine/Components/input_component.gd" id="1_tgybx"]
 
