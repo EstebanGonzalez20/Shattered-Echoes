@@ -8,3 +8,5 @@ enum PickupType {
 
 @export var type: PickupType
 @export var amount: int = 1
+## Guardia para evitar doble recolección
+var is_collected: bool = false
