@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b2vpivfwryh3o"]
+
+[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="1_rejls"]
+[ext_resource type="Script" uid="uid://da3qnelo1f7qc" path="res://Game/Scripts/player.gd" id="2_vajbr"]
+[ext_resource type="Resource" uid="uid://c188earn40el4" path="res://Game/Scripts/player_movement.tres" id="3_56tdo"]
+[ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Game/Scripts/player_look.tres" id="4_0jr4o"]
+[ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Game/Scripts/player_input.tres" id="5_w2kja"]
+[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/health_component.gd" id="6_0jr4o"]
+[ext_resource type="Script" uid="uid://b4uc3c7slruau" path="res://Testing/damage_zone.gd" id="7_w2kja"]
+
+[sub_resource type="Resource" id="Resource_w2kja"]
+script = ExtResource("6_0jr4o")
+metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jr4o"]
+size = Vector3(1, 1, 1.4604492)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w2kja"]
+
+[node name="Test_movment" type="Node3D" unique_id=1762958035]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=68739833]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 2.5, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1966610435 instance=ExtResource("1_rejls")]
+script = ExtResource("2_vajbr")
+movement = ExtResource("3_56tdo")
+look = ExtResource("4_0jr4o")
+input_comp = ExtResource("5_w2kja")
+health = SubResource("Resource_w2kja")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1505691694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+use_collision = true
+collision_layer = 2
+size = Vector3(20, 0.5, 20)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1183689101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+script = ExtResource("7_w2kja")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=336016483]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.23022461)
+shape = SubResource("BoxShape3D_0jr4o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=807215993]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("BoxMesh_w2kja")

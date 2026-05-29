@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cs66pw6ldueej"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5qku"]
+
+[node name="Melee" type="Area3D" unique_id=788117851]
+
+[node name="hitbox" type="CollisionShape3D" parent="." unique_id=1877753425]
+shape = SubResource("BoxShape3D_u5qku")
