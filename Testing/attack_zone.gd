@@ -1,18 +1,20 @@
-extends Area3D
+extends StaticBody3D
 
-@export var damage: float = 0.0
-
-var damage_system: DamageSystem
+@export var health: HealthComponent
 
 func _ready():
-	damage_system = Systems.get_node("DamageSystem")
-	body_entered.connect(_on_body_entered)
-	
-	
-func _on_body_entered(body):
-	if not body.has_node("HealthComponent"):
-		return
+	if health:
+		health.current_health = health.max_health
 
-	var health = body.get_node("HealthComponent")
+func take_damage(amount: float):
+	health.take_damage(amount)
 
-	damage_system.apply_damage(damage, body)
+	print("Daño recibido:", amount)
+	print("Vida restante:", health.current_health)
+
+	if not health.is_alive():
+		die()
+
+func die():
+	print("Zona destruida")
+	queue_free()

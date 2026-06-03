@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://bprhxbdfe78hj" path="res://Engine/Components/weapon_special_attack_data.tres" id="9_picmr"]
 [ext_resource type="Resource" uid="uid://63pokkjs3wrg" path="res://Engine/Components/weapon_coefficient.tres" id="10_0dpih"]
 [ext_resource type="Resource" uid="uid://b7gov53114kmv" path="res://Game/Scripts/player_damage.tres" id="11_picmr"]
+[ext_resource type="Resource" uid="uid://bqqyvxy2c4jk" path="res://Game/Scripts/player_health.tres" id="14_0dpih"]
 
 [sub_resource type="Resource" id="Resource_w2kja"]
 script = ExtResource("6_cuj2b")
@@ -67,9 +68,10 @@ shape = SubResource("BoxShape3D_0jr4o")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("BoxMesh_w2kja")
 
-[node name="AttackZone" type="Area3D" parent="." unique_id=721965659]
+[node name="AttackZone" type="StaticBody3D" parent="." unique_id=1096256789]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -3.5)
 script = ExtResource("8_ffnir")
+health = ExtResource("14_0dpih")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackZone" unique_id=603157208]
 shape = SubResource("CapsuleShape3D_0dpih")

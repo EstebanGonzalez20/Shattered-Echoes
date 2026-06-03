@@ -37,7 +37,7 @@ func _ready():
 		health.current_health = health.max_health
 
 func _input(event):
-	input_system.process_mouse(event, input_comp, weapon_comp, damage_comp, attack_system)
+	input_system.process_mouse(event, input_comp, weapon_comp, self, attack_system)
 
 func _physics_process(delta):
 	input_system.process_actions(input_comp)
