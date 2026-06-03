@@ -1,6 +1,7 @@
 ## Este componente representa el radio en el cual una entidad recolecta pickups
 class_name PickupCollector extends NodeComponent
 
+##Señal emitida cuando un pickup entra en el rango
 signal pickup_entered(pickup_node: Node3D)
 
 @export var radius: float = 24.0: set = _set_radius
