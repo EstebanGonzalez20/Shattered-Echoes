@@ -5,6 +5,8 @@ extends CharacterBody3D
 @export var input_comp: InputComponent
 @export var health: HealthComponent
 @export var weapon_comp: WeaponComponent
+@export var damage_comp: DamageComponent
+
 
 var input_system: InputSystem
 var look_system: LookSystem
@@ -14,6 +16,15 @@ var attack_system: AttackSystem
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	
+	if weapon_comp.basic_attack:
+		weapon_comp.basic_attack.initialize()
+
+	if weapon_comp.special_attack:
+		weapon_comp.special_attack.initialize()
+	
+	weapon_comp.initialize()
 	
 	input_system = Systems.get_node("InputSystem")
 	look_system = Systems.get_node("LookSystem")
@@ -26,7 +37,7 @@ func _ready():
 		health.current_health = health.max_health
 
 func _input(event):
-	input_system.process_mouse(event, input_comp, weapon_comp, self, attack_system)
+	input_system.process_mouse(event, input_comp, weapon_comp, damage_comp, attack_system)
 
 func _physics_process(delta):
 	input_system.process_actions(input_comp)

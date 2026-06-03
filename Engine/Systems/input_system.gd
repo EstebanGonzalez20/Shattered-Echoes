@@ -7,10 +7,10 @@ func process_actions(input_comp: InputComponent):
 	
 
 
-func process_mouse(event: InputEvent, input_comp: InputComponent, weapon_comp: WeaponComponent, player, AttackSystem):
+func process_mouse(event: InputEvent, input_comp: InputComponent, weapon_comp: WeaponComponent, damage_comp: DamageComponent, attack_system: AttackSystem):
 	if event is InputEventMouseMotion:
 		input_comp.mouse_delta = event.relative
 	if Input.is_action_pressed("basic_attack"):
-		AttackSystem.perform_attack(player,weapon_comp.basic_attack.damage_function , weapon_comp.weapon_coefficient)
+		attack_system.perform_attack(damage_comp.damage, weapon_comp.basic_attack.damage_function , weapon_comp.damage_function)
 	if Input.is_action_pressed("special_attack"):
-		AttackSystem.perform_attack(player,weapon_comp.special_attack.damage_function , weapon_comp.weapon_coefficient)
+		attack_system.perform_attack(damage_comp.damage,weapon_comp.special_attack.damage_function , weapon_comp.damage_function)

@@ -5,11 +5,12 @@ class_name WeaponComponent
 @export var basic_attack: SkillResource
 @export var special_attack: SkillResource
 
+
 var damage_function: Callable
 var attack_speed_function: Callable
 
 
-func _ready():
+func initialize():
 	damage_function = MathScaling.scaling_function(
 		weapon_coefficient.num_operates_damage,
 		weapon_coefficient.damage_operation

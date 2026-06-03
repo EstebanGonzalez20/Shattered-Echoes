@@ -10,7 +10,7 @@ var damage_function: Callable
 var attack_speed_function: Callable
  
 
-func _ready():
+func initialize():
 	damage_function = MathScaling.scaling_function(
 		attack_coefficient.num_operates_damage,
 		attack_coefficient.damage_operation
