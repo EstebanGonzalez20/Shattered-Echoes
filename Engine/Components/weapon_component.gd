@@ -2,8 +2,8 @@ extends Component
 class_name WeaponComponent
 
 @export var weapon_coefficient: AttackCoefficient
-@export var basic_attack: AttackData
-@export var special_attack: AttackData
+@export var basic_attack: SkillResource
+@export var special_attack: SkillResource
 
 var damage_function: Callable
 var attack_speed_function: Callable
