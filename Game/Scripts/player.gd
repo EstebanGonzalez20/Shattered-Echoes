@@ -17,12 +17,15 @@ var attack_system: AttackSystem
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
-	
 	if weapon_comp.basic_attack:
-		weapon_comp.basic_attack.initialize()
-
+		var effects = weapon_comp.basic_attack.effects
+		var attack_data = effects.filter(func(obj): return obj is AttackData).get(0)
+		attack_data.initialize()
+		
 	if weapon_comp.special_attack:
-		weapon_comp.special_attack.initialize()
+		var effects = weapon_comp.special_attack.effects
+		var attack_data = effects.filter(func(obj): return obj is AttackData).get(0)
+		attack_data.initialize()
 	
 	weapon_comp.initialize()
 	

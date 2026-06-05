@@ -1,30 +1,16 @@
-[gd_scene format=3 uid="uid://b2vpivfwryh3o"]
+[gd_scene format=3 uid="uid://cdu17fjve25md"]
 
 [ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="1_aekvn"]
 [ext_resource type="Script" uid="uid://da3qnelo1f7qc" path="res://Game/Scripts/player.gd" id="2_ffnir"]
 [ext_resource type="Resource" uid="uid://c188earn40el4" path="res://Game/Scripts/player_movement.tres" id="3_0fywy"]
 [ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Game/Scripts/player_look.tres" id="4_vslxa"]
 [ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Game/Scripts/player_input.tres" id="5_2n68n"]
-[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/health_component.gd" id="6_cuj2b"]
-[ext_resource type="Script" uid="uid://cbrb5ostmuqdj" path="res://Engine/Components/weapon_component.gd" id="7_0fywy"]
-[ext_resource type="Resource" uid="uid://dhv42vo6cebrb" path="res://Engine/Components/weapon_basic_attack_data.tres" id="7_cuj2b"]
+[ext_resource type="Resource" uid="uid://dy0uurspcpc02" path="res://Game/Scripts/sword_data.tres" id="7_2n68n"]
 [ext_resource type="Script" uid="uid://b4uc3c7slruau" path="res://Testing/damage_zone.gd" id="7_picmr"]
-[ext_resource type="Script" uid="uid://qetd7bxsxohq" path="res://Testing/attack_zone.gd" id="8_ffnir"]
-[ext_resource type="Resource" uid="uid://bprhxbdfe78hj" path="res://Engine/Components/weapon_special_attack_data.tres" id="9_picmr"]
-[ext_resource type="Resource" uid="uid://63pokkjs3wrg" path="res://Engine/Components/weapon_coefficient.tres" id="10_0dpih"]
-[ext_resource type="Resource" uid="uid://b7gov53114kmv" path="res://Game/Scripts/player_damage.tres" id="11_picmr"]
+[ext_resource type="Script" path="res://Testing/attack_zone.gd" id="8_ffnir"]
+[ext_resource type="Resource" uid="uid://g6gj0jxoqwrf" path="res://Testing/attack_zone_health.tres" id="11_2n68n"]
+[ext_resource type="Resource" path="res://Game/Scripts/player_damage.tres" id="11_picmr"]
 [ext_resource type="Resource" uid="uid://bqqyvxy2c4jk" path="res://Game/Scripts/player_health.tres" id="14_0dpih"]
-
-[sub_resource type="Resource" id="Resource_w2kja"]
-script = ExtResource("6_cuj2b")
-metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
-
-[sub_resource type="Resource" id="Resource_vslxa"]
-script = ExtResource("7_0fywy")
-weapon_coefficient = ExtResource("10_0dpih")
-basic_attack = ExtResource("7_cuj2b")
-special_attack = ExtResource("9_picmr")
-metadata/_custom_type_script = "uid://cbrb5ostmuqdj"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0jr4o"]
 size = Vector3(1, 1, 1.4604492)
@@ -46,8 +32,8 @@ script = ExtResource("2_ffnir")
 movement = ExtResource("3_0fywy")
 look = ExtResource("4_vslxa")
 input_comp = ExtResource("5_2n68n")
-health = SubResource("Resource_w2kja")
-weapon_comp = SubResource("Resource_vslxa")
+health = ExtResource("14_0dpih")
+weapon_comp = ExtResource("7_2n68n")
 damage_comp = ExtResource("11_picmr")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1505691694]
@@ -59,6 +45,7 @@ size = Vector3(20, 0.5, 20)
 [node name="DamageZone" type="Area3D" parent="." unique_id=1183689101]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 script = ExtResource("7_picmr")
+damage = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageZone" unique_id=336016483]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.23022461)
@@ -71,7 +58,7 @@ mesh = SubResource("BoxMesh_w2kja")
 [node name="AttackZone" type="StaticBody3D" parent="." unique_id=1096256789]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -3.5)
 script = ExtResource("8_ffnir")
-health = ExtResource("14_0dpih")
+health = ExtResource("11_2n68n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackZone" unique_id=603157208]
 shape = SubResource("CapsuleShape3D_0dpih")
