@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://djmvkf0rx7nal"]
 
-[ext_resource type="Script" uid="uid://blaxbq1koqt6g" path="res://Testing/test_ranged_enemy.gd" id="1_xiho5"]
+[ext_resource type="Script" uid="uid://blaxbq1koqt6g" path="res://Testing/Enemies_AI/test_enemies.gd" id="1_xiho5"]
 [ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="2_ndyq0"]
-[ext_resource type="Script" uid="uid://da3qnelo1f7qc" path="res://Game/Scripts/player.gd" id="3_ihkpw"]
-[ext_resource type="Resource" uid="uid://c188earn40el4" path="res://Game/Scripts/player_movement.tres" id="4_fddkj"]
-[ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Game/Scripts/player_look.tres" id="5_p2vdo"]
-[ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Game/Scripts/player_input.tres" id="6_jek14"]
-[ext_resource type="PackedScene" uid="uid://b3hamct2ecmpx" path="res://Content/Enemies/ranged_enemy.tscn" id="7_ihkpw"]
-[ext_resource type="Script" uid="uid://bhyjl757c1a55" path="res://Game/Scripts/ranged_enemy.gd" id="8_fddkj"]
+[ext_resource type="Script" uid="uid://da3qnelo1f7qc" path="res://Game/Scripts/Characters/player.gd" id="3_ihkpw"]
+[ext_resource type="Resource" uid="uid://c188earn40el4" path="res://Game/Data/Characters/Statistics/player_movement.tres" id="4_fddkj"]
+[ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Game/Data/Characters/Statistics/player_look.tres" id="5_p2vdo"]
+[ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Game/Data/Characters/Statistics/player_input.tres" id="6_jek14"]
+[ext_resource type="PackedScene" uid="uid://b3hamct2ecmpx" path="res://Content/Enemies/enemy.tscn" id="7_ihkpw"]
+[ext_resource type="Resource" uid="uid://bqqyvxy2c4jk" path="res://Game/Data/Characters/Statistics/player_health.tres" id="7_qojy7"]
+[ext_resource type="Resource" uid="uid://dy0uurspcpc02" path="res://Game/Data/Characters/Weapons/sword_data.tres" id="8_1lypy"]
+[ext_resource type="Script" uid="uid://bhyjl757c1a55" path="res://Game/Scripts/Enemies/enemy.gd" id="8_fddkj"]
+[ext_resource type="Resource" uid="uid://b7gov53114kmv" path="res://Game/Data/Characters/Statistics/player_damage.tres" id="9_4isx4"]
 [ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/movement_component.gd" id="9_jek14"]
 [ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/enemy_player_distance_component.gd" id="10_qttms"]
 
@@ -81,6 +84,9 @@ script = ExtResource("3_ihkpw")
 movement = ExtResource("4_fddkj")
 look = ExtResource("5_p2vdo")
 input_comp = ExtResource("6_jek14")
+health = ExtResource("7_qojy7")
+weapon_comp = ExtResource("8_1lypy")
+damage_comp = ExtResource("9_4isx4")
 
 [node name="Enemy" parent="." unique_id=1332273276 instance=ExtResource("7_ihkpw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190372, 3.03862, -8.0513)

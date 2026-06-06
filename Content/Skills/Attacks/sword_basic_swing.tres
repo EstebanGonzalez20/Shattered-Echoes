@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://b45ptcc3rhmya"]
 
-[ext_resource type="Resource" uid="uid://lgkb2ko6gstm" path="res://Content/Skills/Attacks/attack_data_sword_basic_swing.tres" id="1_y5abg"]
+[ext_resource type="Resource" uid="uid://lgkb2ko6gstm" path="res://Content/Skills/Attacks/Datas/sword_basic_swing.tres" id="1_y5abg"]
 [ext_resource type="Script" uid="uid://ccav244rm57fh" path="res://Engine/Utils/skill_resource.gd" id="1_yg770"]
 
 [resource]

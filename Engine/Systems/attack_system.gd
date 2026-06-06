@@ -2,7 +2,7 @@ class_name AttackSystem
 extends Node
 	
 func spawn_hitbox(attacker, final_damage: float):
-	var load_attack = load("res://Content/Weapons/melee.tscn")
+	var load_attack = load("res://Content/Proyectiles/melee.tscn")
 	var melee_instance = load_attack.instantiate()
 
 	get_tree().current_scene.add_child(melee_instance)
