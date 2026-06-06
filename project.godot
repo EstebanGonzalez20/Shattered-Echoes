@@ -12,13 +12,9 @@ config_version=5
 
 compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
-[animation]
-
-compatibility/default_parent_skeleton_in_mesh_instance_3d=true
-
 [application]
 
-config/name="No_es_mi_tiempo"
+config/name="Shattered_Echoes"
 run/main_scene="uid://djmvkf0rx7nal"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -29,8 +25,9 @@ Systems="*res://Engine/Systems/Systems.tscn"
 
 [global_group]
 
-enemies=""
-players=""
+enemies="Entities considered enemies."
+players="Entities considered players."
+color_revealer="Lights that can reveal the color of some objects."
 
 [input]
 
@@ -81,3 +78,14 @@ special_attack={
 
 3d_physics/layer_1="Player"
 3d_physics/layer_2="World"
+
+[shader_globals]
+
+color_light_count={
+"type": "int",
+"value": 0
+}
+color_lights_tex={
+"type": "sampler2D",
+"value": ""
+}

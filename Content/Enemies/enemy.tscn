@@ -8,16 +8,16 @@ material = SubResource("StandardMaterial3D_82i5i")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hggra"]
 
-[node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
+[node name="Enemy" type="CharacterBody3D" unique_id=1605977725 groups=["enemies"]]
 collision_mask = 2
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=352206884]
 mesh = SubResource("CapsuleMesh_do21r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1744681284]
 shape = SubResource("CapsuleShape3D_hggra")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=936207895]
 avoidance_enabled = true
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
