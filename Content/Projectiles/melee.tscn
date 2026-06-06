@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://du1drmy1bqh2o"]
+
+[ext_resource type="Script" uid="uid://djf4e056e81mo" path="res://Game/Scripts/Projectiles/projectile.gd" id="1_s6jku"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5qku"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f2gwr"]
+
+[node name="hitbox" type="Area3D" unique_id=1384766878]
+script = ExtResource("1_s6jku")
+
+[node name="collision" type="CollisionShape3D" parent="." unique_id=1877753425]
+shape = SubResource("BoxShape3D_u5qku")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=752865901]
+mesh = SubResource("BoxMesh_f2gwr")
+skeleton = NodePath("")

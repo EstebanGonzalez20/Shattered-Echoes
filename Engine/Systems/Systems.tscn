@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://coopw2g8kr0ey" path="res://Engine/Systems/enemy_movement_system.gd" id="5_kr71i"]
 [ext_resource type="Script" uid="uid://b5fx68om0pfc3" path="res://Engine/Systems/damage_system.gd" id="7_fos0o"]
 [ext_resource type="Script" uid="uid://cjfv6oc2hey2e" path="res://Engine/Systems/attack_system.gd" id="7_udao0"]
+[ext_resource type="Script" uid="uid://cnrorhvqrr4wd" path="res://Engine/Systems/projectile_movement_system.gd" id="8_npi3i"]
 
 [node name="Systems" type="Node" unique_id=2122822176]
 
@@ -33,3 +34,6 @@ script = ExtResource("7_fos0o")
 
 [node name="AttackSystem" type="Node" parent="." unique_id=68861169]
 script = ExtResource("7_udao0")
+
+[node name="ProjectileMovementSystem" type="Node" parent="." unique_id=128865057]
+script = ExtResource("8_npi3i")

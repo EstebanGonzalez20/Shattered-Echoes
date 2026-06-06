@@ -7,14 +7,13 @@ func process_actions(input_comp: InputComponent):
 	
 
 
-func process_mouse(event: InputEvent, input_comp: InputComponent, weapon_comp: WeaponComponent, player, attack_system: AttackSystem):
+func process_mouse(event: InputEvent, input_comp: InputComponent, weapon_comp: WeaponComponent, entity: CharacterBody3D, attack_system: AttackSystem):
 	if event is InputEventMouseMotion:
 		input_comp.mouse_delta = event.relative
-	if Input.is_action_pressed("basic_attack"):
-		var effects = weapon_comp.basic_attack.effects
+
+	if Input.is_action_pressed("basic_attack") or Input.is_action_pressed("special_attack"):
+		var attack_type: String = "basic_attack" if Input.is_action_pressed("basic_attack") else "special_attack"
+		var effects = weapon_comp.get(attack_type).effects
 		var attack_data = effects.filter(func(obj): return obj is AttackData).get(0)
-		attack_system.perform_attack(player, attack_data.damage_function, weapon_comp.damage_function)
-	if Input.is_action_pressed("special_attack"):
-		var effects = weapon_comp.special_attack.effects
-		var attack_data = effects.filter(func(obj): return obj is AttackData).get(0)
-		attack_system.perform_attack(player, attack_data.damage_function, weapon_comp.damage_function)
+
+		attack_system.perform_attack(entity, attack_data, weapon_comp.damage_function)
