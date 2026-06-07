@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b2vpivfwryh3o"]
+
+[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="1_rejls"]
+[ext_resource type="Script" uid="uid://da3qnelo1f7qc" path="res://Game/Scripts/Characters/player.gd" id="2_vajbr"]
+[ext_resource type="Resource" uid="uid://c188earn40el4" path="res://Game/Data/Characters/Statistics/player_movement.tres" id="3_56tdo"]
+[ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Game/Data/Characters/Statistics/player_look.tres" id="4_0jr4o"]
+[ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Game/Data/Characters/Statistics/player_input.tres" id="5_w2kja"]
+[ext_resource type="Resource" uid="uid://bqqyvxy2c4jk" path="res://Game/Data/Characters/Statistics/player_health.tres" id="6_umsjt"]
+[ext_resource type="Resource" uid="uid://dy0uurspcpc02" path="res://Game/Data/Characters/Weapons/sword_data.tres" id="7_7byu8"]
+[ext_resource type="Resource" uid="uid://b7gov53114kmv" path="res://Game/Data/Characters/Statistics/player_damage.tres" id="8_3gxmf"]
+
+[node name="Test_movment" type="Node3D" unique_id=1762958035]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=68739833]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 2.5, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1966610435 instance=ExtResource("1_rejls")]
+script = ExtResource("2_vajbr")
+movement = ExtResource("3_56tdo")
+look = ExtResource("4_0jr4o")
+input_comp = ExtResource("5_w2kja")
+health = ExtResource("6_umsjt")
+weapon_comp = ExtResource("7_7byu8")
+damage_comp = ExtResource("8_3gxmf")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1505691694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+use_collision = true
+collision_layer = 2
+size = Vector3(20, 0.5, 20)

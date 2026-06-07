@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AttackCoefficient" format=3 uid="uid://d1bag4tk3gkxa"]
+
+[ext_resource type="Script" uid="uid://briluodlju34y" path="res://Engine/Utils/attack_coefficients.gd" id="1_n7bhi"]
+
+[resource]
+script = ExtResource("1_n7bhi")
+metadata/_custom_type_script = "uid://briluodlju34y"

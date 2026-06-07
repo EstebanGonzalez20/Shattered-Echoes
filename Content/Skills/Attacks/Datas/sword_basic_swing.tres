@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AttackData" format=3 uid="uid://lgkb2ko6gstm"]
+
+[ext_resource type="Resource" uid="uid://bauf5nol7ot72" path="res://Content/Skills/Attacks/Coefficients/sword_basic_swing.tres" id="1_75vpp"]
+[ext_resource type="Script" uid="uid://thkuy4trvlr7" path="res://Engine/Utils/attack_data.gd" id="1_wa434"]
+[ext_resource type="PackedScene" uid="uid://du1drmy1bqh2o" path="res://Content/Projectiles/melee.tscn" id="2_cqypx"]
+
+[resource]
+script = ExtResource("1_wa434")
+attack_coefficient = ExtResource("1_75vpp")
+duration = 0.4
+hitbox_scale = Vector3(1, 0.75, 0.4)
+projectile_scene = ExtResource("2_cqypx")
+metadata/_custom_type_script = "uid://thkuy4trvlr7"

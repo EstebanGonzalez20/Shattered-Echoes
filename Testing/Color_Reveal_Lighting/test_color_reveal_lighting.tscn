@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://cpypbxkqrme1o"]
+
+[ext_resource type="Script" uid="uid://bvvasfjldvr28" path="res://Testing/Color_Reveal_Lighting/test_color_reveal_lighting.gd" id="1_oa732"]
+[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="2_uvuuj"]
+[ext_resource type="Script" uid="uid://da3qnelo1f7qc" path="res://Game/Scripts/Characters/player.gd" id="3_dfsgh"]
+[ext_resource type="Resource" uid="uid://c188earn40el4" path="res://Game/Data/Characters/Statistics/player_movement.tres" id="4_o8e3v"]
+[ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Game/Data/Characters/Statistics/player_look.tres" id="5_pa6jy"]
+[ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Game/Data/Characters/Statistics/player_input.tres" id="6_plpub"]
+[ext_resource type="Resource" uid="uid://bqqyvxy2c4jk" path="res://Game/Data/Characters/Statistics/player_health.tres" id="7_7py82"]
+[ext_resource type="Resource" uid="uid://dy0uurspcpc02" path="res://Game/Data/Characters/Weapons/sword_data.tres" id="8_bn48a"]
+[ext_resource type="Resource" uid="uid://b7gov53114kmv" path="res://Game/Data/Characters/Statistics/player_damage.tres" id="9_140np"]
+[ext_resource type="PackedScene" uid="uid://b3hamct2ecmpx" path="res://Content/Enemies/enemy.tscn" id="10_73hcq"]
+[ext_resource type="Script" uid="uid://bhyjl757c1a55" path="res://Game/Scripts/Enemies/enemy.gd" id="11_x0gx1"]
+[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/movement_component.gd" id="12_3jxhh"]
+[ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/enemy_player_distance_component.gd" id="13_i7a0m"]
+[ext_resource type="Shader" uid="uid://14ob0yein7es" path="res://Game/Shaders/color_reveal_lighting.gdshader" id="14_7p5fo"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_wdqvv"]
+vertices = PackedVector3Array(0.0740852, 0.542709, -1, 0.324085, 0.542709, 0, 1.82409, 0.542709, 0, 1.82409, 0.542709, -2.75, 4.07409, 0.542709, -9.5, -9.67591, 0.542709, -9.5, -9.67591, 0.542709, -1.25, 4.07409, 0.542709, -3, 7.82409, 0.542709, -3, 8.07409, 0.542709, 1, 9.57409, 0.542709, 1, 9.57409, 0.542709, -9.5, 8.07409, 0.542709, 3, 6.82409, 0.542709, 3.25, 6.82409, 0.542709, 5.25, 5.82409, 2.04271, 2.25, 7.07409, 2.04271, 2, 7.07409, 2.04271, -2, 2.82409, 2.04271, -2, 2.82409, 2.04271, 2, 4.57409, 2.04271, 2.25, 4.57409, 0.792709, 5.25, 3.57409, 0.542709, 5, 3.07409, 0.542709, 9.5, 9.57409, 0.542709, 9.5, 5.82409, 0.792709, 5.25, 0.0740852, 0.542709, 1.25, 1.82409, 0.542709, 3, -9.67591, 0.542709, 1, -9.67591, 0.542709, 9.5, 3.57409, 0.542709, 3.25)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 6), PackedInt32Array(4, 6, 5), PackedInt32Array(4, 7, 3), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(7, 4, 8), PackedInt32Array(8, 4, 11), PackedInt32Array(12, 9, 10), PackedInt32Array(12, 14, 13), PackedInt32Array(15, 20, 16), PackedInt32Array(16, 20, 19), PackedInt32Array(16, 19, 18), PackedInt32Array(16, 18, 17), PackedInt32Array(23, 22, 21), PackedInt32Array(12, 10, 14), PackedInt32Array(14, 10, 24), PackedInt32Array(25, 14, 23), PackedInt32Array(23, 14, 24), PackedInt32Array(23, 21, 25), PackedInt32Array(21, 20, 25), PackedInt32Array(25, 20, 15), PackedInt32Array(1, 2, 26), PackedInt32Array(26, 2, 27), PackedInt32Array(27, 22, 26), PackedInt32Array(26, 22, 23), PackedInt32Array(26, 23, 28), PackedInt32Array(28, 23, 29), PackedInt32Array(27, 30, 22)]
+
+[sub_resource type="Resource" id="Resource_fgnpj"]
+script = ExtResource("12_3jxhh")
+speed = 5.0
+metadata/_custom_type_script = "uid://fiqspojmjr1c"
+
+[sub_resource type="Resource" id="Resource_88bx5"]
+script = ExtResource("13_i7a0m")
+metadata/_custom_type_script = "uid://djh5kjox4u2q1"
+
+[sub_resource type="Resource" id="Resource_jek14"]
+script = ExtResource("12_3jxhh")
+speed = 5.0
+metadata/_custom_type_script = "uid://fiqspojmjr1c"
+
+[sub_resource type="Resource" id="Resource_qttms"]
+script = ExtResource("13_i7a0m")
+max_player_distance = 10.0
+min_player_distance = 5.0
+metadata/_custom_type_script = "uid://djh5kjox4u2q1"
+
+[sub_resource type="Resource" id="Resource_8xdmy"]
+script = ExtResource("12_3jxhh")
+speed = 5.0
+metadata/_custom_type_script = "uid://fiqspojmjr1c"
+
+[sub_resource type="Resource" id="Resource_00e1b"]
+script = ExtResource("13_i7a0m")
+max_player_distance = 2.0
+min_player_distance = 1.0
+metadata/_custom_type_script = "uid://djh5kjox4u2q1"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcp7f"]
+render_priority = 0
+shader = ExtResource("14_7p5fo")
+
+[sub_resource type="BoxMesh" id="BoxMesh_lu4kl"]
+
+[node name="TestColorRevealLighting" type="Node3D" unique_id=1891263668]
+script = ExtResource("1_oa732")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=383981212]
+navigation_mesh = SubResource("NavigationMesh_wdqvv")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=22699080]
+use_collision = true
+collision_layer = 2
+size = Vector3(20, 0.5, 20)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2000583697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96554, 1.38092, 0)
+use_collision = true
+collision_layer = 2
+size = Vector3(5, 0.5, 5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=915783920]
+transform = Transform3D(0.00305433, 0, 0.999995, 0, 1, 0, -0.999995, 0, 0.00305433, -5.42441, 2.5942, 0)
+use_collision = true
+collision_layer = 2
+size = Vector3(1, 5, 10)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1156648774]
+transform = Transform3D(1, 0, 0, 0, 0.904968, -0.425479, 0, 0.425479, 0.904968, 5.30028, 0.332649, 4.66956)
+use_collision = true
+collision_layer = 2
+size = Vector3(2, 0.5, 5)
+
+[node name="Player" parent="." unique_id=217514591 instance=ExtResource("2_uvuuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80747, 0)
+script = ExtResource("3_dfsgh")
+movement = ExtResource("4_o8e3v")
+look = ExtResource("5_pa6jy")
+input_comp = ExtResource("6_plpub")
+health = ExtResource("7_7py82")
+weapon_comp = ExtResource("8_bn48a")
+damage_comp = ExtResource("9_140np")
+
+[node name="Enemy" parent="." unique_id=1332273276 instance=ExtResource("10_73hcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190372, 3.03862, -8.0513)
+script = ExtResource("11_x0gx1")
+movement = SubResource("Resource_fgnpj")
+enemy_player_distance = SubResource("Resource_88bx5")
+
+[node name="Enemy2" parent="." unique_id=2069686704 instance=ExtResource("10_73hcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60557, 1.25, -7.16506)
+script = ExtResource("11_x0gx1")
+movement = SubResource("Resource_jek14")
+enemy_player_distance = SubResource("Resource_qttms")
+
+[node name="Enemy3" parent="." unique_id=481712196 instance=ExtResource("10_73hcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65875, 1.25, -7.07483)
+script = ExtResource("11_x0gx1")
+movement = SubResource("Resource_8xdmy")
+enemy_player_distance = SubResource("Resource_00e1b")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=296736232]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1949612825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.45683, 0)
+omni_range = 19.31
+
+[node name="ImportantThing" type="MeshInstance3D" parent="." unique_id=1294053988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9714665, 2.669991, 6.274202)
+material_override = SubResource("ShaderMaterial_tcp7f")
+mesh = SubResource("BoxMesh_lu4kl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ImportantThing" unique_id=1701553952 groups=["color_revealer"]]
