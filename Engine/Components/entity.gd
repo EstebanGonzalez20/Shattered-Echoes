@@ -1,7 +1,7 @@
 ## Esta clase indica que un nodo se va a comportar como entidad
 class_name EntityComponent extends Node
 
-@export var initial_components: Array[Resource] = []
+@export var initial_components: Array[Component] = []
 
 var _components: Dictionary = {}
 
