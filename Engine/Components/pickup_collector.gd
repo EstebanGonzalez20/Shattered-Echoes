@@ -1,10 +1,17 @@
 ## Este componente representa el radio en el cual una entidad recolecta pickups
 class_name PickupCollector extends NodeComponent
 
-##Señal emitida cuando un pickup entra en el rango
+func get_type() -> StringName:
+	return &"PickupCollector"
+
+## Señal emitida cuando un pickup entra en el rango
 signal pickup_entered(pickup_node: Node3D)
 
-@export var radius: float = 24.0: set = _set_radius
+@export var radius: float = 24.0:
+	set(value):
+		radius = maxf(value, 0.0)
+		if _shape:
+			_shape.radius = radius
 
 var _area: Area3D
 var _shape: SphereShape3D
@@ -12,6 +19,7 @@ var _shape: SphereShape3D
 func _ready() -> void:
 	_build_area()
 
+## Construye el area de detección
 func _build_area() -> void:
 	_area = Area3D.new()
 	_area.name = "PickupCollectionArea"
@@ -30,11 +38,6 @@ func _build_area() -> void:
 	
 	_area.body_entered.connect(_on_body_entered)
 
+## Emite pickup_entered con el cuerpo con el que hace contacto
 func _on_body_entered(body: Node3D) -> void:
-	# El componente solo notifica, no decide qué hacer
 	pickup_entered.emit(body)
-
-func _set_radius(new_value: float) -> void:
-	radius = maxf(new_value, 0.0)
-	if _shape:
-		_shape.radius = radius

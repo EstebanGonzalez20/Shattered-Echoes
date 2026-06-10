@@ -1,5 +1,9 @@
 class_name Wallet extends Component
 
+func get_type() -> StringName:
+	return &"Wallet"
+
+## Señal emitida cuando la reserva de monedas cambia
 signal currency_changed(new_value: int)
 
 @export var min_amount : int = 0:
