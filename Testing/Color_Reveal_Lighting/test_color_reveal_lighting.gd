@@ -9,16 +9,8 @@ var light_texture: ImageTexture
 func _ready() -> void:
 	light_image = Image.create(MAX_LIGHTS, 1, false, Image.FORMAT_RGBAF)
 	light_texture = ImageTexture.create_from_image(light_image)
-	RenderingServer.global_shader_parameter_add(
-		"color_lights_tex",
-		RenderingServer.GLOBAL_VAR_TYPE_SAMPLER2D,
-		light_texture
-	)
-	RenderingServer.global_shader_parameter_add(
-		"color_light_count",
-		RenderingServer.GLOBAL_VAR_TYPE_INT,
-		0
-	)
+	RenderingServer.global_shader_parameter_set("color_lights_tex", light_texture)
+	RenderingServer.global_shader_parameter_set("color_light_count", 0)
 
 	for enemy_mesh in get_tree().get_nodes_in_group("enemies"):
 		var mat: ShaderMaterial = ShaderMaterial.new()

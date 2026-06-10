@@ -1,10 +1,21 @@
 class_name MovementSystem
 extends Node
 
-func process(entity: CharacterBody3D,
-			move: MovementComponent,
-			input: InputComponent,
-			delta: float):
+func process(entity_type: String, parameters: MovementSystemParameters, delta: float):
+	match entity_type:
+		'player':
+			player_process(parameters, delta)
+		'projectile':
+			projectile_process(parameters, delta)
+		'enemy':
+			enemy_process(parameters, delta)
+		_:
+			assert(false, "Valor inválido de entidad: " + str(entity_type))
+
+func player_process(parameters: MovementSystemParameters, delta: float):
+	var entity = parameters.entity
+	var move = parameters.move_component
+	var input = parameters.input_component
 
 	# gravedad
 	if not entity.is_on_floor():
@@ -28,3 +39,66 @@ func process(entity: CharacterBody3D,
 	entity.velocity = move.velocity
 	entity.move_and_slide()
 	move.velocity = entity.velocity
+
+
+func enemy_process(parameters: MovementSystemParameters, delta: float):
+	var entity = parameters.entity
+	var move = parameters.move_component
+	
+	# gravedad
+	if not entity.is_on_floor():
+		move.velocity.y += entity.get_gravity().y * delta
+	else:
+		move.velocity.y = 0
+
+	# dirección de movimiento
+	var current_location = entity.global_transform.origin
+	var next_location = entity.nav_agent.get_next_path_position()
+	var direction = next_location - current_location
+	var distance = direction.length()
+
+	var target_velocity = Vector3.ZERO
+
+	if distance > 0.1:
+		direction = direction.normalized()
+		target_velocity = direction * move.speed
+
+	# aceleración de 0.5 segundos
+	var accel_time = 0.5
+	var acceleration = move.speed / accel_time
+
+	var current_horizontal = Vector3(move.velocity.x, 0, move.velocity.z)
+
+	if target_velocity.length() > 0:
+		# acelerar suavemente
+		current_horizontal = current_horizontal.move_toward(target_velocity, acceleration * delta)
+	else:
+		# frenar instantáneamente
+		current_horizontal = Vector3.ZERO
+
+	entity.nav_agent.velocity = Vector3(
+		current_horizontal.x,
+		move.velocity.y,
+		current_horizontal.z
+	)
+
+func connect_navigation_signal(entity: CharacterBody3D) -> void:
+	entity.nav_agent.connect(
+		"velocity_computed",
+		Callable(self, "_on_velocity_computed").bind(entity)
+	)
+
+func _on_velocity_computed(safe_velocity: Vector3, entity: CharacterBody3D) -> void:
+	var move = entity.movement
+	
+	move.velocity = safe_velocity
+	entity.velocity = move.velocity
+	entity.move_and_slide()
+
+
+func projectile_process(parameters: MovementSystemParameters, delta: float):   
+	var projectile = parameters.entity
+	var speed = parameters.speed
+	 
+	var forward = -projectile.transform.basis.z.normalized()
+	projectile.translate(forward * speed * delta)

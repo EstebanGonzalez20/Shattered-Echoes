@@ -4,15 +4,19 @@ extends CharacterBody3D
 @export var enemy_player_distance: EnemyPlayerDistanceComponent
 
 var enemy_behavior_system: EnemyBehaviorSystem
-var enemy_movement_system: EnemyMovementSystem
+var movement_system: MovementSystem
 
 @onready var nav_agent = $NavigationAgent3D
 
 func _ready() -> void:
 	enemy_behavior_system = Systems.get_node("EnemyBehaviorSystem")
-	enemy_movement_system = Systems.get_node("EnemyMovementSystem")
-	enemy_movement_system.connect_navigation_signal(self)
+	movement_system = Systems.get_node("MovementSystem")
+	movement_system.connect_navigation_signal(self)
 
 func _physics_process(delta: float) -> void:
 	enemy_behavior_system.process(self, enemy_player_distance)
-	enemy_movement_system.process(self, movement, delta)
+	
+	var parameters: MovementSystemParameters = MovementSystemParameters.new()
+	parameters.set_enemy_parameters(self, movement)
+	
+	movement_system.process('enemy', parameters, delta)
