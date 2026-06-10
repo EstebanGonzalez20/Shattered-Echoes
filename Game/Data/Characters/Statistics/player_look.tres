@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_tf35w")
-mouse_sens = 2.0
+mouse_sens = 0.5
 metadata/_custom_type_script = "uid://duevyhqv1q6ch"

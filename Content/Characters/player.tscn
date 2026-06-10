@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bpj4ct6sdsxmd"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iutjo"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2dcui"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1584554695 groups=["players"]]
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=842484660]
-shape = SubResource("CapsuleShape3D_iutjo")
+transform = Transform3D(0.7, 0, 0, 0, 1.5, 0, 0, 0, 0.7, 0, 0, 0)
+shape = SubResource("BoxShape3D_2dcui")
 
 [node name="Head" type="Node3D" parent="." unique_id=44642953]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

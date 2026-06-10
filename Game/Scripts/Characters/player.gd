@@ -44,7 +44,7 @@ func _input(event):
 
 func _physics_process(delta):
 	input_system.process_actions(input_comp)
-	look_system.process(self, look, input_comp)
+	look_system.process(self,$Head, look, input_comp)
 	
 	var parameters: MovementSystemParameters = MovementSystemParameters.new()
 	parameters.set_player_parameters(self, movement, input_comp)
