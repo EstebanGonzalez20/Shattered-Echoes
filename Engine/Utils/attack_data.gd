@@ -7,11 +7,10 @@ class_name AttackData
 @export var hitbox_scale: Vector3
 @export var projectile_scene: PackedScene
 
-var damage_function: Callable
-var attack_speed_function: Callable
- 
+var damage_function: Callable ## Función usada para calcular el daño del arma
+var attack_speed_function: Callable ## Función usada para calcular la cadencia de ataque
 
-func initialize():
+func _init():
 	damage_function = MathScaling.scaling_function(
 		attack_coefficient.num_operates_damage,
 		attack_coefficient.damage_operation
