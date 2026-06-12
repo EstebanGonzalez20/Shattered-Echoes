@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cdg88akrv8wb0"]
+
+[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="1_wxexp"]
+[ext_resource type="Script" uid="uid://da3qnelo1f7qc" path="res://Game/Scripts/Characters/player.gd" id="2_01qnk"]
+[ext_resource type="Resource" uid="uid://c188earn40el4" path="res://Game/Data/Characters/Statistics/player_movement.tres" id="3_idujr"]
+[ext_resource type="Resource" uid="uid://bpetgswrxhsfr" path="res://Game/Data/Characters/Statistics/player_look.tres" id="4_0r8wf"]
+[ext_resource type="Resource" uid="uid://cdttsp18834hi" path="res://Game/Data/Characters/Statistics/player_input.tres" id="5_ay52u"]
+[ext_resource type="Resource" uid="uid://bqqyvxy2c4jk" path="res://Game/Data/Characters/Statistics/player_health.tres" id="6_mh70l"]
+[ext_resource type="Resource" uid="uid://dy0uurspcpc02" path="res://Game/Data/Characters/Weapons/sword_data.tres" id="7_630r8"]
+[ext_resource type="Resource" uid="uid://b7gov53114kmv" path="res://Game/Data/Characters/Statistics/player_damage.tres" id="8_dt2d7"]
+[ext_resource type="Sky" uid="uid://bt8fyfyndxtye" path="res://Game/Shaders/SpaceSky/sky.tres" id="9_2ysp4"]
+[ext_resource type="Script" uid="uid://yaav0mglp0i5" path="res://Game/Shaders/SpaceSky/sky_controller.gd" id="10_o0jcy"]
+
+[sub_resource type="Environment" id="Environment_j50i4"]
+background_mode = 2
+sky = ExtResource("9_2ysp4")
+sky_custom_fov = 90.0
+ambient_light_sky_contribution = 0.0
+
+[node name="space_sky" type="Node3D" unique_id=1762958035]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=68739833]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 2.5, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1966610435 instance=ExtResource("1_wxexp")]
+script = ExtResource("2_01qnk")
+movement = ExtResource("3_idujr")
+look = ExtResource("4_0r8wf")
+input_comp = ExtResource("5_ay52u")
+health = ExtResource("6_mh70l")
+weapon_comp = ExtResource("7_630r8")
+damage_comp = ExtResource("8_dt2d7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1505691694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+use_collision = true
+collision_layer = 2
+size = Vector3(20, 0.5, 20)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1418675474]
+environment = SubResource("Environment_j50i4")
+script = ExtResource("10_o0jcy")

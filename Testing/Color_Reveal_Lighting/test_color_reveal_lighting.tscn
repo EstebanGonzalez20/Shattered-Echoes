@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://bhyjl757c1a55" path="res://Game/Scripts/Enemies/enemy.gd" id="11_x0gx1"]
 [ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/movement_component.gd" id="12_3jxhh"]
 [ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/enemy_player_distance_component.gd" id="13_i7a0m"]
-[ext_resource type="Shader" uid="uid://14ob0yein7es" path="res://Game/Shaders/color_reveal_lighting.gdshader" id="14_7p5fo"]
+[ext_resource type="Shader" uid="uid://14ob0yein7es" path="res://Game/Shaders/ColorReveal/color_reveal_lighting.gdshader" id="14_7p5fo"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_wdqvv"]
 vertices = PackedVector3Array(0.0740852, 0.542709, -1, 0.324085, 0.542709, 0, 1.82409, 0.542709, 0, 1.82409, 0.542709, -2.75, 4.07409, 0.542709, -9.5, -9.67591, 0.542709, -9.5, -9.67591, 0.542709, -1.25, 4.07409, 0.542709, -3, 7.82409, 0.542709, -3, 8.07409, 0.542709, 1, 9.57409, 0.542709, 1, 9.57409, 0.542709, -9.5, 8.07409, 0.542709, 3, 6.82409, 0.542709, 3.25, 6.82409, 0.542709, 5.25, 5.82409, 2.04271, 2.25, 7.07409, 2.04271, 2, 7.07409, 2.04271, -2, 2.82409, 2.04271, -2, 2.82409, 2.04271, 2, 4.57409, 2.04271, 2.25, 4.57409, 0.792709, 5.25, 3.57409, 0.542709, 5, 3.07409, 0.542709, 9.5, 9.57409, 0.542709, 9.5, 5.82409, 0.792709, 5.25, 0.0740852, 0.542709, 1.25, 1.82409, 0.542709, 3, -9.67591, 0.542709, 1, -9.67591, 0.542709, 9.5, 3.57409, 0.542709, 3.25)
