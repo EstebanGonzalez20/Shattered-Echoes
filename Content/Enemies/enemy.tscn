@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://b3hamct2ecmpx"]
+[gd_scene load_steps=9 format=3 uid="uid://b3hamct2ecmpx"]
+
+[ext_resource type="Script" path="res://Engine/Components/entity.gd" id="1_rvfqy"]
+[ext_resource type="Script" path="res://Engine/Components/movement_component.gd" id="2_cv27q"]
+[ext_resource type="Script" path="res://Engine/Components/enemy_behavior_component.gd" id="3_61iar"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82i5i"]
 albedo_color = Color(1, 0, 0, 1)
@@ -8,16 +12,30 @@ material = SubResource("StandardMaterial3D_82i5i")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hggra"]
 
-[node name="Enemy" type="CharacterBody3D" unique_id=1605977725 groups=["enemies"]]
+[sub_resource type="Resource" id="Resource_2t4ei"]
+script = ExtResource("2_cv27q")
+speed = 2.0
+jump_velocity = 2.0
+
+[sub_resource type="Resource" id="Resource_n3jev"]
+script = ExtResource("3_61iar")
+max_player_distance = 1.0
+min_player_distance = 7.0
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
 collision_mask = 2
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=352206884]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_do21r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1744681284]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hggra")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=936207895]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
+
+[node name="EntityComponent" type="Node" parent="."]
+script = ExtResource("1_rvfqy")
+initial_components = Array[Resource("res://Engine/Components/component.gd")]([SubResource("Resource_2t4ei"), SubResource("Resource_n3jev")])
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
