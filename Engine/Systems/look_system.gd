@@ -1,7 +1,7 @@
 class_name LookSystem
 extends Node
 
-func process(player: CharacterBody3D, camera_pivot: Node3D, look: LookComponent, input: InputComponent):
+func process(player: CharacterBody3D, camera_pivot: Node3D, look: Look, input: PlayerInput):
 	look.yaw -= input.mouse_delta.x * look.mouse_sens
 	look.pitch -= input.mouse_delta.y * look.mouse_sens
 

@@ -14,7 +14,7 @@ func _ready() -> void:
 
 	for enemy_mesh in get_tree().get_nodes_in_group("enemies"):
 		var mat: ShaderMaterial = ShaderMaterial.new()
-		mat.shader = preload("res://Game/Shaders/ColorReveal/color_reveal_lighting.gdshader")
+		mat.shader = preload("res://Assets/Shaders/Illumination/color_reveal_lighting.gdshader")
 		mat.set_shader_parameter("albedo_texture", preload("res://Testing/Color_Reveal_Lighting/color_red.png"))
 		enemy_mesh.get_node("MeshInstance3D").material_override = mat
 

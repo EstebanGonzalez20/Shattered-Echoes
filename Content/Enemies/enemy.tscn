@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3hamct2ecmpx"]
+[gd_scene format=3 uid="uid://b3hamct2ecmpx"]
 
-[ext_resource type="Script" path="res://Engine/Components/entity.gd" id="1_rvfqy"]
-[ext_resource type="Script" path="res://Engine/Components/movement_component.gd" id="2_cv27q"]
-[ext_resource type="Script" path="res://Engine/Components/enemy_behavior_component.gd" id="3_61iar"]
+[ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_rvfqy"]
+[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="2_cv27q"]
+[ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_kbvwg"]
+[ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/Resource/Miscellaneous/enemy_behavior.gd" id="3_61iar"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82i5i"]
 albedo_color = Color(1, 0, 0, 1)
@@ -22,20 +23,20 @@ script = ExtResource("3_61iar")
 max_player_distance = 1.0
 min_player_distance = 7.0
 
-[node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
+[node name="Enemy" type="CharacterBody3D" unique_id=323666946 groups=["enemies"]]
 collision_mask = 2
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1197185182]
 mesh = SubResource("CapsuleMesh_do21r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1290754886]
 shape = SubResource("CapsuleShape3D_hggra")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=599200574]
 avoidance_enabled = true
 
-[node name="EntityComponent" type="Node" parent="."]
+[node name="EntityComponent" type="Node" parent="." unique_id=1312685923]
 script = ExtResource("1_rvfqy")
-initial_components = Array[Resource("res://Engine/Components/component.gd")]([SubResource("Resource_2t4ei"), SubResource("Resource_n3jev")])
+initial_components = Array[ExtResource("2_kbvwg")]([SubResource("Resource_2t4ei"), SubResource("Resource_n3jev")])
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="HealthComponent" format=3 uid="uid://bqqyvxy2c4jk"]
-
-[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/health_component.gd" id="1_tdw63"]
-
-[resource]
-script = ExtResource("1_tdw63")
-max_health = 100.0
-metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"

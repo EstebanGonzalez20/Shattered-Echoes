@@ -1,21 +1,21 @@
 class_name MovementSystem
 extends Node
 
-func process(entity_type: String, parameters: MovementSystemParameters, delta: float):
+func process(entity: Node3D, delta: float):
+	var entity_type: StringName = entity.get_groups()[0]
 	match entity_type:
-		'player':
-			player_process(parameters, delta)
+		'players':
+			players_process(entity, delta)
 		'projectile':
-			projectile_process(parameters, delta)
-		'enemy':
-			enemy_process(parameters, delta)
+			projectiles_process(entity, delta)
+		'enemies':
+			enemies_process(entity, delta)
 		_:
 			assert(false, "Valor inválido de entidad: " + str(entity_type))
 
-func player_process(parameters: MovementSystemParameters, delta: float):
-	var entity = parameters.entity
-	var move = parameters.move_component
-	var input = parameters.input_component
+func players_process(entity: Node3D, delta: float):
+	var move = entity.move_component
+	var input = entity.input_component
 
 	# gravedad
 	if not entity.is_on_floor():
@@ -41,9 +41,8 @@ func player_process(parameters: MovementSystemParameters, delta: float):
 	move.velocity = entity.velocity
 
 
-func enemy_process(parameters: MovementSystemParameters, delta: float):
-	var entity = parameters.entity
-	var move = parameters.move_component
+func enemies_process(entity: Node3D, delta: float):
+	var move = entity.move_component
 	
 	# gravedad
 	if not entity.is_on_floor():
@@ -96,9 +95,9 @@ func _on_velocity_computed(safe_velocity: Vector3, entity: CharacterBody3D) -> v
 	entity.move_and_slide()
 
 
-func projectile_process(parameters: MovementSystemParameters, delta: float):   
-	var projectile = parameters.entity
-	var speed = parameters.speed
+func projectiles_process(entity: Node3D, delta: float):   
+	var projectile = entity.entity
+	var speed = entity.speed
 	 
 	var forward = -projectile.transform.basis.z.normalized()
 	projectile.translate(forward * speed * delta)

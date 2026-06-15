@@ -1,4 +1,4 @@
-class_name HealthComponent extends Component
+class_name Health extends Component
 
 func get_type() -> StringName:
 	return &"Health"

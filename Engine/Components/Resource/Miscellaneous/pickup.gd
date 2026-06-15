@@ -1,5 +1,5 @@
 ## Este componente determina que una entidad es un pickup
-class_name PickupComponent extends Component
+class_name Pickup extends Component
 
 func get_type() -> StringName:
 	return &"Pickup"

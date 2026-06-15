@@ -1,4 +1,4 @@
-class_name LookComponent extends Component
+class_name Look extends Component
 
 func get_type() -> StringName:
 	return &"Look"

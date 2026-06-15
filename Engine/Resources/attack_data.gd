@@ -1,5 +1,4 @@
-extends Resource
-class_name AttackData
+class_name AttackData extends Resource
 
 @export var attack_coefficient: AttackCoefficient
 @export var shot_speed: float

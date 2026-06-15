@@ -12,19 +12,19 @@ func _register_collector(entity: Node) -> void:
 	collector.pickup_entered.connect(_on_pickup_entered.bind(entity))
 
 func _on_pickup_entered(pickup_node: Node3D, collector_entity: Node) -> void:
-	var pickup: PickupComponent = pickup_node.get_component(PickupComponent)
+	var pickup: Pickup = pickup_node.get_component(Pickup)
 	if not pickup or pickup.is_collected:
 		return
 	
 	pickup.is_collected = true
 	
 	match pickup.type:
-		PickupComponent.PickupType.HEAL:
-			var health = collector_entity.get_component(HealthComponent)
+		Pickup.PickupType.HEAL:
+			var health = collector_entity.get_component(Health)
 			if health:
 				health.heal(pickup.amount)
 				
-		PickupComponent.PickupType.COIN:
+		Pickup.PickupType.COIN:
 			var wallet = collector_entity.get_component(Wallet)
 			if wallet:
 				wallet.gain(pickup.amount)

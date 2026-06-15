@@ -1,4 +1,4 @@
-class_name EnemyBehaviorComponent extends Component
+class_name EnemyBehavior extends Component
 
 func get_type() -> StringName:
 	return &"EnemyBehavior"

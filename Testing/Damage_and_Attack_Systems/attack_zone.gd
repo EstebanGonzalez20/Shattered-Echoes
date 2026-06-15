@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@export var health: HealthComponent
+@export var health: Health
 
 func _ready():
 	if health:

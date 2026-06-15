@@ -1,4 +1,4 @@
-class_name WeaponComponent extends Component
+class_name Weapon extends Component
 
 func get_type() -> StringName:
 	return &"Weapon"

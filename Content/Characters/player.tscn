@@ -1,60 +1,35 @@
 [gd_scene format=3 uid="uid://bpj4ct6sdsxmd"]
 
 [ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_pku2s"]
-[ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/component.gd" id="2_p5mnu"]
-[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/health_component.gd" id="3_lidmn"]
-[ext_resource type="Script" uid="uid://cbrb5ostmuqdj" path="res://Engine/Components/weapon_component.gd" id="3_u6305"]
-[ext_resource type="Script" uid="uid://briluodlju34y" path="res://Engine/Utils/attack_coefficients.gd" id="4_1l6xp"]
-[ext_resource type="Script" uid="uid://be2y0o30ucagp" path="res://Engine/Components/damage_component.gd" id="4_ec6tw"]
-[ext_resource type="Script" uid="uid://bi0qxqhedesed" path="res://Engine/Components/attack_speed_component.gd" id="5_rj5p2"]
-[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/movement_component.gd" id="6_0awg1"]
-[ext_resource type="Script" uid="uid://duevyhqv1q6ch" path="res://Engine/Components/look_component.gd" id="7_jdigc"]
-[ext_resource type="Script" uid="uid://cvky1r7l5thsf" path="res://Engine/Components/input_component.gd" id="8_p70jc"]
-[ext_resource type="Script" uid="uid://6j7rexoxg3kj" path="res://Engine/Components/wallet_component.gd" id="9_qd5y6"]
-[ext_resource type="Script" uid="uid://ccav244rm57fh" path="res://Engine/Utils/skill_resource.gd" id="10_m8lm8"]
-[ext_resource type="Script" uid="uid://dpyakykl46quv" path="res://Engine/Components/pickup_collector.gd" id="13_1ww3p"]
+[ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_p5mnu"]
+[ext_resource type="Script" uid="uid://cbrb5ostmuqdj" path="res://Engine/Components/Resource/Gameplay/weapon.gd" id="3_u6305"]
+[ext_resource type="Script" uid="uid://briluodlju34y" path="res://Engine/Resources/attack_coefficients.gd" id="4_1l6xp"]
+[ext_resource type="Script" uid="uid://duevyhqv1q6ch" path="res://Engine/Components/Resource/Gameplay/look.gd" id="5_jdigc"]
+[ext_resource type="Script" uid="uid://cvky1r7l5thsf" path="res://Engine/Components/Resource/Gameplay/player_input.gd" id="6_p70jc"]
+[ext_resource type="Script" uid="uid://6j7rexoxg3kj" path="res://Engine/Components/Resource/Gameplay/wallet.gd" id="7_qd5y6"]
+[ext_resource type="Script" uid="uid://ccav244rm57fh" path="res://Engine/Resources/skill_resource.gd" id="8_m8lm8"]
+[ext_resource type="Script" uid="uid://dpyakykl46quv" path="res://Engine/Components/Node/Gameplay/pickup_collector.gd" id="9_1ww3p"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iutjo"]
-
-[sub_resource type="Resource" id="Resource_cdn3h"]
-script = ExtResource("3_lidmn")
-max_health = 100.0
-metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
-
-[sub_resource type="Resource" id="Resource_0kgpn"]
-script = ExtResource("4_ec6tw")
-damage = 10.0
-metadata/_custom_type_script = "uid://be2y0o30ucagp"
-
-[sub_resource type="Resource" id="Resource_1hsbw"]
-script = ExtResource("5_rj5p2")
-attacks_per_second = 1.0
-metadata/_custom_type_script = "uid://bi0qxqhedesed"
-
-[sub_resource type="Resource" id="Resource_eju1x"]
-script = ExtResource("6_0awg1")
-speed = 2.0
-jump_velocity = 2.0
-metadata/_custom_type_script = "uid://fiqspojmjr1c"
+[sub_resource type="BoxShape3D" id="BoxShape3D_2dcui"]
 
 [sub_resource type="Resource" id="Resource_piaqt"]
-script = ExtResource("7_jdigc")
+script = ExtResource("5_jdigc")
 metadata/_custom_type_script = "uid://duevyhqv1q6ch"
 
 [sub_resource type="Resource" id="Resource_608vp"]
-script = ExtResource("8_p70jc")
+script = ExtResource("6_p70jc")
 metadata/_custom_type_script = "uid://cvky1r7l5thsf"
 
 [sub_resource type="Resource" id="Resource_5qoqd"]
-script = ExtResource("9_qd5y6")
+script = ExtResource("7_qd5y6")
 metadata/_custom_type_script = "uid://6j7rexoxg3kj"
 
 [sub_resource type="Resource" id="Resource_rp74o"]
-script = ExtResource("10_m8lm8")
+script = ExtResource("8_m8lm8")
 metadata/_custom_type_script = "uid://ccav244rm57fh"
 
 [sub_resource type="Resource" id="Resource_vy2b6"]
-script = ExtResource("10_m8lm8")
+script = ExtResource("8_m8lm8")
 metadata/_custom_type_script = "uid://ccav244rm57fh"
 
 [sub_resource type="Resource" id="Resource_n6jr1"]
@@ -82,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="EntityComponent" type="Node" parent="." unique_id=486308515]
 script = ExtResource("1_pku2s")
-initial_components = Array[ExtResource("2_p5mnu")]([SubResource("Resource_cdn3h"), SubResource("Resource_0kgpn"), SubResource("Resource_1hsbw"), SubResource("Resource_eju1x"), SubResource("Resource_piaqt"), SubResource("Resource_608vp"), SubResource("Resource_5qoqd"), SubResource("Resource_02v4y")])
+initial_components = Array[ExtResource("2_p5mnu")]([SubResource("Resource_piaqt"), SubResource("Resource_608vp"), SubResource("Resource_5qoqd"), SubResource("Resource_02v4y")])
 
 [node name="PickupCollector" type="Node" parent="EntityComponent" unique_id=366473627]
-script = ExtResource("13_1ww3p")
+script = ExtResource("9_1ww3p")

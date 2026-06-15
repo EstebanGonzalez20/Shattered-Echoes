@@ -28,6 +28,7 @@ Systems="*res://Engine/Systems/Systems.tscn"
 enemies="Entities considered enemies."
 players="Entities considered players."
 color_revealer="Lights that can reveal the color of some objects."
+projectiles="Entities considered projectiles."
 
 [input]
 

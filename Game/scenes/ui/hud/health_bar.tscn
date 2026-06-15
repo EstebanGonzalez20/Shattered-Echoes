@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfsdfbds7gewd"]
 
-[ext_resource type="Script" uid="uid://dbentfi11o2xx" path="res://Game/scenes/ui/hud/health_bar.gd" id="1_cqknx"]
+[ext_resource type="Script" uid="uid://dbentfi11o2xx" path="res://Game/Scripts/UI/health_bar.gd" id="1_cqknx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2ot5"]
 

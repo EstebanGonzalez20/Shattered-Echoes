@@ -1,17 +1,33 @@
 [gd_scene format=3 uid="uid://du1drmy1bqh2o"]
 
-[ext_resource type="Script" uid="uid://djf4e056e81mo" path="res://Game/Scripts/Projectiles/projectile.gd" id="1_s6jku"]
+[ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_i25ib"]
+[ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_i8ol0"]
+[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="3_6a4k7"]
+[ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/Resource/Miscellaneous/enemy_behavior.gd" id="4_4t8xc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u5qku"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f2gwr"]
 
-[node name="hitbox" type="Area3D" unique_id=1384766878]
-script = ExtResource("1_s6jku")
+[sub_resource type="Resource" id="Resource_2t4ei"]
+script = ExtResource("3_6a4k7")
+speed = 2.0
+jump_velocity = 2.0
 
-[node name="collision" type="CollisionShape3D" parent="." unique_id=1877753425]
+[sub_resource type="Resource" id="Resource_n3jev"]
+script = ExtResource("4_4t8xc")
+max_player_distance = 1.0
+min_player_distance = 7.0
+
+[node name="Hitbox" type="Area3D" unique_id=1384766878]
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1877753425]
 shape = SubResource("BoxShape3D_u5qku")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=752865901]
 mesh = SubResource("BoxMesh_f2gwr")
 skeleton = NodePath("")
+
+[node name="EntityComponent" type="Node" parent="." unique_id=1529879160]
+script = ExtResource("1_i25ib")
+initial_components = Array[ExtResource("2_i8ol0")]([SubResource("Resource_2t4ei"), SubResource("Resource_n3jev")])

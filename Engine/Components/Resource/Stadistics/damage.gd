@@ -1,5 +1,4 @@
-extends Component
-class_name DamageComponent
+class_name Damage extends Component
 
 func get_type() -> StringName:
 	return &"Damage"

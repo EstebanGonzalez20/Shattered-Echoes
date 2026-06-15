@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://b02ntobxhpyd8"]
 
-[ext_resource type="Shader" uid="uid://8ac03f0spc3u" path="res://Game/Shaders/SpaceSky/space_sky.gdshader" id="1_0gg3d"]
+[ext_resource type="Shader" uid="uid://8ac03f0spc3u" path="res://Assets/Shaders/Sky/Space/space_sky.gdshader" id="1_0gg3d"]
 
 [resource]
 shader = ExtResource("1_0gg3d")

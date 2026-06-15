@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="MovementComponent" format=3 uid="uid://c188earn40el4"]
-
-[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/movement_component.gd" id="1_m02jd"]
-
-[resource]
-script = ExtResource("1_m02jd")
-speed = 10.0
-jump_velocity = 10.0
-metadata/_custom_type_script = "uid://fiqspojmjr1c"

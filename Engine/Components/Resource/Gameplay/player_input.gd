@@ -1,5 +1,4 @@
-class_name InputComponent
-extends Component
+class_name PlayerInput extends Component
 
 func get_type() -> StringName:
 	return &"Input"

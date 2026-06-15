@@ -1,4 +1,4 @@
-class_name AttackSpeedComponent extends Component
+class_name AttackSpeed extends Component
 
 func get_type() -> StringName:
 	return &"AttackSpeed"

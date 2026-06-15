@@ -1,4 +1,4 @@
-class_name MovementComponent extends Component
+class_name Movement extends Component
 
 func get_type() -> StringName:
 	return &"Movement"

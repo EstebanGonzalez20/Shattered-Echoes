@@ -1,7 +1,7 @@
 class_name EnemyBehaviorSystem
 extends Node
 
-func process(enemy: CharacterBody3D, data: EnemyPlayerDistanceComponent) -> void:
+func process(enemy: CharacterBody3D, data: EnemyBehavior) -> void:
 	var enemy_pos = enemy.global_transform.origin
 
 	var closest_player = null
