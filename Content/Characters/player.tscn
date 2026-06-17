@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpj4ct6sdsxmd"]
 
 [ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_pku2s"]
+[ext_resource type="PackedScene" uid="uid://cxc1sk88xyj1l" path="res://Assets/CaballeraAnimaciones/EspadaCaballera_AtaqueBasico1/EspadaCaballera_AtaqueBasico1.blend11.glb" id="1_uu26y"]
 [ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_p5mnu"]
 [ext_resource type="Script" uid="uid://cbrb5ostmuqdj" path="res://Engine/Components/Resource/Gameplay/weapon.gd" id="3_u6305"]
 [ext_resource type="Script" uid="uid://briluodlju34y" path="res://Engine/Resources/attack_coefficients.gd" id="4_1l6xp"]
@@ -54,6 +55,21 @@ shape = SubResource("BoxShape3D_2dcui")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1375604234]
+cull_mask = 1048573
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera3D" unique_id=1637834111]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="Head/Camera3D/SubViewportContainer" unique_id=212018375]
+transparent_bg = true
+
+[node name="CameraWeapon" type="Camera3D" parent="Head/Camera3D/SubViewportContainer/SubViewport" unique_id=1131530670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+cull_mask = 1048574
+
+[node name="EspadaCaballera_AtaqueBasico1_blend11" parent="Head/Camera3D/SubViewportContainer/SubViewport/CameraWeapon" unique_id=150173042 instance=ExtResource("1_uu26y")]
+transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, 0.5, -0.5, -0.6)
 
 [node name="EntityComponent" type="Node" parent="." unique_id=486308515]
 script = ExtResource("1_pku2s")
