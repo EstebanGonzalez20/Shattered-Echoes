@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c5lr4njcqm75h"]
+
+[ext_resource type="Script" uid="uid://dkif3ysjks4am" path="res://Game/Scripts/menus/menu.gd" id="1_fyy00"]
+[ext_resource type="Sky" uid="uid://bt8fyfyndxtye" path="res://Assets/Shaders/Sky/Space/sky.tres" id="2_55qfy"]
+[ext_resource type="Script" uid="uid://yaav0mglp0i5" path="res://Assets/Shaders/Sky/Space/sky_controller.gd" id="3_h0npb"]
+[ext_resource type="AudioStream" uid="uid://brbf43b3v7hkr" path="res://Assets/SFX/OST/menu.mp3" id="4_h0npb"]
+
+[sub_resource type="Environment" id="Environment_yra00"]
+background_mode = 2
+sky = ExtResource("2_55qfy")
+sky_custom_fov = 90.0
+ambient_light_sky_contribution = 0.0
+
+[node name="MainMenu" type="Node3D" unique_id=1212301076]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=17715007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3982962, 1.2164338, 3.8779001)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2057588859]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -108.75
+offset_right = 150.0
+offset_bottom = 108.75
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fyy00")
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=2071555519]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Juego nuevo"
+
+[node name="ConfigButton" type="Button" parent="VBoxContainer" unique_id=1378167101]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Configuración"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=510790291]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Salir"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=119356394]
+environment = SubResource("Environment_yra00")
+script = ExtResource("3_h0npb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=257266446]
+stream = ExtResource("4_h0npb")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="VBoxContainer" method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer" method="_on_quit_button_pressed"]
