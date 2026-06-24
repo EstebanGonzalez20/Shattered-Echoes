@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_play_button_pressed() -> void:
+	# la camara empieza en z:7 debería moverse hacia z:33 aprox
 	pass # Replace with function body.
 
 func _on_quit_button_pressed() -> void:
