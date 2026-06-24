@@ -14,7 +14,7 @@ ambient_light_sky_contribution = 0.0
 [node name="MainMenu" type="Node3D" unique_id=1212301076]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=17715007]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3982962, 1.2164338, 3.8779001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.077, 1.3, 33)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2057588859]
 anchors_preset = 8
@@ -52,6 +52,24 @@ script = ExtResource("3_h0npb")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=257266446]
 stream = ExtResource("4_h0npb")
 autoplay = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=857004219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3298576, 5.8742075, 9.789418)
+size = Vector3(66, 30, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=176129592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0438087, -4.7804346, -0.008000374)
+operation = 2
+size = Vector3(6, 4.5, 1.198)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1848521935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2743902, -9.415789, 18.815266)
+size = Vector3(66, 1, 20)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=536119168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9024153, -6.4625254, 13.075729)
+radius = 1.5
+height = 4.0
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="VBoxContainer" method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer" method="_on_quit_button_pressed"]
