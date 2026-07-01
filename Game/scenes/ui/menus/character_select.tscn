@@ -2,20 +2,25 @@
 
 [node name="CharacterSelect" type="Node3D" unique_id=25731525]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1079349072]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0615051, 5.8209763, 9.537767)
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=473618334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3298576, 5.8742075, 9.789418)
 size = Vector3(66, 30, 1)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=2116396775]
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=1681034713]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0438087, -4.7804346, -0.008000374)
 operation = 2
 size = Vector3(6, 4.5, 1.198)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=2016819250]
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1119923414]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2743902, -9.415789, 18.815266)
 size = Vector3(66, 1, 20)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1896419956]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9024153, -6.4625254, 13.075729)
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1974415959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9330142, -6.9620256, 13.137821)
 radius = 1.5
 height = 4.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1389068133]
+transform = Transform3D(0.987206, -0.13808787, 0.07972504, 0, 0.49999994, 0.86602545, -0.15945014, -0.85494554, 0.493603, 0, 2.5, 25.564016)
+shadow_enabled = true
+sky_mode = 1
