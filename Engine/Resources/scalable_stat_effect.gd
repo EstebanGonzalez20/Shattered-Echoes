@@ -1,4 +1,4 @@
-class_name StatEffect extends SkillEffect
+class_name ScalableStatEffect extends SkillEffect
 
 ## Valor base de la estadística
 @export var stat_value: float
