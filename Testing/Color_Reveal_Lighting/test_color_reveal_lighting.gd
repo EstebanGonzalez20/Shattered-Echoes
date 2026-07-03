@@ -33,6 +33,3 @@ func _process(_delta: float) -> void:
 	light_texture.update(light_image)
 	RenderingServer.global_shader_parameter_set("color_lights_tex", light_texture)
 	RenderingServer.global_shader_parameter_set("color_light_count", count)
-
-func _physics_process(delta: float) -> void:
-	get_tree().call_group("enemies", "update_target_location", player.global_transform.origin)

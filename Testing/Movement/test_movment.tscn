@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2vpivfwryh3o"]
 
 [ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="1_rejls"]
+[ext_resource type="Script" uid="uid://csvfsgxthaavm" path="res://Game/controller.gd" id="2_yv6fv"]
 
 [node name="Test_movment" type="Node3D" unique_id=1762958035]
 
@@ -15,3 +16,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 use_collision = true
 collision_layer = 2
 size = Vector3(20, 0.5, 20)
+
+[node name="SystemsController" type="Node" parent="." unique_id=1710658043]
+script = ExtResource("2_yv6fv")

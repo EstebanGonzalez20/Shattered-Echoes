@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="1_wxexp"]
 [ext_resource type="Sky" uid="uid://bt8fyfyndxtye" path="res://Assets/Shaders/Sky/Space/sky.tres" id="2_2ysp4"]
 [ext_resource type="Script" uid="uid://yaav0mglp0i5" path="res://Assets/Shaders/Sky/Space/sky_controller.gd" id="3_o0jcy"]
+[ext_resource type="Script" uid="uid://csvfsgxthaavm" path="res://Game/controller.gd" id="4_hdpaj"]
 
 [sub_resource type="Environment" id="Environment_j50i4"]
 background_mode = 2
@@ -27,3 +28,6 @@ size = Vector3(20, 0.5, 20)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1418675474]
 environment = SubResource("Environment_j50i4")
 script = ExtResource("3_o0jcy")
+
+[node name="SystemsController" type="Node" parent="." unique_id=1521284952]
+script = ExtResource("4_hdpaj")
