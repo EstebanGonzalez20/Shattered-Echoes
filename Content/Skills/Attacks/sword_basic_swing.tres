@@ -1,9 +1,50 @@
 [gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://b45ptcc3rhmya"]
 
-[ext_resource type="Resource" uid="uid://lgkb2ko6gstm" path="res://Content/Skills/Attacks/Datas/sword_basic_swing.tres" id="1_y5abg"]
+[ext_resource type="Script" uid="uid://brijmw2r4bkyu" path="res://Engine/Resources/skill_effect.gd" id="1_bccno"]
 [ext_resource type="Script" uid="uid://ccav244rm57fh" path="res://Engine/Resources/skill_resource.gd" id="1_yg770"]
+[ext_resource type="Script" uid="uid://b2pamn375axb4" path="res://Engine/Resources/scalable_stat_effect.gd" id="2_thadx"]
+[ext_resource type="Script" uid="uid://cpv56fehjuv5a" path="res://Engine/Resources/fixed_stat_effect.gd" id="3_o3qtd"]
+[ext_resource type="PackedScene" uid="uid://du1drmy1bqh2o" path="res://Content/Projectiles/melee.tscn" id="3_thadx"]
+[ext_resource type="Script" uid="uid://dka3u1veeds2h" path="res://Engine/Resources/projectile_scene_effect.gd" id="4_7j2wm"]
+
+[sub_resource type="Resource" id="Resource_thadx"]
+script = ExtResource("2_thadx")
+stat_value = 10.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
+
+[sub_resource type="Resource" id="Resource_mqgom"]
+script = ExtResource("2_thadx")
+stat_value = 1.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
+
+[sub_resource type="Resource" id="Resource_se66o"]
+script = ExtResource("2_thadx")
+metadata/_custom_type_script = "uid://b2pamn375axb4"
+
+[sub_resource type="Resource" id="Resource_hgpma"]
+script = ExtResource("2_thadx")
+stat_value = 1.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
+
+[sub_resource type="Resource" id="Resource_u38b4"]
+script = ExtResource("3_o3qtd")
+stat_value = 1.0
+metadata/_custom_type_script = "uid://cpv56fehjuv5a"
+
+[sub_resource type="Resource" id="Resource_ma4gr"]
+script = ExtResource("4_7j2wm")
+projectile_scene = ExtResource("3_thadx")
+projectile_scalar = Vector3(0.7, 0.5, 1)
+metadata/_custom_type_script = "uid://dka3u1veeds2h"
 
 [resource]
 script = ExtResource("1_yg770")
-effects = Array[Resource]([ExtResource("1_y5abg")])
+effects = Dictionary[int, ExtResource("1_bccno")]({
+0: SubResource("Resource_thadx"),
+2: SubResource("Resource_mqgom"),
+3: SubResource("Resource_se66o"),
+4: SubResource("Resource_hgpma"),
+5: SubResource("Resource_u38b4"),
+6: SubResource("Resource_ma4gr")
+})
 metadata/_custom_type_script = "uid://ccav244rm57fh"

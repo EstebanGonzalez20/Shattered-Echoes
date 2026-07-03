@@ -12,7 +12,7 @@ func _ready() -> void:
 	# Después los NodeComponents que ya son hijos en el árbol
 	for child in get_children():
 		if child is NodeComponent:
-			_components[child.TYPE] = child
+			_components[child.get_type()] = child
 
 ## Añade un componente a la entidad. El componente debe tener un tipo
 func add_component(component: Object) -> void:
@@ -25,9 +25,8 @@ func add_component(component: Object) -> void:
 
 	assert(type != &"", "Componente %s retornó TYPE vacío" % component.get_class())
 
-	if component is Node:
-		add_child(component)
-		_components[component.TYPE] = component
+	add_child(component)
+	_components[type] = component
 
 ## Devuelve un componente a partir de su tipo
 func get_component(type: StringName) -> Object:

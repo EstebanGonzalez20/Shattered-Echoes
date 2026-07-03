@@ -3,14 +3,19 @@
 [ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_pku2s"]
 [ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_p5mnu"]
 [ext_resource type="Script" uid="uid://cbrb5ostmuqdj" path="res://Engine/Components/Resource/Gameplay/weapon.gd" id="3_u6305"]
-[ext_resource type="Script" uid="uid://briluodlju34y" path="res://Engine/Resources/attack_coefficients.gd" id="4_1l6xp"]
 [ext_resource type="Script" uid="uid://duevyhqv1q6ch" path="res://Engine/Components/Resource/Gameplay/look.gd" id="5_jdigc"]
+[ext_resource type="Resource" uid="uid://b45ptcc3rhmya" path="res://Content/Skills/Attacks/sword_basic_swing.tres" id="6_7cmeo"]
 [ext_resource type="Script" uid="uid://cvky1r7l5thsf" path="res://Engine/Components/Resource/Gameplay/player_input.gd" id="6_p70jc"]
+[ext_resource type="Script" uid="uid://b2pamn375axb4" path="res://Engine/Resources/scalable_stat_effect.gd" id="7_55ogs"]
 [ext_resource type="Script" uid="uid://6j7rexoxg3kj" path="res://Engine/Components/Resource/Gameplay/wallet.gd" id="7_qd5y6"]
-[ext_resource type="Script" uid="uid://ccav244rm57fh" path="res://Engine/Resources/skill_resource.gd" id="8_m8lm8"]
 [ext_resource type="Script" uid="uid://dpyakykl46quv" path="res://Engine/Components/Node/Gameplay/pickup_collector.gd" id="9_1ww3p"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2dcui"]
+[ext_resource type="Resource" uid="uid://bwxhaovc2eh6b" path="res://Content/Skills/Attacks/healing_special_attack.tres" id="9_rj5p2"]
+[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="9_uu26y"]
+[ext_resource type="Script" uid="uid://bi0qxqhedesed" path="res://Engine/Components/Resource/Stadistics/attack_speed.gd" id="10_0u7sf"]
+[ext_resource type="Script" uid="uid://be2y0o30ucagp" path="res://Engine/Components/Resource/Stadistics/damage.gd" id="11_lidmn"]
+[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="12_lidmn"]
+[ext_resource type="Script" uid="uid://du6uxk4qcsk8" path="res://Engine/Components/Resource/Stadistics/healing.gd" id="14_0awg1"]
+[ext_resource type="Script" uid="uid://bvugimqgg43aw" path="res://Engine/Components/Node/hurtbox.gd" id="14_ec6tw"]
 
 [sub_resource type="Resource" id="Resource_piaqt"]
 script = ExtResource("5_jdigc")
@@ -24,31 +29,62 @@ metadata/_custom_type_script = "uid://cvky1r7l5thsf"
 script = ExtResource("7_qd5y6")
 metadata/_custom_type_script = "uid://6j7rexoxg3kj"
 
-[sub_resource type="Resource" id="Resource_rp74o"]
-script = ExtResource("8_m8lm8")
-metadata/_custom_type_script = "uid://ccav244rm57fh"
+[sub_resource type="Resource" id="Resource_uu26y"]
+script = ExtResource("7_55ogs")
+stat_value = 1.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
 
-[sub_resource type="Resource" id="Resource_vy2b6"]
-script = ExtResource("8_m8lm8")
-metadata/_custom_type_script = "uid://ccav244rm57fh"
+[sub_resource type="Resource" id="Resource_vfqvt"]
+script = ExtResource("7_55ogs")
+stat_value = 10.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
 
-[sub_resource type="Resource" id="Resource_n6jr1"]
-script = ExtResource("4_1l6xp")
-metadata/_custom_type_script = "uid://briluodlju34y"
+[sub_resource type="Resource" id="Resource_p70jc"]
+script = ExtResource("7_55ogs")
+stat_value = 10.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
 
-[sub_resource type="Resource" id="Resource_02v4y"]
+[sub_resource type="Resource" id="Resource_55ogs"]
 script = ExtResource("3_u6305")
-weapon_coefficient = SubResource("Resource_n6jr1")
-basic_attack = SubResource("Resource_rp74o")
-special_attack = SubResource("Resource_vy2b6")
+basic_attack = ExtResource("6_7cmeo")
+special_attack = ExtResource("9_rj5p2")
+scaling_damage = SubResource("Resource_vfqvt")
+scaling_healing = SubResource("Resource_p70jc")
+scaling_attack_speed = SubResource("Resource_uu26y")
 metadata/_custom_type_script = "uid://cbrb5ostmuqdj"
 
-[node name="Player" type="CharacterBody3D" unique_id=1584554695 groups=["players"]]
-collision_mask = 2
+[sub_resource type="Resource" id="Resource_0u7sf"]
+script = ExtResource("9_uu26y")
+speed = 5.0
+jump_velocity = 4.0
+metadata/_custom_type_script = "uid://fiqspojmjr1c"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=842484660]
-transform = Transform3D(0.7, 0, 0, 0, 1.5, 0, 0, 0, 0.7, 0, 0, 0)
-shape = SubResource("BoxShape3D_2dcui")
+[sub_resource type="Resource" id="Resource_ec6tw"]
+script = ExtResource("10_0u7sf")
+attacks_per_second = 1.0
+metadata/_custom_type_script = "uid://bi0qxqhedesed"
+
+[sub_resource type="Resource" id="Resource_rj5p2"]
+script = ExtResource("11_lidmn")
+damage = 10.0
+metadata/_custom_type_script = "uid://be2y0o30ucagp"
+
+[sub_resource type="Resource" id="Resource_0awg1"]
+script = ExtResource("12_lidmn")
+max_health = 100.0
+metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
+
+[sub_resource type="Resource" id="Resource_jdigc"]
+script = ExtResource("14_0awg1")
+healing = 10.0
+metadata/_custom_type_script = "uid://du6uxk4qcsk8"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2dcui"]
+size = Vector3(0.7, 1.5, 0.7)
+
+[node name="Player" type="CharacterBody3D" unique_id=1584554695 groups=["players"]]
+collision_layer = 2
+collision_mask = 7
 
 [node name="Head" type="Node3D" parent="." unique_id=44642953]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -57,7 +93,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="EntityComponent" type="Node" parent="." unique_id=486308515]
 script = ExtResource("1_pku2s")
-initial_components = Array[ExtResource("2_p5mnu")]([SubResource("Resource_piaqt"), SubResource("Resource_608vp"), SubResource("Resource_5qoqd"), SubResource("Resource_02v4y")])
+initial_components = Array[ExtResource("2_p5mnu")]([SubResource("Resource_piaqt"), SubResource("Resource_608vp"), SubResource("Resource_5qoqd"), SubResource("Resource_55ogs"), SubResource("Resource_0u7sf"), SubResource("Resource_ec6tw"), SubResource("Resource_rj5p2"), SubResource("Resource_0awg1"), SubResource("Resource_jdigc")])
 
 [node name="PickupCollector" type="Node" parent="EntityComponent" unique_id=366473627]
 script = ExtResource("9_1ww3p")
+
+[node name="Hurtbox" type="Node" parent="EntityComponent" unique_id=85451404]
+script = ExtResource("14_ec6tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1704074740]
+shape = SubResource("BoxShape3D_2dcui")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=817624804]
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1872117484]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+shape = SubResource("BoxShape3D_2dcui")

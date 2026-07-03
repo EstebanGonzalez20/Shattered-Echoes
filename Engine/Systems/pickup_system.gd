@@ -1,5 +1,5 @@
 # pickup_system.gd
-class_name PickupSystem
+class_name PickupSystem extends RefCounted
 
 # Si tu arquitectura tiene un EventBus para entidades nuevas, úsalo aquí
 func on_entity_added(entity: Node) -> void:

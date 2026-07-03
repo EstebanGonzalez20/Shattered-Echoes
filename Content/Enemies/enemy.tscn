@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="2_cv27q"]
 [ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_kbvwg"]
 [ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/Resource/Miscellaneous/enemy_behavior.gd" id="3_61iar"]
+[ext_resource type="Script" uid="uid://cyky51380i3ww" path="res://Engine/Components/Node/enemy_navigation.gd" id="5_i0otu"]
+[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="5_qxkvb"]
+[ext_resource type="Script" uid="uid://bvugimqgg43aw" path="res://Engine/Components/Node/hurtbox.gd" id="7_6ylue"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82i5i"]
 albedo_color = Color(1, 0, 0, 1)
@@ -23,6 +26,14 @@ script = ExtResource("3_61iar")
 max_player_distance = 1.0
 min_player_distance = 7.0
 
+[sub_resource type="Resource" id="Resource_6ylue"]
+script = ExtResource("5_qxkvb")
+max_health = 30.0
+metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d4ryt"]
+size = Vector3(0.7, 1.5, 0.7)
+
 [node name="Enemy" type="CharacterBody3D" unique_id=323666946 groups=["enemies"]]
 collision_mask = 2
 
@@ -32,11 +43,22 @@ mesh = SubResource("CapsuleMesh_do21r")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1290754886]
 shape = SubResource("CapsuleShape3D_hggra")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=599200574]
-avoidance_enabled = true
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=135100718]
 
 [node name="EntityComponent" type="Node" parent="." unique_id=1312685923]
 script = ExtResource("1_rvfqy")
-initial_components = Array[ExtResource("2_kbvwg")]([SubResource("Resource_2t4ei"), SubResource("Resource_n3jev")])
+initial_components = Array[ExtResource("2_kbvwg")]([SubResource("Resource_2t4ei"), SubResource("Resource_n3jev"), SubResource("Resource_6ylue")])
 
-[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[node name="EnemyNavigation" type="Node" parent="EntityComponent" unique_id=39120433]
+script = ExtResource("5_i0otu")
+
+[node name="Hurtbox" type="Node" parent="EntityComponent" unique_id=233363745]
+script = ExtResource("7_6ylue")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1536310161]
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=294296588]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_d4ryt")

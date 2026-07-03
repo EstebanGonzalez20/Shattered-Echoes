@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://bwxhaovc2eh6b"]
+
+[ext_resource type="Script" uid="uid://brijmw2r4bkyu" path="res://Engine/Resources/skill_effect.gd" id="1_maell"]
+[ext_resource type="Script" uid="uid://b2pamn375axb4" path="res://Engine/Resources/scalable_stat_effect.gd" id="2_2mndr"]
+[ext_resource type="Script" uid="uid://cpv56fehjuv5a" path="res://Engine/Resources/fixed_stat_effect.gd" id="3_holit"]
+[ext_resource type="PackedScene" uid="uid://du1drmy1bqh2o" path="res://Content/Projectiles/melee.tscn" id="4_vw372"]
+[ext_resource type="Script" uid="uid://dka3u1veeds2h" path="res://Engine/Resources/projectile_scene_effect.gd" id="5_atx5n"]
+[ext_resource type="Script" uid="uid://ccav244rm57fh" path="res://Engine/Resources/skill_resource.gd" id="6_33h1q"]
+
+[sub_resource type="Resource" id="Resource_7j2wm"]
+script = ExtResource("2_2mndr")
+stat_value = 10.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
+
+[sub_resource type="Resource" id="Resource_mqgom"]
+script = ExtResource("2_2mndr")
+stat_value = 1.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
+
+[sub_resource type="Resource" id="Resource_se66o"]
+script = ExtResource("2_2mndr")
+stat_value = 1.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
+
+[sub_resource type="Resource" id="Resource_hgpma"]
+script = ExtResource("2_2mndr")
+stat_value = 1.0
+metadata/_custom_type_script = "uid://b2pamn375axb4"
+
+[sub_resource type="Resource" id="Resource_u38b4"]
+script = ExtResource("3_holit")
+stat_value = 1.0
+metadata/_custom_type_script = "uid://cpv56fehjuv5a"
+
+[sub_resource type="Resource" id="Resource_ma4gr"]
+script = ExtResource("5_atx5n")
+projectile_scene = ExtResource("4_vw372")
+projectile_scalar = Vector3(0.7, 0.5, 1)
+metadata/_custom_type_script = "uid://dka3u1veeds2h"
+
+[resource]
+script = ExtResource("6_33h1q")
+effects = Dictionary[int, ExtResource("1_maell")]({
+1: SubResource("Resource_7j2wm"),
+2: SubResource("Resource_mqgom"),
+3: SubResource("Resource_se66o"),
+4: SubResource("Resource_hgpma"),
+5: SubResource("Resource_u38b4"),
+6: SubResource("Resource_ma4gr")
+})
+metadata/_custom_type_script = "uid://ccav244rm57fh"
