@@ -1,4 +1,4 @@
-## Clase base para los componentes que representan estadísticas
+## Clase base para los componentes que representan estadísticas.
 class_name StatComponent extends Component
 
 ## Valor base de la estadística.

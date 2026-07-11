@@ -1,12 +1,10 @@
-class_name AttackSpeed extends Component
+class_name AttackSpeed extends StatComponent
 
 func get_type() -> StringName:
 	return &"AttackSpeed"
 
-## Ataques por segundo (ej: 2 = 2 ataques por segundo)
-@export var attacks_per_second: float:
-	set(value):
-		attacks_per_second = max(value, 0.1)
+func _get_allowed_modifiers() -> Array[Global.ModifierType]:
+	return [Globals.ModifierType.MULTIPLIER]
 
 ## Tiempo restante hasta poder atacar otra vez
 var cooldown: float = 0.0:
@@ -17,7 +15,7 @@ func can_attack() -> bool:
 	return cooldown <= 0.0
 
 func trigger_attack():
-	cooldown = 1.0 / attacks_per_second
+	cooldown = 1.0 / get_final()
 
 func update(delta: float):
 	cooldown -= delta

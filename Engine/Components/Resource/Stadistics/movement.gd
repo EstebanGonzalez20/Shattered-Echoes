@@ -3,9 +3,8 @@ class_name Movement extends Component
 func get_type() -> StringName:
 	return &"Movement"
 
-@export var speed: float: ## Representa que tan rápido se mueve la entidad
-	set(value):
-		speed = max(value, 0)
+func _get_allowed_modifiers() -> Array[Global.ModifierType]:
+	return [Globals.ModifierType.FLAT, Globals.ModifierType.MULTIPLIER]
 
 @export var jump_velocity: float: ## Representa que tan fuerte salta la entidad
 	set(value):
