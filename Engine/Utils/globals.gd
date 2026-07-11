@@ -25,3 +25,11 @@ enum CollisionLayers {
 	PROJECTILES = 3,
 	PICKUPS = 4
 }
+
+## Enum que dicta los tipos de modificadores que hay para las estadísticas.
+enum ModifierType {
+	## Representa un modificador aditivo: const + mod
+	FLAT,
+	## Representa un modificador multiplicativo: const * mod
+	MULTIPLIER
+}
