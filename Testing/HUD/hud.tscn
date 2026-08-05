@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c6tjg1ptskf2g"]
+
+[ext_resource type="PackedScene" uid="uid://nywik2fsq2bi" path="res://Game/scenes/ui/hud/hud.tscn" id="1_7la57"]
+[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="2_x7bgk"]
+
+[node name="Hud" type="Node3D" unique_id=524349444]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1187330428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4439697, -1.037689, -3.5498705)
+size = Vector3(8.877197, 1, 12.604431)
+
+[node name="Hud" parent="." unique_id=896107773 instance=ExtResource("1_7la57")]
+
+[node name="Player" parent="." unique_id=1584554695 instance=ExtResource("2_x7bgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7479062, 0)
