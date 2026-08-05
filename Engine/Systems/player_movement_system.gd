@@ -17,11 +17,11 @@ func movement_process(player: CharacterBody3D, player_entity: EntityComponent, d
 		Vector3(player_input.move_vector.x, 0, player_input.move_vector.y)).normalized()
 
 	if dir:
-		player_move.velocity.x = dir.x * player_move.speed
-		player_move.velocity.z = dir.z * player_move.speed
+		player_move.velocity.x = dir.x * player_move.base_value
+		player_move.velocity.z = dir.z * player_move.base_value
 	else:
-		player_move.velocity.x = move_toward(player_move.velocity.x, 0, player_move.speed)
-		player_move.velocity.z = move_toward(player_move.velocity.z, 0, player_move.speed)
+		player_move.velocity.x = move_toward(player_move.velocity.x, 0, player_move.base_value)
+		player_move.velocity.z = move_toward(player_move.velocity.z, 0, player_move.base_value)
 
 	player.velocity = player_move.velocity
 	player.move_and_slide()

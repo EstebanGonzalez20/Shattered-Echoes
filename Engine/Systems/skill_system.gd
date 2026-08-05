@@ -38,9 +38,9 @@ func process_attack(effects: Dictionary,
 	perform_attack_task.uses = uses_effect.stat_value
 	
 	perform_attack_task.shot_speed = scale_stat(shot_speed_effect, 0)
-	var final_damage = scale_stat(damage_effect, entity_dmg.damage) if damage_effect != null else null
+	var final_damage = scale_stat(damage_effect, entity_dmg.base_value) if damage_effect != null else null
 	var final_healing = scale_stat(healing_effect, entity_healing.healing) if healing_effect != null else null
-	var final_attack_speed = scale_stat(attack_speed_effect, entity_atk_speed.attacks_per_second)
+	var final_attack_speed = scale_stat(attack_speed_effect, entity_atk_speed.base_value)
 	
 	if weapon != null:
 		var weapon_damage_effect := weapon.scaling_damage

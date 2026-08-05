@@ -18,11 +18,11 @@ func process_movement(enemy: CharacterBody3D, delta: float):
 
 	if distance > 0.1:
 		direction = direction.normalized()
-		target_velocity = direction * enemy_move.speed
+		target_velocity = direction * enemy_move.base_value
 
 	# aceleración de 0.5 segundos
 	var accel_time = 0.5
-	var acceleration = enemy_move.speed / accel_time
+	var acceleration = enemy_move.base_value / accel_time
 
 	var current_horizontal = Vector3(enemy_move.velocity.x, 0, enemy_move.velocity.z)
 

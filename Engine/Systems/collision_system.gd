@@ -26,7 +26,7 @@ func process_collision(hurtbox: Area3D, other_entity: EntityComponent) -> Array[
 				var task: DamageEntityTask = DamageEntityTask.new()
 				var other_entity_damage: Damage = other_entity.get_component("Damage")
 				
-				task.damage_value = other_entity_damage.damage
+				task.damage_value = other_entity_damage.base_value
 				task.entity = hurtbox.get_parent().get_node("EntityComponent")
 				tasks.append(task)
 		

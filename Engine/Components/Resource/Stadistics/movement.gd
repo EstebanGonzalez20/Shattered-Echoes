@@ -1,4 +1,4 @@
-class_name Movement extends Component
+class_name Movement extends StatComponent
 
 func get_type() -> StringName:
 	return &"Movement"

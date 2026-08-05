@@ -10,7 +10,7 @@ func perform_attack(task: PerformAttackTask, current_scene: Node) -> void:
 	if task.damage != null:
 		health_effect = health_effects.Damage
 		var damage_comp := Damage.new()
-		damage_comp.damage = task.damage
+		damage_comp.base_value = task.damage
 		attack_instance_entity.add_component(damage_comp)
 	
 	if task.healing != null:

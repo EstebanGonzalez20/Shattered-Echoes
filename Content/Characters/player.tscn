@@ -55,18 +55,16 @@ metadata/_custom_type_script = "uid://cbrb5ostmuqdj"
 
 [sub_resource type="Resource" id="Resource_0u7sf"]
 script = ExtResource("9_uu26y")
-speed = 5.0
 jump_velocity = 4.0
+base_value = 5.0
 metadata/_custom_type_script = "uid://fiqspojmjr1c"
 
 [sub_resource type="Resource" id="Resource_ec6tw"]
 script = ExtResource("10_0u7sf")
-attacks_per_second = 1.0
 metadata/_custom_type_script = "uid://bi0qxqhedesed"
 
 [sub_resource type="Resource" id="Resource_rj5p2"]
 script = ExtResource("11_lidmn")
-damage = 10.0
 metadata/_custom_type_script = "uid://be2y0o30ucagp"
 
 [sub_resource type="Resource" id="Resource_0awg1"]
