@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bpj4ct6sdsxmd"]
 
+[ext_resource type="Script" uid="uid://64mf72ra2iae" path="res://Game/Scripts/Utils/PlayerCamera.gd" id="1_p70jc"]
 [ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_pku2s"]
 [ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_p5mnu"]
 [ext_resource type="Script" uid="uid://cbrb5ostmuqdj" path="res://Engine/Components/Resource/Gameplay/weapon.gd" id="3_u6305"]
@@ -90,6 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1375604234]
 fov = 37.849285
+script = ExtResource("1_p70jc")
 
 [node name="EntityComponent" type="Node" parent="." unique_id=486308515]
 script = ExtResource("1_pku2s")

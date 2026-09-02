@@ -20,8 +20,6 @@ func _ready() -> void:
 	_detection_area.body_entered.connect(_on_body_entered)
 	_tooltip_area.body_entered.connect(_on_player_entered)
 	_tooltip_area.body_exited.connect(_on_player_exited)
-	_tooltip_area.mouse_entered.connect(_on_mouse_entered)
-	_tooltip_area.mouse_exited.connect(_on_mouse_exited)
 	_tooltip_area.input_ray_pickable = true
 
 func _spawn_visual() -> void:
@@ -65,12 +63,9 @@ func _on_player_exited(body: Node3D) -> void:
 		_player_nearby = false
 		_update_tooltip()
 
-func _on_mouse_entered() -> void:
-	_mouse_hovering = true
-	_update_tooltip()
-
-func _on_mouse_exited() -> void:
-	_mouse_hovering = false
+func set_mouse_hover(is_hovering: bool) -> void:
+	print("1")
+	_mouse_hovering = is_hovering
 	_update_tooltip()
 
 func _update_tooltip() -> void:

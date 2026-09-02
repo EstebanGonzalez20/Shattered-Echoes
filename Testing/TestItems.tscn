@@ -8,9 +8,10 @@
 [node name="TestItems" type="Node3D" unique_id=308486388]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=338802127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25531, 0, 0)
 use_collision = true
 collision_layer = 2
-size = Vector3(20, 0.5, 20)
+size = Vector3(40, 0.5, 40)
 
 [node name="Player" parent="." unique_id=1584554695 instance=ExtResource("2_kn6c4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80747, 3.7152233)
@@ -19,5 +20,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80747, 3.7152233)
 script = ExtResource("1_wx5j7")
 
 [node name="ItemSpawnPoint" parent="." unique_id=791236795 instance=ExtResource("3_5nrpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71577114, -2.4827266)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, 0.9428048)
 pool = ExtResource("4_vgvj0")
