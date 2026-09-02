@@ -10,8 +10,14 @@ class_name Item extends Resource
 ## Nombre del objeto que se le muestra al jugador.
 @export var name : String
 
-## Sprite que se muestra en el juego, más adelante se cambiara por un modelo 3D.
-@export var sprite : Texture2D
-
 ## Descripción del objeto que se le muestra al jugador.
 @export var description : String
+
+## Icono que representa al item en los menus.
+@export var icon: Texture2D
+
+## Usar mientras el ítem se representa como sprite (Sprite3D)
+@export var pickup_texture: Texture2D
+
+## Usar cuando el ítem tenga un modelo 3D completo (reemplaza a pickup_texture si está presente)
+@export var pickup_model: PackedScene

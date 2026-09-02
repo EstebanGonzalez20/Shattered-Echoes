@@ -1,5 +1,8 @@
 class_name Inventory extends NodeComponent
 
+func get_type() -> StringName:
+	return &"Inventory"
+
 ## Diccionario que almacena los objetos pasivos, utiliza las id de los objetos como llave y almacena la cantidad de copias que hay de ese objeto.
 var passive_items: Dictionary[StringName, Dictionary] = {}  # StringName -> {resource: Item, count: int}
 

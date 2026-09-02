@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 Global="*uid://dqaajrj3jp2rk"
 SignalBus="*uid://d2dca1e57mt74"
+ItemTooltip="*uid://b0c6ag54bviid"
 
 [global_group]
 
@@ -108,6 +109,10 @@ jump={
 3d_physics/layer_3="Enemies"
 3d_physics/layer_4="Projectiles"
 3d_physics/layer_5="Pickups"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
 
 [shader_globals]
 

@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="12_lidmn"]
 [ext_resource type="Script" uid="uid://du6uxk4qcsk8" path="res://Engine/Components/Resource/Stadistics/healing.gd" id="14_0awg1"]
 [ext_resource type="Script" uid="uid://bvugimqgg43aw" path="res://Engine/Components/Node/hurtbox.gd" id="14_ec6tw"]
+[ext_resource type="Script" uid="uid://daw3j3frmisye" path="res://Engine/Components/Node/Gameplay/Inventory.gd" id="17_jdigc"]
 
 [sub_resource type="Resource" id="Resource_piaqt"]
 script = ExtResource("5_jdigc")
@@ -88,6 +89,7 @@ collision_mask = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1375604234]
+fov = 37.849285
 
 [node name="EntityComponent" type="Node" parent="." unique_id=486308515]
 script = ExtResource("1_pku2s")
@@ -98,6 +100,9 @@ script = ExtResource("9_1ww3p")
 
 [node name="Hurtbox" type="Node" parent="EntityComponent" unique_id=85451404]
 script = ExtResource("14_ec6tw")
+
+[node name="Inventory" type="Node" parent="EntityComponent" unique_id=1420736961]
+script = ExtResource("17_jdigc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1704074740]
 shape = SubResource("BoxShape3D_2dcui")

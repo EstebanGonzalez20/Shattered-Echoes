@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bop55wgsefbjn"]
+
+[ext_resource type="Script" uid="uid://csvfsgxthaavm" path="res://Game/controller.gd" id="1_wx5j7"]
+[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="2_kn6c4"]
+[ext_resource type="PackedScene" uid="uid://cvom8x8jx8l1m" path="res://Game/scenes/Utils/ItemSpawnPoint.tscn" id="3_5nrpg"]
+[ext_resource type="Resource" uid="uid://cqj7v0itmbiqh" path="res://Content/Items/Pools/aaa.tres" id="4_vgvj0"]
+
+[node name="TestItems" type="Node3D" unique_id=308486388]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=338802127]
+use_collision = true
+collision_layer = 2
+size = Vector3(20, 0.5, 20)
+
+[node name="Player" parent="." unique_id=1584554695 instance=ExtResource("2_kn6c4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80747, 3.7152233)
+
+[node name="SystemsController" type="Node" parent="." unique_id=60410057]
+script = ExtResource("1_wx5j7")
+
+[node name="ItemSpawnPoint" parent="." unique_id=791236795 instance=ExtResource("3_5nrpg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71577114, -2.4827266)
+pool = ExtResource("4_vgvj0")

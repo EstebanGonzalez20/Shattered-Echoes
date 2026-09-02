@@ -6,7 +6,7 @@ extends Node3D
 
 const ITEM_PICKUP_SCENE: PackedScene = preload("res://Game/scenes/Utils/ItemPickup.tscn")
 
-func spawn() -> void:
+func _ready() -> void:
 	if pool == null:
 		push_warning("ItemSpawnPoint sin pool asignado: %s" % name)
 		return
@@ -16,8 +16,8 @@ func spawn() -> void:
 		return
 	
 	var pickup: ItemPickup = ITEM_PICKUP_SCENE.instantiate()
-	pickup.item = chosen_item  # se asigna ANTES de entrar al árbol
-	get_parent().add_child(pickup)
-	pickup.global_position = global_position
+	pickup.item = chosen_item
+	pickup.transform = transform  # se copia ANTES de entrar al árbol, no requiere estar en el tree
 	
-	queue_free()  # el marcador se reemplaza por el pickup real
+	get_parent().add_child.call_deferred(pickup)
+	queue_free()
