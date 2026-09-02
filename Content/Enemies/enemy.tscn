@@ -23,8 +23,8 @@ base_value = 3.0
 
 [sub_resource type="Resource" id="Resource_n3jev"]
 script = ExtResource("3_61iar")
-max_player_distance = 1.0
-min_player_distance = 7.0
+max_player_distance = 3.0
+min_player_distance = 2.0
 
 [sub_resource type="Resource" id="Resource_6ylue"]
 script = ExtResource("5_qxkvb")
@@ -35,7 +35,8 @@ metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
 size = Vector3(0.7, 1.5, 0.7)
 
 [node name="Enemy" type="CharacterBody3D" unique_id=323666946 groups=["enemies"]]
-collision_mask = 2
+collision_layer = 4
+collision_mask = 15
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1197185182]
 mesh = SubResource("CapsuleMesh_do21r")
@@ -44,6 +45,12 @@ mesh = SubResource("CapsuleMesh_do21r")
 shape = SubResource("CapsuleShape3D_hggra")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=135100718]
+path_height_offset = 0.1
+avoidance_enabled = true
+radius = 0.6
+neighbor_distance = 10.0
+max_neighbors = 15
+time_horizon_agents = 1.5
 
 [node name="EntityComponent" type="Node" parent="." unique_id=1312685923]
 script = ExtResource("1_rvfqy")

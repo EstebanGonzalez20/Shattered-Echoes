@@ -7,32 +7,32 @@ func process_movement(enemy: CharacterBody3D, delta: float):
 	# gravedad
 	if not enemy.is_on_floor():
 		enemy_move.velocity += enemy.get_gravity() * delta
-
+	
 	# dirección de movimiento
 	var current_location = enemy.global_transform.origin
 	var next_location = enemy_nav_agent.get_next_path_position()
 	var direction = next_location - current_location
 	var distance = direction.length()
-
+	
 	var target_velocity = Vector3.ZERO
-
+	
 	if distance > 0.1:
 		direction = direction.normalized()
 		target_velocity = direction * enemy_move.base_value
-
-	# aceleración de 0.5 segundos
-	var accel_time = 0.5
+	
+	# aceleración de 0.2 segundos
+	var accel_time = 0.2
 	var acceleration = enemy_move.base_value / accel_time
-
+	
 	var current_horizontal = Vector3(enemy_move.velocity.x, 0, enemy_move.velocity.z)
-
+	
 	if target_velocity.length() > 0:
 		# acelerar suavemente
 		current_horizontal = current_horizontal.move_toward(target_velocity, acceleration * delta)
 	else:
 		# frenar instantáneamente
 		current_horizontal = Vector3.ZERO
-
+	
 	enemy_nav_agent.velocity = Vector3(
 		current_horizontal.x,
 		enemy_move.velocity.y,
