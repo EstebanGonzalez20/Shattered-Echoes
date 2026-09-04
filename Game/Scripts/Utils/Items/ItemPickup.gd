@@ -54,24 +54,21 @@ func _on_body_entered(body: Node3D) -> void:
 		queue_free()
 
 func _on_player_entered(body: Node3D) -> void:
-	print("entro")
-	if body.has_node("Inventory"):
+	if body.has_node("EntityComponent/Inventory"):
 		_player_nearby = true
 		_update_tooltip()
 
 func _on_player_exited(body: Node3D) -> void:
-	if body.has_node("Inventory"):
+	if body.has_node("EntityComponent/Inventory"):
 		_player_nearby = false
 		_update_tooltip()
 
 func set_mouse_hover(is_hovering: bool) -> void:
-	print("1")
 	_mouse_hovering = is_hovering
 	_update_tooltip()
 
 func _update_tooltip() -> void:
 	if _player_nearby and _mouse_hovering:
-		print("true")
 		ItemTooltip.show_for(item)
 	else:
 		ItemTooltip.hide_tooltip()

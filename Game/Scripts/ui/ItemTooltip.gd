@@ -10,7 +10,7 @@ func _ready() -> void:
 
 ## Muestra el tooltip con la información del item que se le pase.
 func show_for(item: Item) -> void:
-	_name_label.text = item.display_name
+	_name_label.text = item.name
 	_quality_label.text = Globals.ItemQuality.keys()[item.quality]
 	_description_label.text = item.description
 	_panel.show()

@@ -6,7 +6,6 @@ func _process(_delta: float) -> void:
 	var hovered := get_hovered_item_pickup()
 
 	if hovered != _currently_hovered:
-		print("hola")
 		if _currently_hovered != null:
 			_currently_hovered.set_mouse_hover(false)
 		if hovered != null:
