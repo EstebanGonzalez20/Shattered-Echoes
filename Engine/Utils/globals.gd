@@ -23,7 +23,7 @@ enum CollisionLayers {
 	PLAYERS = 1,
 	ENEMIES = 2,
 	PROJECTILES = 3,
-	PICKUPS = 4
+	PICKUPS = 20
 }
 
 ## Enum que dicta los tipos de modificadores que hay para las estadísticas.

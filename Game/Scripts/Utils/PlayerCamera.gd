@@ -4,8 +4,9 @@ var _currently_hovered: ItemPickup = null
 
 func _process(_delta: float) -> void:
 	var hovered := get_hovered_item_pickup()
-	print(hovered)
+
 	if hovered != _currently_hovered:
+		print("hola")
 		if _currently_hovered != null:
 			_currently_hovered.set_mouse_hover(false)
 		if hovered != null:
@@ -26,11 +27,12 @@ func get_hovered_item_pickup() -> ItemPickup:
 	
 	var space_state := get_world_3d().direct_space_state
 	var result := space_state.intersect_ray(query)
-	print(result)
+	
 	if result.is_empty():
 		return null
-	
 	var collider: Node = result.collider
-	if collider is ItemPickup:
-		return collider
+	var pickup := collider.get_owner() as ItemPickup
+
+	if pickup != null:
+		return pickup
 	return null
