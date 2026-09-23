@@ -2,10 +2,23 @@
 
 [ext_resource type="Script" uid="uid://stwrvxonnspb" path="res://Game/Scripts/ui/ItemTooltip.gd" id="1_0m4ou"]
 
-[sub_resource type="Theme" id="Theme_u04hk"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m4ou"]
-bg_color = Color(0.11326108, 0.6504758, 0.8731869, 1)
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.9411765)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aiscd"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.34118742, 0.35469243, 0.31529683, 1)
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="ItemTooltip" type="Control" unique_id=252018889]
 layout_mode = 3
@@ -25,12 +38,14 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 290.0
 offset_bottom = 189.0
+theme_override_constants/separation = 0
 
-[node name="NameLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1641650831]
+[node name="NameLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1022822385]
 layout_mode = 2
-theme = SubResource("Theme_u04hk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0m4ou")
+fit_content = true
 
-[node name="DescriptionLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1417265671]
+[node name="DescriptionLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=581648695]
 layout_mode = 2
-bbcode_enabled = true
+theme_override_styles/normal = SubResource("StyleBoxFlat_aiscd")
+fit_content = true

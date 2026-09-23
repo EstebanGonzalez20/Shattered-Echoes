@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://dmol6gwh11xwb"]
+
+[ext_resource type="Script" uid="uid://bjeeo2fyfjf3i" path="res://Engine/Resources/PassiveItem.gd" id="1_gevr6"]
+[ext_resource type="Texture2D" uid="uid://gf6e518mryq6" path="res://Assets/Items/daño.png" id="1_h47cv"]
+
+[resource]
+script = ExtResource("1_gevr6")
+id = &"3"
+quality = 3
+name = "Simbolo de Fuerza"
+description = "+10 de daño de ataque."
+icon = ExtResource("1_h47cv")
+pickup_texture = ExtResource("1_h47cv")
+metadata/_custom_type_script = "uid://bjeeo2fyfjf3i"

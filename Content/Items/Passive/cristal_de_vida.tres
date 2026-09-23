@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://c3he1sm7aikel"]
+
+[ext_resource type="Script" uid="uid://bjeeo2fyfjf3i" path="res://Engine/Resources/PassiveItem.gd" id="1_nj8mv"]
+[ext_resource type="Texture2D" uid="uid://c282lvdvga3xr" path="res://Assets/Items/Vida.png" id="1_ui8sr"]
+
+[resource]
+script = ExtResource("1_nj8mv")
+id = &"2"
+quality = 2
+name = "Cristal de Vida"
+description = "Aumenta en 10% la vida máxima desde todas las fuentes."
+icon = ExtResource("1_ui8sr")
+pickup_texture = ExtResource("1_ui8sr")
+metadata/_custom_type_script = "uid://bjeeo2fyfjf3i"

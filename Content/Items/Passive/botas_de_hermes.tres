@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://cb7xhjjc7jeks"]
+
+[ext_resource type="Script" uid="uid://bjeeo2fyfjf3i" path="res://Engine/Resources/PassiveItem.gd" id="1_afphi"]
+[ext_resource type="Texture2D" uid="uid://cptp53pi223qu" path="res://Assets/Items/botas.png" id="1_iqdcu"]
+
+[resource]
+script = ExtResource("1_afphi")
+id = &"1"
+quality = 1
+name = "Botas de Hermes"
+description = "+20 de velocidad de movimiento."
+icon = ExtResource("1_iqdcu")
+pickup_texture = ExtResource("1_iqdcu")
+metadata/_custom_type_script = "uid://bjeeo2fyfjf3i"

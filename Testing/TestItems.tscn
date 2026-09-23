@@ -4,6 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="2_kn6c4"]
 [ext_resource type="PackedScene" uid="uid://cvom8x8jx8l1m" path="res://Game/scenes/Utils/ItemSpawnPoint.tscn" id="3_5nrpg"]
 [ext_resource type="Resource" uid="uid://cqj7v0itmbiqh" path="res://Content/Items/Pools/aaa.tres" id="4_vgvj0"]
+[ext_resource type="Script" uid="uid://cn1jejpapc4ub" path="res://Engine/Resources/Item.gd" id="5_44850"]
+[ext_resource type="Resource" uid="uid://cb7xhjjc7jeks" path="res://Content/Items/Passive/botas_de_hermes.tres" id="6_di5mn"]
+[ext_resource type="Script" uid="uid://hrao22aybcej" path="res://Game/Scripts/Utils/Items/ItemPool.gd" id="7_is2bi"]
+[ext_resource type="Resource" uid="uid://c3he1sm7aikel" path="res://Content/Items/Passive/cristal_de_vida.tres" id="8_tdg6d"]
+[ext_resource type="Resource" uid="uid://dmol6gwh11xwb" path="res://Content/Items/Passive/simbolo_de_fuerza.tres" id="9_5ns33"]
+
+[sub_resource type="Resource" id="Resource_50c4p"]
+script = ExtResource("7_is2bi")
+entries = Array[ExtResource("5_44850")]([ExtResource("6_di5mn")])
+metadata/_custom_type_script = "uid://hrao22aybcej"
+
+[sub_resource type="Resource" id="Resource_exeqg"]
+script = ExtResource("7_is2bi")
+entries = Array[ExtResource("5_44850")]([ExtResource("8_tdg6d")])
+metadata/_custom_type_script = "uid://hrao22aybcej"
+
+[sub_resource type="Resource" id="Resource_jugie"]
+script = ExtResource("7_is2bi")
+entries = Array[ExtResource("5_44850")]([ExtResource("9_5ns33")])
+metadata/_custom_type_script = "uid://hrao22aybcej"
 
 [node name="TestItems" type="Node3D" unique_id=308486388]
 
@@ -17,8 +37,20 @@ collision_layer = 2
 size = Vector3(40, 0.5, 40)
 
 [node name="Player" parent="." unique_id=1584554695 instance=ExtResource("2_kn6c4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80747, 3.7152233)
+transform = Transform3D(-0.11403144, 0, -0.99347717, 0, 1, 0, 0.99347717, 0, -0.11403144, 0, 2.80747, 3.7152233)
 
 [node name="ItemSpawnPoint" parent="." unique_id=791236795 instance=ExtResource("3_5nrpg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, 0.9428048)
 pool = ExtResource("4_vgvj0")
+
+[node name="ItemSpawnPoint2" parent="." unique_id=129632351 instance=ExtResource("3_5nrpg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, -3.8559864)
+pool = SubResource("Resource_50c4p")
+
+[node name="ItemSpawnPoint3" parent="." unique_id=2005141264 instance=ExtResource("3_5nrpg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, 4.1537642)
+pool = SubResource("Resource_exeqg")
+
+[node name="ItemSpawnPoint4" parent="." unique_id=825702485 instance=ExtResource("3_5nrpg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, 7.420475)
+pool = SubResource("Resource_jugie")

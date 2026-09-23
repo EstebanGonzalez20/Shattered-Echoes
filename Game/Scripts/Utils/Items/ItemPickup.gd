@@ -8,7 +8,9 @@ extends Node3D
 ## Area que detecta colisión con otras entidades.
 @onready var _detection_area: Area3D = $DetectionArea
 ## Area que detecta al jugador para mostrar o no el tooltip.
-@onready var _tooltip_area: Area3D = $TooltipArea
+@onready var _proximity_area: Area3D = $ProximityArea
+## Area que detecta cuando el jugador mira al item.
+@onready var _look_area : Area3D = $LookArea
 
 ## Flag que verifica la proximidad del usuario para mostrar el tooltip.
 var _player_nearby: bool = false
@@ -18,9 +20,9 @@ var _mouse_hovering: bool = false
 func _ready() -> void:
 	_spawn_visual()
 	_detection_area.body_entered.connect(_on_body_entered)
-	_tooltip_area.body_entered.connect(_on_player_entered)
-	_tooltip_area.body_exited.connect(_on_player_exited)
-	_tooltip_area.input_ray_pickable = true
+	_proximity_area.body_entered.connect(_on_player_entered)
+	_proximity_area.body_exited.connect(_on_player_exited)
+	_look_area.input_ray_pickable = true
 
 func _spawn_visual() -> void:
 	if item == null:
