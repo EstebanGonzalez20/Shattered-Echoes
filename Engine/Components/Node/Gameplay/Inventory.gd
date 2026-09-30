@@ -24,6 +24,7 @@ func add_item_hooks(item : PassiveItem) -> void:
 
 ## Añade el objeto pasivo al inventario.
 func add_passive_item(item: PassiveItem, amount: int = 1) -> void:
+	print("agarró el item")
 	if passive_items.has(item.id):
 		passive_items[item.id].count += amount
 
@@ -32,4 +33,5 @@ func add_passive_item(item: PassiveItem, amount: int = 1) -> void:
 		add_item_hooks(item)
 
 	if item.hooks.has(Globals.EventHooks.OnStack):
+		print("tiene el hook")
 		item.on_stack_changed(entity, passive_items[item.id]["count"])

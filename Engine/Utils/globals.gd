@@ -19,11 +19,12 @@ enum EffectType {
 
 ## Enum que dicta qué objetos pertenecen a qué layer
 enum CollisionLayers {
-	WORLD = 0,
-	PLAYERS = 1,
-	ENEMIES = 2,
-	PROJECTILES = 3,
-	PICKUPS = 20
+	WORLD = 1,
+	PLAYERS = 2,
+	ENEMIES = 4,
+	PROJECTILES = 8,
+	PICKUPS = 16,
+	LOOKABLE = 32
 }
 
 ## Enum que dicta los tipos de modificadores que hay para las estadísticas.

@@ -40,15 +40,15 @@ size = Vector3(40, 0.5, 40)
 transform = Transform3D(-0.11403144, 0, -0.99347717, 0, 1, 0, 0.99347717, 0, -0.11403144, 0, 2.80747, 3.7152233)
 
 [node name="ItemSpawnPoint" parent="." unique_id=791236795 instance=ExtResource("3_5nrpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, 0.9428048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, -9.98735)
 pool = ExtResource("4_vgvj0")
 
 [node name="ItemSpawnPoint2" parent="." unique_id=129632351 instance=ExtResource("3_5nrpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, -3.8559864)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, 0.9365952)
 pool = SubResource("Resource_50c4p")
 
 [node name="ItemSpawnPoint3" parent="." unique_id=2005141264 instance=ExtResource("3_5nrpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.211069, 0.7157702, 4.1537642)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.838131, 0.7157702, 4.1537642)
 pool = SubResource("Resource_exeqg")
 
 [node name="ItemSpawnPoint4" parent="." unique_id=825702485 instance=ExtResource("3_5nrpg")]

@@ -8,6 +8,7 @@ load_path = "res://.godot/imported/testitem4.png-3ab36d8b82be4d738e7c2d55bc7eda7
 
 [resource]
 script = ExtResource("1_0qv7b")
+hooks = Array[int]([0])
 id = &"xd"
 name = "xd"
 description = "aaa"

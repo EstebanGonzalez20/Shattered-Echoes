@@ -20,7 +20,7 @@ func get_hovered_item_pickup() -> ItemPickup:
 	var ray_end := ray_origin + ray_direction * ray_length ## Punto final del ray.
 	
 	var query := PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
-	query.collision_mask = Globals.CollisionLayers.PICKUPS  # ajustar al bit de capa donde están los ItemPickup
+	query.collision_mask = Globals.CollisionLayers.LOOKABLE  # ajustar al bit de capa donde están los ItemPickup
 	query.collide_with_areas = true   # Permite al raycast interactuar con Area3D
 	query.collide_with_bodies = false # Evita chocar contra el jugador/paredes acá
 	

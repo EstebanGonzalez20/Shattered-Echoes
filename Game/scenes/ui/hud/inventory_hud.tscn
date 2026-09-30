@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cxu4cmo8c1lbl"]
+
+[node name="InventoryHud" type="PanelContainer" unique_id=1313642060]
+custom_minimum_size = Vector2(264, 454)
+custom_maximum_size = Vector2(264, 454)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2129678957]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ItemGrid" type="GridContainer" parent="MarginContainer" unique_id=1096012031]
+layout_mode = 2
+columns = 4

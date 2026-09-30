@@ -12,17 +12,16 @@ radius = 4.0
 [node name="ItemPickup" type="Node3D" unique_id=991594032]
 script = ExtResource("1_ntmvs")
 
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=544978407]
+billboard = 1
+
 [node name="DetectionArea" type="Area3D" parent="." unique_id=1409833875]
 collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=554896498]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-visible = false
 shape = SubResource("SphereShape3D_u04hk")
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=544978407]
-billboard = 1
 
 [node name="ProximityArea" type="Area3D" parent="." unique_id=547736554]
 collision_layer = 16
@@ -32,7 +31,7 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_ntmvs")
 
 [node name="LookArea" type="Area3D" parent="." unique_id=1509300001]
-collision_layer = 16
+collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LookArea" unique_id=2016603900]
