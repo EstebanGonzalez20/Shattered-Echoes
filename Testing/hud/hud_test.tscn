@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://o3ce1iqeut1r"]
+
+[ext_resource type="Script" uid="uid://csvfsgxthaavm" path="res://Game/controller.gd" id="1_8l715"]
+[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="2_rf8e1"]
+[ext_resource type="PackedScene" uid="uid://nywik2fsq2bi" path="res://Game/scenes/ui/hud/hud.tscn" id="3_ihtag"]
+[ext_resource type="Script" uid="uid://rufuw3o2xxye" path="res://Testing/hud/damage_zone.gd" id="4_ndkeu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s0bqv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u04hk"]
+
+[node name="HudTest" type="Node3D" unique_id=243109552]
+
+[node name="SystemsController" type="Node" parent="." unique_id=1391331349]
+script = ExtResource("1_8l715")
+
+[node name="Player" parent="." unique_id=1584554695 instance=ExtResource("2_rf8e1")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2080757682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+use_collision = true
+collision_layer = 2
+size = Vector3(20, 0.5, 20)
+
+[node name="Hud" parent="." unique_id=896107773 instance=ExtResource("3_ihtag")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1589197214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4325438)
+mesh = SubResource("BoxMesh_s0bqv")
+script = ExtResource("4_ndkeu")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D" unique_id=813921132]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D" unique_id=1480723515]
+shape = SubResource("BoxShape3D_u04hk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1407282313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.746691, 0)
+light_energy = 10.0
+omni_range = 1452.378
+
+[connection signal="body_entered" from="MeshInstance3D/Area3D" to="MeshInstance3D" method="_on_area_3d_body_entered"]

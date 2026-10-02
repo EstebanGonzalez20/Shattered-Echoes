@@ -1,4 +1,4 @@
-extends CanvasLayer
+class_name Hud extends CanvasLayer
 
 @onready var healthBar = $Control/HealthBar
 @onready var currencyCounter = $Control/CurrencyCounter

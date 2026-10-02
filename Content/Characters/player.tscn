@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bpj4ct6sdsxmd"]
 
+[ext_resource type="Script" uid="uid://cdr62n72tv3sj" path="res://Game/Scripts/Utils/player.gd" id="1_jdigc"]
 [ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_pku2s"]
 [ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_p5mnu"]
 [ext_resource type="Script" uid="uid://cbrb5ostmuqdj" path="res://Engine/Components/Resource/Gameplay/weapon.gd" id="3_u6305"]
@@ -83,6 +84,7 @@ size = Vector3(0.7, 1.5, 0.7)
 [node name="Player" type="CharacterBody3D" unique_id=1584554695 groups=["players"]]
 collision_layer = 2
 collision_mask = 31
+script = ExtResource("1_jdigc")
 
 [node name="Head" type="Node3D" parent="." unique_id=44642953]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
