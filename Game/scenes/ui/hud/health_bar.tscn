@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfsdfbds7gewd"]
 
-[ext_resource type="Script" uid="uid://dbentfi11o2xx" path="res://Game/Scripts/UI/health_bar.gd" id="1_cqknx"]
+[ext_resource type="Script" uid="uid://dbentfi11o2xx" path="res://Game/Scripts/ui/health_bar.gd" id="1_cqknx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2ot5"]
 
@@ -22,8 +22,19 @@ bg_color = Color(0.98379046, 0.80898976, 0.7887366, 1)
 
 [node name="HealthBar" type="ProgressBar" unique_id=940840797]
 z_index = 1
-offset_right = 240.0
-offset_bottom = 8.0
+custom_minimum_size = Vector2(0, 18)
+custom_maximum_size = Vector2(-1, 18)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -4.0
+offset_right = 120.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_k2ot5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cqknx")
 value = 60.0
@@ -32,6 +43,7 @@ script = ExtResource("1_cqknx")
 
 [node name="DamageBar" type="ProgressBar" parent="." unique_id=942403007]
 z_index = -1
+custom_maximum_size = Vector2(-1, 18)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,5 +58,23 @@ show_percentage = false
 [node name="Timer" type="Timer" parent="." unique_id=764704496]
 wait_time = 0.4
 one_shot = true
+
+[node name="HealthLabel" type="Label" parent="." unique_id=133152840]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -11.5
+offset_right = 15.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "1/1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
