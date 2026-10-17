@@ -9,9 +9,12 @@ func get_type() -> StringName:
 		if current_health > max_health or current_health == -1:
 			current_health = max_health
 
-var current_health: float = -1:
+var current_health: float :
 	set(value):
 		current_health = min(max(value, 0), max_health)
+
+func initialize() -> void:
+	current_health = max_health
 
 func is_alive() -> bool:
 	return current_health > 0

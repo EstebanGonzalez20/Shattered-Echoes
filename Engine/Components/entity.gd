@@ -7,7 +7,10 @@ var _components: Dictionary = {}
 
 func _ready() -> void:
 	for component in initial_components:
-		add_component(component.duplicate())
+		var component_istance : Component  = component.duplicate()
+		component_istance.initialize()
+		add_component(component_istance)
+		
 
 	# Después los NodeComponents que ya son hijos en el árbol
 	for child in get_children():
