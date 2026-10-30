@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://cbag1fkfi2e5s"]
+
+[ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="1_qba0b"]
+[ext_resource type="Script" uid="uid://dbwo1j7eyg556" path="res://Engine/Resources/character_data.gd" id="2_7yh7c"]
+[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="2_t2f60"]
+[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="3_akq6e"]
+[ext_resource type="Script" uid="uid://be2y0o30ucagp" path="res://Engine/Components/Resource/Stadistics/damage.gd" id="4_qls30"]
+[ext_resource type="Script" uid="uid://bi0qxqhedesed" path="res://Engine/Components/Resource/Stadistics/attack_speed.gd" id="5_lhy8u"]
+
+[sub_resource type="Resource" id="Resource_tlw20"]
+script = ExtResource("2_t2f60")
+max_health = 100
+metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
+
+[sub_resource type="Resource" id="Resource_ymwqk"]
+script = ExtResource("3_akq6e")
+jump_velocity = 5.0
+base_value = 10.0
+metadata/_custom_type_script = "uid://fiqspojmjr1c"
+
+[sub_resource type="Resource" id="Resource_t2f60"]
+script = ExtResource("4_qls30")
+base_value = 10.0
+metadata/_custom_type_script = "uid://be2y0o30ucagp"
+
+[sub_resource type="Resource" id="Resource_akq6e"]
+script = ExtResource("5_lhy8u")
+base_value = 0.85
+metadata/_custom_type_script = "uid://bi0qxqhedesed"
+
+[resource]
+script = ExtResource("2_7yh7c")
+character_name = "Knight"
+initial_components = Array[ExtResource("1_qba0b")]([SubResource("Resource_tlw20"), SubResource("Resource_ymwqk"), SubResource("Resource_t2f60"), SubResource("Resource_akq6e")])
+metadata/_custom_type_script = "uid://dbwo1j7eyg556"
