@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://brijmw2r4bkyu" path="res://Engine/Resources/skill_effect.gd" id="1_maell"]
 [ext_resource type="Script" uid="uid://b2pamn375axb4" path="res://Engine/Resources/scalable_stat_effect.gd" id="2_2mndr"]
 [ext_resource type="Script" uid="uid://cpv56fehjuv5a" path="res://Engine/Resources/fixed_stat_effect.gd" id="3_holit"]
-[ext_resource type="PackedScene" uid="uid://du1drmy1bqh2o" path="res://Content/Projectiles/melee.tscn" id="4_vw372"]
+[ext_resource type="PackedScene" uid="uid://du1drmy1bqh2o" path="res://Content/Projectiles/Allies/melee.tscn" id="4_vw372"]
 [ext_resource type="Script" uid="uid://dka3u1veeds2h" path="res://Engine/Resources/projectile_scene_effect.gd" id="5_atx5n"]
 [ext_resource type="Script" uid="uid://ccav244rm57fh" path="res://Engine/Resources/skill_resource.gd" id="6_33h1q"]
 
