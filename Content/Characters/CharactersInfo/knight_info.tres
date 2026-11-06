@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterInfo" format=3 uid="uid://de6gim717vjbb"]
+
+[ext_resource type="Texture2D" uid="uid://ej52266suj44" path="res://Assets/Characters/Knight/knight_splashart.PNG" id="1_15jst"]
+[ext_resource type="Script" uid="uid://nmcaf8upmjpk" path="res://Engine/Resources/characetr_info.gd" id="1_kswwj"]
+
+[resource]
+script = ExtResource("1_kswwj")
+character_name = &"Knight"
+base_max_health_value = 100
+base_damage_value = 10
+base_attack_speed_value = 0.85
+max_movement_speed_value = 10
+characetr_splashart = ExtResource("1_15jst")
+metadata/_custom_type_script = "uid://nmcaf8upmjpk"
