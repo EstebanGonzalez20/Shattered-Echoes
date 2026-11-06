@@ -78,6 +78,7 @@ script = ExtResource("3_h0npb")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=257266446]
 stream = ExtResource("4_h0npb")
 autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Menu/ButtonContainer/PlayButton" to="Menu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="Menu/ButtonContainer/QuitButton" to="Menu" method="_on_quit_button_pressed"]
