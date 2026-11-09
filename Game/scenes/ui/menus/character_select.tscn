@@ -7,6 +7,12 @@
 [ext_resource type="Resource" uid="uid://gev44vld5ive" path="res://Content/Characters/CharactersInfo/samurai_info.tres" id="5_56m01"]
 [ext_resource type="Resource" uid="uid://b66vqhiy0e4bp" path="res://Content/Characters/CharactersInfo/sorcerer_info.tres" id="6_plbg7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56m01"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="CharacterSelect" type="Node3D" unique_id=25731525]
 script = ExtResource("1_ghmy7")
 
@@ -52,14 +58,133 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CharacterDisplay/PanelContainer" unique_id=1930306985]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Splashart" type="TextureRect" parent="CharacterDisplay/PanelContainer/VBoxContainer" unique_id=1318074859]
+custom_minimum_size = Vector2(155, 155)
 layout_mode = 2
+size_flags_horizontal = 4
+stretch_mode = 3
 
 [node name="CharactersName" type="Label" parent="CharacterDisplay/PanelContainer/VBoxContainer" unique_id=1417221655]
 layout_mode = 2
 text = "Nombre del personaje"
 horizontal_alignment = 1
+
+[node name="StatContainerTop" type="HBoxContainer" parent="CharacterDisplay/PanelContainer/VBoxContainer" unique_id=1404369657]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="HealthLabel" type="RichTextLabel" parent="CharacterDisplay/PanelContainer/VBoxContainer/StatContainerTop" unique_id=1239146277]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="DamageLabel" type="RichTextLabel" parent="CharacterDisplay/PanelContainer/VBoxContainer/StatContainerTop" unique_id=314076297]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="StatContainerBottom" type="HBoxContainer" parent="CharacterDisplay/PanelContainer/VBoxContainer" unique_id=591593390]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="SpeedLabel" type="RichTextLabel" parent="CharacterDisplay/PanelContainer/VBoxContainer/StatContainerBottom" unique_id=1959804407]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AttackSpeedLabel" type="RichTextLabel" parent="CharacterDisplay/PanelContainer/VBoxContainer/StatContainerBottom" unique_id=178859752]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+text_direction = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CharacterDisplay/PanelContainer/VBoxContainer" unique_id=1256847647]
+custom_minimum_size = Vector2(300, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_56m01")
+
+[node name="Label" type="Label" parent="CharacterDisplay/PanelContainer/VBoxContainer" unique_id=1053523662]
+layout_mode = 2
+text = "Información general"
+horizontal_alignment = 1
+
+[node name="CharacterDescription" type="Label" parent="CharacterDisplay/PanelContainer/VBoxContainer" unique_id=1706286733]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+autowrap_mode = 2
+
+[node name="WeaponContainer" type="HBoxContainer" parent="CharacterDisplay/PanelContainer/VBoxContainer" unique_id=473414754]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="WeaponImage" type="TextureRect" parent="CharacterDisplay/PanelContainer/VBoxContainer/WeaponContainer" unique_id=2135724340]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_horizontal = 0
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterDisplay/PanelContainer/VBoxContainer/WeaponContainer" unique_id=177273022]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="WeaponName" type="Label" parent="CharacterDisplay/PanelContainer/VBoxContainer/WeaponContainer/VBoxContainer" unique_id=1497897344]
+layout_mode = 2
+
+[node name="WeaponDesciption" type="Label" parent="CharacterDisplay/PanelContainer/VBoxContainer/WeaponContainer/VBoxContainer" unique_id=1762343808]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+size_flags_vertical = 8
+autowrap_mode = 2
+
+[node name="AbilityContainer" type="HBoxContainer" parent="CharacterDisplay/PanelContainer/VBoxContainer" unique_id=1386834640]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="AbilityImage" type="TextureRect" parent="CharacterDisplay/PanelContainer/VBoxContainer/AbilityContainer" unique_id=1012320212]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_horizontal = 0
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterDisplay/PanelContainer/VBoxContainer/AbilityContainer" unique_id=543601887]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="AbilityName" type="Label" parent="CharacterDisplay/PanelContainer/VBoxContainer/AbilityContainer/VBoxContainer" unique_id=1103328906]
+layout_mode = 2
+
+[node name="AbilityDesciption" type="Label" parent="CharacterDisplay/PanelContainer/VBoxContainer/AbilityContainer/VBoxContainer" unique_id=1967790871]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+size_flags_vertical = 8
+autowrap_mode = 2
 
 [node name="Characters" type="Node3D" parent="." unique_id=1125269966]
 

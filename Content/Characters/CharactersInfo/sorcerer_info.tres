@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterInfo" format=3 uid="uid://b66vqhiy0e4bp"]
 
+[ext_resource type="Texture2D" uid="uid://bq38884ojr0jd" path="res://Assets/Characters/Sorcerer/sorcere_splashart.png" id="1_gilpu"]
 [ext_resource type="Script" uid="uid://nmcaf8upmjpk" path="res://Engine/Resources/characetr_info.gd" id="1_s4sx1"]
 
 [resource]
@@ -8,5 +9,7 @@ character_name = &"Sorcerer"
 base_max_health_value = 70
 base_damage_value = 2
 base_attack_speed_value = 1.2
-max_movement_speed_value = 8
+base_movement_speed_value = 10
+characetr_splashart = ExtResource("1_gilpu")
+character_description = "                                 Proximamente"
 metadata/_custom_type_script = "uid://nmcaf8upmjpk"

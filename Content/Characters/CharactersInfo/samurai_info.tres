@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterInfo" format=3 uid="uid://gev44vld5ive"]
 
 [ext_resource type="Script" uid="uid://nmcaf8upmjpk" path="res://Engine/Resources/characetr_info.gd" id="1_or3sl"]
+[ext_resource type="Texture2D" uid="uid://caa6ix3ewubaw" path="res://Assets/Characters/Samurai/samurai_spalshart.png" id="1_tq2fo"]
 
 [resource]
 script = ExtResource("1_or3sl")
@@ -8,5 +9,7 @@ character_name = &"Samurai"
 base_max_health_value = 85
 base_damage_value = 5
 base_attack_speed_value = 1.0
-max_movement_speed_value = 10
+base_movement_speed_value = 15
+characetr_splashart = ExtResource("1_tq2fo")
+character_description = "                                 Proximamente"
 metadata/_custom_type_script = "uid://nmcaf8upmjpk"

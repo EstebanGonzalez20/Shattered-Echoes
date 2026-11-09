@@ -36,6 +36,6 @@ func _process(delta: float) -> void:
 			current_index += 1
 			character_display.display_character(current_character.character_info)
 		
-		if Input.is_action_pressed("move_left"):
+		if Input.is_action_just_pressed("move_left"):
 			current_index -= 1
 			character_display.display_character(current_character.character_info)

@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="CharacterInfo" format=3 uid="uid://de6gim717vjbb"]
 
 [ext_resource type="Texture2D" uid="uid://ej52266suj44" path="res://Assets/Characters/Knight/knight_splashart.PNG" id="1_15jst"]
+[ext_resource type="Texture2D" uid="uid://b7yugm78wlblx" path="res://Assets/Characters/Knight/ability.jpg" id="1_i28u8"]
 [ext_resource type="Script" uid="uid://nmcaf8upmjpk" path="res://Engine/Resources/characetr_info.gd" id="1_kswwj"]
+[ext_resource type="Texture2D" uid="uid://dy4qwgkceeeba" path="res://Assets/Characters/Knight/sword.jpg" id="3_aug0o"]
 
 [resource]
 script = ExtResource("1_kswwj")
@@ -9,6 +11,13 @@ character_name = &"Knight"
 base_max_health_value = 100
 base_damage_value = 10
 base_attack_speed_value = 0.85
-max_movement_speed_value = 10
+base_movement_speed_value = 10
 characetr_splashart = ExtResource("1_15jst")
+character_description = "Personaje balanceado con buen daño y aguante. Cuenta con una barra de estamina que limita las acciones."
+weapon_name = "Espada y escudo"
+weapon_description = "Realiza ataques rápidos con la espada y bloquea ataques con el escudo."
+weapon_image = ExtResource("3_aug0o")
+ability_name = "Rodar"
+ability_description = "La caballera se desplaza hacia adelante rodando y esquivando los ataques."
+ability_image = ExtResource("1_i28u8")
 metadata/_custom_type_script = "uid://nmcaf8upmjpk"
