@@ -100,9 +100,9 @@ theme_override_constants/separation = 60
 alignment = 1
 
 [node name="SpeedLabel" type="RichTextLabel" parent="CharacterDisplay/PanelContainer/VBoxContainer/StatContainerBottom" unique_id=1959804407]
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
+layout_direction = 2
 bbcode_enabled = true
 fit_content = true
 horizontal_alignment = 1

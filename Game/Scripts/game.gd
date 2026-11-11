@@ -9,7 +9,7 @@ func _ready() -> void:
 	player.character_data = GameSession.selected_character
 	player.initialize()
 	player.player_died.connect(_on_player_dead)
-	hud.initialize(player.entity_component.get_component("Health").max_health)
+	hud.initialize(player.entity_component.get_component("Health").max_health, player.entity_component.get_component("Stamina"))
 	audio_stream_player.play(27)
 
 func _on_player_dead() -> void:

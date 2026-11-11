@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://be2y0o30ucagp" path="res://Engine/Components/Resource/Stadistics/damage.gd" id="3_dtk8j"]
 [ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="4_kjd50"]
 [ext_resource type="Script" uid="uid://bi0qxqhedesed" path="res://Engine/Components/Resource/Stadistics/attack_speed.gd" id="5_1bu05"]
+[ext_resource type="Script" uid="uid://jj870up6poq6" path="res://Engine/Components/Resource/Stadistics/stamina.gd" id="6_kf3bf"]
 
 [sub_resource type="Resource" id="Resource_cmrml"]
 script = ExtResource("2_kf3bf")
@@ -28,8 +29,13 @@ script = ExtResource("5_1bu05")
 base_value = 0.85
 metadata/_custom_type_script = "uid://bi0qxqhedesed"
 
+[sub_resource type="Resource" id="Resource_56m01"]
+script = ExtResource("6_kf3bf")
+max_stamina = 100
+metadata/_custom_type_script = "uid://jj870up6poq6"
+
 [resource]
 script = ExtResource("1_onki0")
 characters_name = &"Caballera"
-initial_components = Array[ExtResource("1_u6hu6")]([SubResource("Resource_cmrml"), SubResource("Resource_hfi6w"), SubResource("Resource_li6ay"), SubResource("Resource_ql74n")])
+initial_components = Array[ExtResource("1_u6hu6")]([SubResource("Resource_cmrml"), SubResource("Resource_hfi6w"), SubResource("Resource_li6ay"), SubResource("Resource_ql74n"), SubResource("Resource_56m01")])
 metadata/_custom_type_script = "uid://dbwo1j7eyg556"

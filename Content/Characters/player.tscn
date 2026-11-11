@@ -2,57 +2,14 @@
 
 [ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_pku2s"]
 [ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_p5mnu"]
-[ext_resource type="Script" uid="uid://cbrb5ostmuqdj" path="res://Engine/Components/Resource/Gameplay/weapon.gd" id="3_u6305"]
 [ext_resource type="Script" uid="uid://duevyhqv1q6ch" path="res://Engine/Components/Resource/Gameplay/look.gd" id="5_jdigc"]
-[ext_resource type="Resource" uid="uid://b45ptcc3rhmya" path="res://Content/Skills/Attacks/sword_basic_swing.tres" id="6_7cmeo"]
-[ext_resource type="Script" uid="uid://cvky1r7l5thsf" path="res://Engine/Components/Resource/Gameplay/player_input.gd" id="6_p70jc"]
-[ext_resource type="Script" uid="uid://b2pamn375axb4" path="res://Engine/Resources/scalable_stat_effect.gd" id="7_55ogs"]
-[ext_resource type="Script" uid="uid://6j7rexoxg3kj" path="res://Engine/Components/Resource/Gameplay/wallet.gd" id="7_qd5y6"]
+[ext_resource type="Script" uid="uid://cvky1r7l5thsf" path="res://Engine/Components/Node/Gameplay/player_input.gd" id="6_p70jc"]
 [ext_resource type="Script" uid="uid://dpyakykl46quv" path="res://Engine/Components/Node/Gameplay/pickup_collector.gd" id="9_1ww3p"]
-[ext_resource type="Resource" uid="uid://bwxhaovc2eh6b" path="res://Content/Skills/Attacks/healing_special_attack.tres" id="9_rj5p2"]
-[ext_resource type="Script" uid="uid://du6uxk4qcsk8" path="res://Engine/Components/Resource/Stadistics/healing.gd" id="14_0awg1"]
 [ext_resource type="Script" uid="uid://bvugimqgg43aw" path="res://Engine/Components/Node/hurtbox.gd" id="14_ec6tw"]
 
-[sub_resource type="Resource" id="Resource_piaqt"]
+[sub_resource type="Resource" id="Resource_p5mnu"]
 script = ExtResource("5_jdigc")
 metadata/_custom_type_script = "uid://duevyhqv1q6ch"
-
-[sub_resource type="Resource" id="Resource_608vp"]
-script = ExtResource("6_p70jc")
-metadata/_custom_type_script = "uid://cvky1r7l5thsf"
-
-[sub_resource type="Resource" id="Resource_5qoqd"]
-script = ExtResource("7_qd5y6")
-metadata/_custom_type_script = "uid://6j7rexoxg3kj"
-
-[sub_resource type="Resource" id="Resource_uu26y"]
-script = ExtResource("7_55ogs")
-stat_value = 1.0
-metadata/_custom_type_script = "uid://b2pamn375axb4"
-
-[sub_resource type="Resource" id="Resource_vfqvt"]
-script = ExtResource("7_55ogs")
-stat_value = 10.0
-metadata/_custom_type_script = "uid://b2pamn375axb4"
-
-[sub_resource type="Resource" id="Resource_p70jc"]
-script = ExtResource("7_55ogs")
-stat_value = 10.0
-metadata/_custom_type_script = "uid://b2pamn375axb4"
-
-[sub_resource type="Resource" id="Resource_55ogs"]
-script = ExtResource("3_u6305")
-basic_attack = ExtResource("6_7cmeo")
-special_attack = ExtResource("9_rj5p2")
-scaling_damage = SubResource("Resource_vfqvt")
-scaling_healing = SubResource("Resource_p70jc")
-scaling_attack_speed = SubResource("Resource_uu26y")
-metadata/_custom_type_script = "uid://cbrb5ostmuqdj"
-
-[sub_resource type="Resource" id="Resource_jdigc"]
-script = ExtResource("14_0awg1")
-healing = 10.0
-metadata/_custom_type_script = "uid://du6uxk4qcsk8"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2dcui"]
 size = Vector3(0.7, 1.5, 0.7)
@@ -68,13 +25,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="EntityComponent" type="Node" parent="." unique_id=486308515]
 script = ExtResource("1_pku2s")
-initial_components = Array[ExtResource("2_p5mnu")]([SubResource("Resource_piaqt"), SubResource("Resource_608vp"), SubResource("Resource_5qoqd"), SubResource("Resource_55ogs"), SubResource("Resource_jdigc")])
+initial_components = Array[ExtResource("2_p5mnu")]([SubResource("Resource_p5mnu")])
 
 [node name="PickupCollector" type="Node" parent="EntityComponent" unique_id=366473627]
 script = ExtResource("9_1ww3p")
 
 [node name="Hurtbox" type="Node" parent="EntityComponent" unique_id=85451404]
 script = ExtResource("14_ec6tw")
+
+[node name="PlayerInput" type="Node" parent="EntityComponent" unique_id=129221421]
+script = ExtResource("6_p70jc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1704074740]
 shape = SubResource("BoxShape3D_2dcui")
