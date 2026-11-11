@@ -1,5 +1,8 @@
 class_name Health extends Component
 
+signal damage_taken(amount: int)
+signal die
+
 func get_type() -> StringName:
 	return &"Health"
 
@@ -24,3 +27,6 @@ func heal(amount: float):
 
 func take_damage(amount: float):
 	current_health -= amount
+	damage_taken.emit(amount)
+	if current_health == 0:
+		die.emit()

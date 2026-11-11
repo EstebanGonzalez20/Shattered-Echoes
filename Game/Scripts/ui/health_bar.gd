@@ -2,6 +2,7 @@ extends ProgressBar
 
 @onready var timer = $Timer
 @onready var damageBar = $DamageBar
+@onready var health_label: Label = $HealthLabel
 
 var health := 0
 
@@ -13,6 +14,8 @@ func initialize(max_health: int):
 	
 	damageBar.max_value = max_health
 	damageBar.value = max_health
+	
+	health_label.text = "%s/%s" % [max_health, max_health]
 
 func set_health(new_health: int):
 	var previous_health = health
@@ -25,6 +28,8 @@ func set_health(new_health: int):
 		
 	else:
 		damageBar.value = health
+	
+	health_label.text = "%s/%s" % [value, max_value]
 
 func _on_timer_timeout() -> void:
 	damageBar.value = value

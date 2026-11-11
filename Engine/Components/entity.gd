@@ -41,6 +41,8 @@ func add_component(component: Object) -> void:
 	if component is FirstAttackCooldown:
 		component.can_attack.connect(_on_can_attack)
 	add_child(component)
+	if component is Component:
+		component.initialize()
 	_components[type] = component
 
 ## Devuelve un componente a partir de su tipo

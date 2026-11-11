@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://2ytcbolqbrjl"]
+
+[ext_resource type="Script" uid="uid://dbwo1j7eyg556" path="res://Engine/Resources/character_data.gd" id="1_onki0"]
+[ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="1_u6hu6"]
+[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="2_kf3bf"]
+[ext_resource type="Script" uid="uid://be2y0o30ucagp" path="res://Engine/Components/Resource/Stadistics/damage.gd" id="3_dtk8j"]
+[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="4_kjd50"]
+[ext_resource type="Script" uid="uid://bi0qxqhedesed" path="res://Engine/Components/Resource/Stadistics/attack_speed.gd" id="5_1bu05"]
+
+[sub_resource type="Resource" id="Resource_cmrml"]
+script = ExtResource("2_kf3bf")
+max_health = 100.0
+metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
+
+[sub_resource type="Resource" id="Resource_hfi6w"]
+script = ExtResource("3_dtk8j")
+base_value = 10.0
+metadata/_custom_type_script = "uid://be2y0o30ucagp"
+
+[sub_resource type="Resource" id="Resource_li6ay"]
+script = ExtResource("4_kjd50")
+jump_velocity = 5.0
+base_value = 10.0
+metadata/_custom_type_script = "uid://fiqspojmjr1c"
+
+[sub_resource type="Resource" id="Resource_ql74n"]
+script = ExtResource("5_1bu05")
+base_value = 0.85
+metadata/_custom_type_script = "uid://bi0qxqhedesed"
+
+[resource]
+script = ExtResource("1_onki0")
+characters_name = &"Caballera"
+initial_components = Array[ExtResource("1_u6hu6")]([SubResource("Resource_cmrml"), SubResource("Resource_hfi6w"), SubResource("Resource_li6ay"), SubResource("Resource_ql74n")])
+metadata/_custom_type_script = "uid://dbwo1j7eyg556"
