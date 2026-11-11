@@ -16,6 +16,7 @@ func initialize() -> void:
 	## Realiza todas las conexiones para la vida.
 	var player_health : Health = entity_component.get_component("Health")
 	player_health.damage_taken.connect(_on_damage_taken)
+	player_health.health_restore.connect(_on_health_restore)
 	player_health.die.connect(_on_die)
 	
 	## Realiza todas las conexiones para la estamina.
@@ -32,8 +33,12 @@ func _on_damage_taken(amount) -> void:
 	var player_health : Health = entity_component.get_component("Health")
 	hud.healthBar.set_health(player_health.current_health)
 
-func _on_stamina_changed(amount) -> void:
-	hud.stamina_bar.set_stamina(entity_component.get_component("Stamina").current_stamina)
+func _on_health_restore(amount) -> void:
+	var player_health : Health = entity_component.get_component("Health")
+	hud.healthBar.set_health(player_health.current_health)
+
+func _on_stamina_changed(new_value, old_value) -> void:
+	hud.update_stamina(entity_component.get_component("Stamina").current_stamina)
 
 func _on_action_done(action_name) -> void:
 	match action_name:
@@ -42,3 +47,7 @@ func _on_action_done(action_name) -> void:
 
 func _on_die() -> void:
 	player_died.emit()
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("accept"):
+		print(entity_component.get_component("Stamina").current_stamina)

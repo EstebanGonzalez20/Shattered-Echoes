@@ -17,6 +17,11 @@ func _ready() -> void:
 		if child is NodeComponent:
 			_components[child.get_type()] = child
 
+func _process(delta: float) -> void:
+	for component in _components.values():
+		if component.has_method("update"):
+			component.update(delta)
+
 ## Añade un componente a la entidad. El componente debe tener un tipo
 func add_component(component: Object) -> void:
 	var type: StringName
