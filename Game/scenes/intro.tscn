@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bie38qhvgpcwb"]
+
+[ext_resource type="VideoStream" uid="uid://c434ro7fnva0n" path="res://Assets/Videos/shattered_echoes_intro.ogv" id="1_6q003"]
+[ext_resource type="Script" uid="uid://dddqi72r0y3gi" path="res://Game/Scripts/intro.gd" id="1_om3jc"]
+
+[node name="Intro" type="Node2D" unique_id=1301710982]
+script = ExtResource("1_om3jc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1829094519]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2035953696]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -356.0
+offset_right = 640.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_6q003")
+autoplay = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
