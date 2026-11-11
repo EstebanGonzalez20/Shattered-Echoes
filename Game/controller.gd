@@ -45,8 +45,6 @@ func execute_task(task: Task) -> void:
 		
 		DamageEntityTask:
 			var entity := health_system.apply_damage(task)
-			if entity != null:
-				free_entity(entity)
 		
 		HealEntityTask:
 			health_system.apply_heal(task)

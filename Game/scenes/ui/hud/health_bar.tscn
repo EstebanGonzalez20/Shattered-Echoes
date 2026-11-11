@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfsdfbds7gewd"]
 
-[ext_resource type="Script" uid="uid://dbentfi11o2xx" path="res://Game/Scripts/UI/health_bar.gd" id="1_cqknx"]
+[ext_resource type="Script" uid="uid://dbentfi11o2xx" path="res://Game/Scripts/ui/health_bar.gd" id="1_cqknx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2ot5"]
 
@@ -26,7 +26,7 @@ offset_right = 240.0
 offset_bottom = 8.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_k2ot5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cqknx")
-value = 60.0
+value = 100.0
 show_percentage = false
 script = ExtResource("1_cqknx")
 
@@ -40,11 +40,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_utyx8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_d70t2")
-value = 80.0
+value = 100.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="." unique_id=764704496]
 wait_time = 0.4
 one_shot = true
+
+[node name="HealthLabel" type="Label" parent="." unique_id=375200422]
+layout_mode = 0
+offset_left = 197.0
+offset_right = 237.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,9 @@
 ## Esta clase almacena la información de los personajes que se muestra en los menús
 class_name CharacterInfo extends Resource
 
+## Ruta del character_data del personaje.
+@export var character_data_path : String
+
 ## Esta variable almacena el nombre del personaje
 @export var character_name : StringName
 

@@ -10,10 +10,6 @@
 [ext_resource type="Script" uid="uid://6j7rexoxg3kj" path="res://Engine/Components/Resource/Gameplay/wallet.gd" id="7_qd5y6"]
 [ext_resource type="Script" uid="uid://dpyakykl46quv" path="res://Engine/Components/Node/Gameplay/pickup_collector.gd" id="9_1ww3p"]
 [ext_resource type="Resource" uid="uid://bwxhaovc2eh6b" path="res://Content/Skills/Attacks/healing_special_attack.tres" id="9_rj5p2"]
-[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="9_uu26y"]
-[ext_resource type="Script" uid="uid://bi0qxqhedesed" path="res://Engine/Components/Resource/Stadistics/attack_speed.gd" id="10_0u7sf"]
-[ext_resource type="Script" uid="uid://be2y0o30ucagp" path="res://Engine/Components/Resource/Stadistics/damage.gd" id="11_lidmn"]
-[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="12_lidmn"]
 [ext_resource type="Script" uid="uid://du6uxk4qcsk8" path="res://Engine/Components/Resource/Stadistics/healing.gd" id="14_0awg1"]
 [ext_resource type="Script" uid="uid://bvugimqgg43aw" path="res://Engine/Components/Node/hurtbox.gd" id="14_ec6tw"]
 
@@ -53,25 +49,6 @@ scaling_healing = SubResource("Resource_p70jc")
 scaling_attack_speed = SubResource("Resource_uu26y")
 metadata/_custom_type_script = "uid://cbrb5ostmuqdj"
 
-[sub_resource type="Resource" id="Resource_0u7sf"]
-script = ExtResource("9_uu26y")
-jump_velocity = 4.0
-base_value = 5.0
-metadata/_custom_type_script = "uid://fiqspojmjr1c"
-
-[sub_resource type="Resource" id="Resource_ec6tw"]
-script = ExtResource("10_0u7sf")
-metadata/_custom_type_script = "uid://bi0qxqhedesed"
-
-[sub_resource type="Resource" id="Resource_rj5p2"]
-script = ExtResource("11_lidmn")
-metadata/_custom_type_script = "uid://be2y0o30ucagp"
-
-[sub_resource type="Resource" id="Resource_0awg1"]
-script = ExtResource("12_lidmn")
-max_health = 100.0
-metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
-
 [sub_resource type="Resource" id="Resource_jdigc"]
 script = ExtResource("14_0awg1")
 healing = 10.0
@@ -91,7 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="EntityComponent" type="Node" parent="." unique_id=486308515]
 script = ExtResource("1_pku2s")
-initial_components = Array[ExtResource("2_p5mnu")]([SubResource("Resource_piaqt"), SubResource("Resource_608vp"), SubResource("Resource_5qoqd"), SubResource("Resource_55ogs"), SubResource("Resource_0u7sf"), SubResource("Resource_ec6tw"), SubResource("Resource_rj5p2"), SubResource("Resource_0awg1"), SubResource("Resource_jdigc")])
+initial_components = Array[ExtResource("2_p5mnu")]([SubResource("Resource_piaqt"), SubResource("Resource_608vp"), SubResource("Resource_5qoqd"), SubResource("Resource_55ogs"), SubResource("Resource_jdigc")])
 
 [node name="PickupCollector" type="Node" parent="EntityComponent" unique_id=366473627]
 script = ExtResource("9_1ww3p")

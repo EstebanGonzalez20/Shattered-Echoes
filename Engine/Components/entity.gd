@@ -29,6 +29,8 @@ func add_component(component: Object) -> void:
 	assert(type != &"", "Componente %s retornó TYPE vacío" % component.get_class())
 
 	add_child(component)
+	if component is Component:
+		component.initialize()
 	_components[type] = component
 
 ## Devuelve un componente a partir de su tipo

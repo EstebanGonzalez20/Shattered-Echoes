@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b7fxfqyacvgtr"]
+
+[ext_resource type="Script" uid="uid://bn20x70npd7q0" path="res://Game/Scripts/game.gd" id="1_2jiha"]
+[ext_resource type="Sky" uid="uid://bt8fyfyndxtye" path="res://Assets/Shaders/Sky/Space/sky.tres" id="1_7475e"]
+[ext_resource type="Script" uid="uid://yaav0mglp0i5" path="res://Assets/Shaders/Sky/Space/sky_controller.gd" id="2_vc2ns"]
+[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="3_w3xpy"]
+[ext_resource type="Script" uid="uid://cdr62n72tv3sj" path="res://Game/Scripts/Utils/player.gd" id="4_2jiha"]
+[ext_resource type="Script" uid="uid://csvfsgxthaavm" path="res://Game/controller.gd" id="4_jik8v"]
+[ext_resource type="PackedScene" uid="uid://nywik2fsq2bi" path="res://Game/scenes/ui/hud/hud.tscn" id="7_bqf56"]
+[ext_resource type="AudioStream" uid="uid://codl860pp86eg" path="res://Assets/SFX/OST/level.mp3" id="8_yieuc"]
+
+[sub_resource type="Environment" id="Environment_w3xpy"]
+background_mode = 2
+sky = ExtResource("1_7475e")
+sky_custom_fov = 90.0
+ambient_light_sky_contribution = 0.0
+fog_sky_affect = 0.23
+
+[node name="Game" type="Node3D" unique_id=1908730838]
+script = ExtResource("1_2jiha")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=657045241]
+environment = SubResource("Environment_w3xpy")
+script = ExtResource("2_vc2ns")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=918310460]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 2.5, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1584554695 instance=ExtResource("3_w3xpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3025298, 0)
+script = ExtResource("4_2jiha")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2112973569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+use_collision = true
+collision_layer = 2
+size = Vector3(200, 0.5, 200)
+
+[node name="SystemsController" type="Node" parent="." unique_id=1251226107]
+script = ExtResource("4_jik8v")
+
+[node name="Hud" parent="." unique_id=896107773 instance=ExtResource("7_bqf56")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1918840786]
+stream = ExtResource("8_yieuc")
+autoplay = true
+parameters/looping = true

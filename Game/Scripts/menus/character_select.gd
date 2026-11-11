@@ -39,3 +39,8 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("move_left"):
 			current_index -= 1
 			character_display.display_character(current_character.character_info)
+		
+		if Input.is_action_pressed("accept"):
+			# Guardamos el personaje elegido en una variable global y cambiamos a la escena principal.
+			GameSession.selected_character = load(current_character.character_info.character_data_path).duplicate()
+			get_tree().change_scene_to_file("res://Game/scenes/game.tscn")
