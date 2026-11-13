@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://b3hamct2ecmpx"]
 
+[ext_resource type="Shader" uid="uid://14ob0yein7es" path="res://Assets/Shaders/Illumination/color_reveal_lighting.gdshader" id="1_i0otu"]
 [ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_rvfqy"]
+[ext_resource type="Texture2D" uid="uid://biqamv5htjtnl" path="res://Assets/Textures/color_red.png" id="2_qxkvb"]
 [ext_resource type="Script" uid="uid://cyky51380i3ww" path="res://Engine/Components/Node/enemy_navigation.gd" id="5_i0otu"]
 [ext_resource type="Script" uid="uid://bvugimqgg43aw" path="res://Engine/Components/Node/hurtbox.gd" id="7_6ylue"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82i5i"]
-albedo_color = Color(1, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ylue"]
+render_priority = 0
+shader = ExtResource("1_i0otu")
+shader_parameter/albedo_texture = ExtResource("2_qxkvb")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_do21r"]
-material = SubResource("StandardMaterial3D_82i5i")
+material = SubResource("ShaderMaterial_6ylue")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hggra"]
 

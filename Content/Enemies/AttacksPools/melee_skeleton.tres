@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AttacksPools" format=3 uid="uid://itgmhpgb1jjp"]
+
+[ext_resource type="Script" uid="uid://c88lhy2opavkx" path="res://Engine/Components/Resource/Miscellaneous/attacks_pool.gd" id="1_n0owj"]
+[ext_resource type="Resource" uid="uid://c8gg4adicb1dn" path="res://Content/Enemies/AttacksPool/basic_melee.tres" id="2_88ks3"]
+[ext_resource type="Script" uid="uid://ncj71bljd2nf" path="res://Engine/Components/Resource/Miscellaneous/attacks_pools.gd" id="2_e1rux"]
+
+[resource]
+script = ExtResource("2_e1rux")
+attacks_pools = Array[ExtResource("1_n0owj")]([ExtResource("2_88ks3")])
+metadata/_custom_type_script = "uid://ncj71bljd2nf"

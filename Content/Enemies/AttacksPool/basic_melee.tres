@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AttacksPool" format=3 uid="uid://c8gg4adicb1dn"]
+
+[ext_resource type="Script" uid="uid://ccav244rm57fh" path="res://Engine/Resources/skill_resource.gd" id="1_ftgfj"]
+[ext_resource type="Resource" uid="uid://b45ptcc3rhmya" path="res://Content/Skills/Attacks/sword_basic_swing.tres" id="2_qvcyk"]
+[ext_resource type="Script" uid="uid://c88lhy2opavkx" path="res://Engine/Components/Resource/Miscellaneous/attacks_pool.gd" id="2_rn8ic"]
+
+[resource]
+script = ExtResource("2_rn8ic")
+attacks_pool = Array[ExtResource("1_ftgfj")]([ExtResource("2_qvcyk")])
+metadata/_custom_type_script = "uid://c88lhy2opavkx"
