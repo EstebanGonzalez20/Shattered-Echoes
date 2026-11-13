@@ -14,7 +14,6 @@ var skill_system := SkillSystem.new()
 
 var players: Array[Node]
 var players_entities: Array[EntityComponent]
-var enemies: Array[Node]
 
 
 ## Libera una entidad de la escena
@@ -23,8 +22,6 @@ func free_entity(entity: Node3D) -> void:
 		players.erase(entity)
 		var entity_comp: EntityComponent = entity.get_node("EntityComponent")
 		players_entities.erase(entity_comp)
-	elif entity in enemies:
-		enemies.erase(entity)
 	
 	entity.queue_free()
 	if players.size() == 0:
@@ -67,12 +64,31 @@ func _on_navigation_velocity(enemy: CharacterBody3D, safe_velocity: Vector3) -> 
 	enemy_movement_system.on_velocity_computed(safe_velocity, enemy)
 
 
+## Evento para escuchar cuando un enemigo puede atacar
+func _on_enemy_can_attack(enemy: CharacterBody3D) -> void:
+	var enemy_entity_comp = enemy.get_node("EntityComponent")
+	var enemy_attacks_pools = enemy_entity_comp.get_component("AttacksPools").attacks_pools
+	var enemy_phase = enemy_entity_comp.get_component("Phases").current_phase
+	
+	var enemy_attacks_pool = enemy_attacks_pools[enemy_phase - 1].attacks_pool
+	var enemy_attack = enemy_attacks_pool.pick_random()
+	
+	var tasks: Array[Task] = skill_system.process_skill(enemy_attack, enemy, enemy_entity_comp)
+	process_tasks(tasks)
+
+## Evento para escuchar cuando un nodo se añade a la escena principal
+func _on_node_added(node: Node):
+	if node.is_in_group("enemies"):
+		node.get_node("EntityComponent").enemy_can_attack.connect(_on_enemy_can_attack)
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	players = get_tree().get_nodes_in_group("players")
 	for player in players:
 		players_entities.append(player.get_node("EntityComponent") as EntityComponent)
+	
+	get_tree().node_added.connect(_on_node_added)
 	
 	SignalBus.navigation_velocity_computed.connect(
 		_on_navigation_velocity

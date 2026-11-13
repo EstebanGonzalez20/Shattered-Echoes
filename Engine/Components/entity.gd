@@ -1,6 +1,8 @@
 ## Esta clase indica que un nodo se va a comportar como entidad
 class_name EntityComponent extends Node
 
+signal enemy_can_attack(enemy: CharacterBody3D)
+
 @export var initial_components: Array[Component] = []
 
 var _components: Dictionary = {}
@@ -32,7 +34,12 @@ func add_component(component: Object) -> void:
 		return
 
 	assert(type != &"", "Componente %s retornó TYPE vacío" % component.get_class())
-
+	
+	if component is EnemyBehavior:
+		component.enemy_still.connect(_on_enemy_still)
+	
+	if component is FirstAttackCooldown:
+		component.can_attack.connect(_on_can_attack)
 	add_child(component)
 	_components[type] = component
 
@@ -54,3 +61,10 @@ func remove_component(type: StringName) -> void:
 
 	if component is Node:
 		component.queue_free()
+
+func _on_enemy_still() -> void:
+	var FAC = get_component("FirstAttackCooldown")
+	FAC.cooldown = FAC.base_cooldown
+
+func _on_can_attack() -> void:
+	enemy_can_attack.emit(get_parent())

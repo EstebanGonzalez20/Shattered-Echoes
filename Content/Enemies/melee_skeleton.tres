@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="4_02du8"]
 [ext_resource type="Script" uid="uid://bwguh8mfd4t0c" path="res://Engine/Components/Resource/Gameplay/phases.gd" id="5_ro6b6"]
 [ext_resource type="Script" uid="uid://b8kwi61772mhb" path="res://Engine/Components/Resource/Gameplay/first_attack_cooldown.gd" id="6_g6tkh"]
+[ext_resource type="Resource" uid="uid://itgmhpgb1jjp" path="res://Content/Enemies/AttacksPools/melee_skeleton.tres" id="7_g6tkh"]
+[ext_resource type="Script" uid="uid://be2y0o30ucagp" path="res://Engine/Components/Resource/Stadistics/damage.gd" id="8_w2uyc"]
+[ext_resource type="Script" uid="uid://bi0qxqhedesed" path="res://Engine/Components/Resource/Stadistics/attack_speed.gd" id="9_atspv"]
 
 [sub_resource type="Resource" id="Resource_02du8"]
 script = ExtResource("2_hx5l8")
@@ -34,7 +37,17 @@ script = ExtResource("6_g6tkh")
 base_cooldown = 2
 metadata/_custom_type_script = "uid://b8kwi61772mhb"
 
+[sub_resource type="Resource" id="Resource_ks8de"]
+script = ExtResource("8_w2uyc")
+base_value = 10.0
+metadata/_custom_type_script = "uid://be2y0o30ucagp"
+
+[sub_resource type="Resource" id="Resource_wfppe"]
+script = ExtResource("9_atspv")
+base_value = 1.0
+metadata/_custom_type_script = "uid://bi0qxqhedesed"
+
 [resource]
 script = ExtResource("2_3q8br")
-initial_components = Array[ExtResource("1_w2pkv")]([SubResource("Resource_02du8"), SubResource("Resource_exfq8"), SubResource("Resource_ro6b6"), SubResource("Resource_128pk"), SubResource("Resource_w2uyc")])
+initial_components = Array[ExtResource("1_w2pkv")]([SubResource("Resource_02du8"), SubResource("Resource_exfq8"), SubResource("Resource_ro6b6"), SubResource("Resource_128pk"), SubResource("Resource_w2uyc"), ExtResource("7_g6tkh"), SubResource("Resource_ks8de"), SubResource("Resource_wfppe")])
 metadata/_custom_type_script = "uid://dnljp4lqk872s"
