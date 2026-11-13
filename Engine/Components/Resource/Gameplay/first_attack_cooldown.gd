@@ -6,7 +6,7 @@ func get_type() -> StringName:
 signal can_attack()
 
 @export var base_cooldown: int ## Tiempo total que tiene que pasar hasta poder empezar a atacar
-var has_cooldown_ended: bool = false ## Indica si el cooldown terminó
+var has_cooldown_ended: bool = true ## Indica si el cooldown terminó
 var cooldown: float = 0.0: ## Tiempo restante hasta poder empezar a atacar
 	set(value):
 		cooldown = min(max(value, 0.0), base_cooldown)

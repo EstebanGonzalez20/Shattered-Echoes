@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="2_hx5l8"]
 [ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/Resource/Miscellaneous/enemy_behavior.gd" id="3_02du8"]
 [ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="4_02du8"]
-[ext_resource type="Script" uid="uid://bwguh8mfd4t0c" path="res://Engine/Components/Resource/Gameplay/phases.gd" id="5_ro6b6"]
+[ext_resource type="Script" path="res://Engine/Components/Resource/Gameplay/phases.gd" id="5_ro6b6"]
 [ext_resource type="Script" uid="uid://b8kwi61772mhb" path="res://Engine/Components/Resource/Gameplay/first_attack_cooldown.gd" id="6_g6tkh"]
 [ext_resource type="Resource" uid="uid://itgmhpgb1jjp" path="res://Content/Enemies/AttacksPools/melee_skeleton.tres" id="7_g6tkh"]
 [ext_resource type="Script" uid="uid://be2y0o30ucagp" path="res://Engine/Components/Resource/Stadistics/damage.gd" id="8_w2uyc"]
@@ -19,8 +19,8 @@ metadata/_custom_type_script = "uid://fiqspojmjr1c"
 
 [sub_resource type="Resource" id="Resource_exfq8"]
 script = ExtResource("3_02du8")
-max_player_distance = 2.0
-min_player_distance = 1.5
+max_player_distance = 1.5
+min_player_distance = 1.2
 metadata/_custom_type_script = "uid://djh5kjox4u2q1"
 
 [sub_resource type="Resource" id="Resource_ro6b6"]
@@ -30,12 +30,10 @@ metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
 
 [sub_resource type="Resource" id="Resource_128pk"]
 script = ExtResource("5_ro6b6")
-metadata/_custom_type_script = "uid://bwguh8mfd4t0c"
 
 [sub_resource type="Resource" id="Resource_w2uyc"]
 script = ExtResource("6_g6tkh")
 base_cooldown = 2
-metadata/_custom_type_script = "uid://b8kwi61772mhb"
 
 [sub_resource type="Resource" id="Resource_ks8de"]
 script = ExtResource("8_w2uyc")

@@ -67,4 +67,6 @@ func _on_enemy_still() -> void:
 	FAC.cooldown = FAC.base_cooldown
 
 func _on_can_attack() -> void:
-	enemy_can_attack.emit(get_parent())
+	var enemy_is_still = get_component("EnemyBehavior").is_still
+	if enemy_is_still:
+		enemy_can_attack.emit(get_parent())

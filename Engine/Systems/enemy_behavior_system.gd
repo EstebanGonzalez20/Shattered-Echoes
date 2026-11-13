@@ -19,6 +19,9 @@ func process_enemy_behavior(enemy: CharacterBody3D, players) -> void:
 	if closest_player == null:
 		return
 		
+	var vision = enemy.get_node("Head/Vision")
+	vision.look_at(closest_player.global_position, Vector3.UP)
+	
 	if closest_distance > enemy_behavior_comp.max_player_distance:
 		# acercarse
 		enemy_behavior_comp.is_still = false

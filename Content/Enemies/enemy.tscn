@@ -53,3 +53,8 @@ collision_mask = 32
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=294296588]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 shape = SubResource("BoxShape3D_d4ryt")
+
+[node name="Head" type="Node3D" parent="." unique_id=1423318156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Vision" type="Node3D" parent="Head" unique_id=1335588449]

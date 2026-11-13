@@ -36,7 +36,9 @@ func perform_attack(task: PerformAttackTask, current_scene: Node) -> void:
 	
 	attack_instance.scale = proj_scene_effect.projectile_scalar
 	
-	var attacker_camera: Camera3D = task.attacker.get_node("Head/Camera3D")
+	var attacker_camera = task.attacker.get_node("Head/Camera3D")
+	attacker_camera = task.attacker.get_node("Head/Vision") if attacker_camera == null else attacker_camera
+	
 	if proj_scene_effect.has_spawn_coordinates:
 		attack_instance.global_position = task.attacker.global_transform * proj_scene_effect.spawn_coordinates
 		
