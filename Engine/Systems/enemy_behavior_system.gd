@@ -21,13 +21,16 @@ func process_enemy_behavior(enemy: CharacterBody3D, players) -> void:
 		
 	if closest_distance > enemy_behavior_comp.max_player_distance:
 		# acercarse
+		enemy_behavior_comp.is_still = false
 		enemy_nav_agent.target_position = closest_player.global_transform.origin
 	
 	elif closest_distance < enemy_behavior_comp.min_player_distance:
 		# alejarse
+		enemy_behavior_comp.is_still = false
 		var dir = (enemy_pos - closest_player.global_transform.origin).normalized()
 		enemy_nav_agent.target_position = enemy_pos + dir * 5.0
 	
 	else:
 		# quedarse quieto
+		enemy_behavior_comp.is_still = true
 		enemy_nav_agent.target_position = enemy_pos

@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="2_5dkyc"]
 [ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/Resource/Miscellaneous/enemy_behavior.gd" id="3_1qduq"]
 [ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="4_8edvy"]
+[ext_resource type="Script" uid="uid://bwguh8mfd4t0c" path="res://Engine/Components/Resource/Gameplay/phases.gd" id="5_8edvy"]
+[ext_resource type="Script" uid="uid://b8kwi61772mhb" path="res://Engine/Components/Resource/Gameplay/first_attack_cooldown.gd" id="6_vti1e"]
 
 [sub_resource type="Resource" id="Resource_5dkyc"]
 script = ExtResource("2_5dkyc")
@@ -23,7 +25,16 @@ script = ExtResource("4_8edvy")
 max_health = 20.0
 metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
 
+[sub_resource type="Resource" id="Resource_86fyn"]
+script = ExtResource("5_8edvy")
+metadata/_custom_type_script = "uid://bwguh8mfd4t0c"
+
+[sub_resource type="Resource" id="Resource_y3qbu"]
+script = ExtResource("6_vti1e")
+base_cooldown = 4
+metadata/_custom_type_script = "uid://b8kwi61772mhb"
+
 [resource]
 script = ExtResource("2_2eona")
-initial_components = Array[ExtResource("1_sr6on")]([SubResource("Resource_5dkyc"), SubResource("Resource_1qduq"), SubResource("Resource_8edvy")])
+initial_components = Array[ExtResource("1_sr6on")]([SubResource("Resource_5dkyc"), SubResource("Resource_1qduq"), SubResource("Resource_8edvy"), SubResource("Resource_86fyn"), SubResource("Resource_y3qbu")])
 metadata/_custom_type_script = "uid://dnljp4lqk872s"
