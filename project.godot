@@ -25,6 +25,10 @@ Global="*uid://dqaajrj3jp2rk"
 SignalBus="*uid://d2dca1e57mt74"
 GameSession="*uid://dpdt3eb7hau7u"
 
+[display]
+
+window/size/mode=3
+
 [filesystem]
 
 import/blender/enabled=false

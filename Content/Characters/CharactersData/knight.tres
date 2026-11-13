@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://2ytcbolqbrjl"]
 
+[ext_resource type="AnimationLibrary" uid="uid://csqujn2cjxet8" path="res://Assets/Characters/Knight/knight_animations.res" id="1_kjd50"]
 [ext_resource type="Script" uid="uid://dbwo1j7eyg556" path="res://Engine/Resources/character_data.gd" id="1_onki0"]
 [ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="1_u6hu6"]
 [ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="2_kf3bf"]
@@ -7,6 +8,7 @@
 [ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="4_kjd50"]
 [ext_resource type="Script" uid="uid://bi0qxqhedesed" path="res://Engine/Components/Resource/Stadistics/attack_speed.gd" id="5_1bu05"]
 [ext_resource type="Script" uid="uid://jj870up6poq6" path="res://Engine/Components/Resource/Stadistics/stamina.gd" id="6_kf3bf"]
+[ext_resource type="PackedScene" uid="uid://bsmo23lvljirr" path="res://Assets/Characters/Knight/knight_weapon_primary1.glb" id="9_1bu05"]
 
 [sub_resource type="Resource" id="Resource_cmrml"]
 script = ExtResource("2_kf3bf")
@@ -38,4 +40,6 @@ metadata/_custom_type_script = "uid://jj870up6poq6"
 script = ExtResource("1_onki0")
 characters_name = &"Caballera"
 initial_components = Array[ExtResource("1_u6hu6")]([SubResource("Resource_cmrml"), SubResource("Resource_hfi6w"), SubResource("Resource_li6ay"), SubResource("Resource_ql74n"), SubResource("Resource_56m01")])
+viewmodel_scene = ExtResource("9_1bu05")
+animation_library = ExtResource("1_kjd50")
 metadata/_custom_type_script = "uid://dbwo1j7eyg556"
