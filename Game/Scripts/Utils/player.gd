@@ -2,14 +2,19 @@ class_name Player extends CharacterBody3D
 
 @onready var entity_component: EntityComponent = $EntityComponent
 @onready var hud: CanvasLayer = $"../Hud"
+@onready var camera: Camera3D = $Head/Camera3D
+@onready var pivot: Node3D = $Head/Camera3D/ViewmodelPivot
 
 signal player_died
 
 ## Datos del personaje del jugador.
 var character_data : CharacterData
+var viewmodel: Node3D
+var weapon_anim: AnimationPlayer
 
 ## Hace todas las preparaciones y lógicas de arranque que no puedan hacerse en _ready()
 func initialize() -> void:
+	_setup_viewmodel()
 	for component in character_data.initial_components:
 		entity_component.add_component(component)
 	
@@ -29,6 +34,16 @@ func initialize() -> void:
 		var player_input : PlayerInput = entity_component.get_component("Input")
 		player_input.player_action.connect(_on_action_done)
 
+func _setup_viewmodel() -> void:
+	if viewmodel:
+		viewmodel.queue_free()
+
+	viewmodel = character_data.viewmodel_scene.instantiate()
+	pivot.add_child(viewmodel)   # antes: camera.add_child(viewmodel)
+	weapon_anim = viewmodel.find_child("AnimationPlayer", true, false)
+	weapon_anim.add_animation_library("weapon", character_data.animation_library)
+	weapon_anim.play("weapon/Idle")
+
 func _on_damage_taken(amount) -> void:
 	var player_health : Health = entity_component.get_component("Health")
 	hud.healthBar.set_health(player_health.current_health)
@@ -43,6 +58,7 @@ func _on_stamina_changed(new_value, old_value) -> void:
 func _on_action_done(action_name) -> void:
 	match action_name:
 		&"basic_attack", &"special_attack":
+			weapon_anim.play("weapon/Primary1")
 			entity_component.get_component("Stamina").expend_stamina(30)
 
 func _on_die() -> void:

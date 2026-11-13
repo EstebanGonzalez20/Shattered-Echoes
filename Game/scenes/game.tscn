@@ -44,5 +44,5 @@ script = ExtResource("4_jik8v")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1918840786]
 stream = ExtResource("8_yieuc")
-volume_db = -5.473
+volume_db = -8.0
 parameters/looping = true

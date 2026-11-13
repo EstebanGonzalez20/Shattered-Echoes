@@ -6,3 +6,9 @@ class_name CharacterData extends Resource
 
 ## Lista de componentes con los que empieza el personaje.
 @export var initial_components : Array[Component]
+
+## Modelo del arma.
+@export var viewmodel_scene : PackedScene
+
+## Libreria con las animaciones del arma.
+@export var animation_library : AnimationLibrary

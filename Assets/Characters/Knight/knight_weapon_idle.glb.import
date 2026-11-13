@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1j4mbddfw22g"
-path="res://.godot/imported/EspadaEscudoIdle.blend11 - copia.glb-b132f4f278597a3cb39a09bc4ac37068.scn"
+uid="uid://ba6brrfjjyguj"
+path="res://.godot/imported/knight_weapon_idle.glb-10d5c94db24ca674906be62dc9cab21a.scn"
 
 [deps]
 
-source_file="res://Assets/Characters/Knight/EspadaEscudoIdle/EspadaEscudoIdle/COPIA_unificado/EspadaEscudoIdle.blend11 - copia.glb"
-dest_files=["res://.godot/imported/EspadaEscudoIdle.blend11 - copia.glb-b132f4f278597a3cb39a09bc4ac37068.scn"]
+source_file="res://Assets/Characters/Knight/knight_weapon_idle.glb"
+dest_files=["res://.godot/imported/knight_weapon_idle.glb-10d5c94db24ca674906be62dc9cab21a.scn"]
 
 [params]
 
@@ -42,4 +42,4 @@ materials/extract_path=""
 _subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
-gltf/texture_map_mode=0
+gltf/texture_map_mode=1
