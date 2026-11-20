@@ -38,5 +38,5 @@ func update(delta: float):
 		cooldown -= delta
 	
 	elif current_stamina < max_stamina:
-		current_stamina += delta * 10
-		stamina_changed.emit(current_stamina, current_stamina)
+		current_stamina += delta * 100
+		stamina_changed.emit(current_stamina, current_stamina - delta * 10)

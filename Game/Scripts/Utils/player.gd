@@ -12,6 +12,20 @@ var character_data : CharacterData
 var viewmodel: Node3D
 var weapon_anim: AnimationPlayer
 
+# Cosas del arma.
+## segundos tras terminar el ataque para encadenar
+const COMBO_WINDOW := 0.6
+## fracción de la animación tras la cual se permite encadenar
+const CANCEL_POINT := 0.5
+## transición suave entre animaciones
+const BLEND_TIME := 0.1   
+
+var combo_index := 0
+var last_attack_end := -INF
+var is_attacking := false
+var can_chain := false
+var attack_queued := false
+
 ## Hace todas las preparaciones y lógicas de arranque que no puedan hacerse en _ready()
 func initialize() -> void:
 	_setup_viewmodel()
@@ -42,6 +56,7 @@ func _setup_viewmodel() -> void:
 	pivot.add_child(viewmodel)   # antes: camera.add_child(viewmodel)
 	weapon_anim = viewmodel.find_child("AnimationPlayer", true, false)
 	weapon_anim.add_animation_library("weapon", character_data.animation_library)
+	weapon_anim.animation_finished.connect(_on_anim_finished)
 	weapon_anim.play("weapon/Idle")
 
 func _on_damage_taken(amount) -> void:
@@ -58,12 +73,43 @@ func _on_stamina_changed(new_value, old_value) -> void:
 func _on_action_done(action_name) -> void:
 	match action_name:
 		&"basic_attack", &"special_attack":
-			weapon_anim.play("weapon/Primary1")
-			entity_component.get_component("Stamina").expend_stamina(30)
+			try_attack()
+
+func _start_attack() -> void:
+	entity_component.get_component("Stamina").expend_stamina(30)
+	var now := Time.get_ticks_msec() / 1000.0
+	if not is_attacking and now - last_attack_end > COMBO_WINDOW:
+		combo_index = 0   # pausa larga: reinicia el combo
+	var anim_name := "weapon/Primary1" if combo_index == 0 else "weapon/Primary2"
+	combo_index = 1 - combo_index
+	is_attacking = true
+	can_chain = false
+	attack_queued = false
+	weapon_anim.play(anim_name, BLEND_TIME)
+
+func try_attack() -> void:
+	if is_attacking and not can_chain:
+		attack_queued = true    # buffer: se ejecutará al llegar al punto de cancelación
+		return
+	_start_attack()
+
+func _on_anim_finished(anim_name: StringName) -> void:
+	if not str(anim_name).begins_with("weapon/Ataque"):
+		return
+	is_attacking = false
+	can_chain = false
+	attack_queued = false
+	last_attack_end = Time.get_ticks_msec() / 1000.0
+	weapon_anim.play("weapon/Idle", BLEND_TIME)
 
 func _on_die() -> void:
 	player_died.emit()
 
-func _process(delta: float) -> void:
-	if Input.is_action_pressed("accept"):
-		print(entity_component.get_component("Stamina").current_stamina)
+func _process(_delta: float) -> void:
+	if not is_attacking or can_chain:
+		return
+	var length := weapon_anim.current_animation_length
+	if length > 0.0 and weapon_anim.current_animation_position >= length * CANCEL_POINT:
+		can_chain = true
+		if attack_queued:
+			_start_attack()
